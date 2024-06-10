@@ -1,0 +1,12 @@
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Servico.deps.json
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Servico.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Servico.pdb
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.GeneratedMSBuildEditorConfig.editorconfig
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.AssemblyInfoInputs.cache
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.AssemblyInfo.cs
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.csproj.CoreCompileInputs.cache
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.sourcelink.json
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\refint\UrnaEletronica.Servico.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.pdb
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\ref\UrnaEletronica.Servico.dll

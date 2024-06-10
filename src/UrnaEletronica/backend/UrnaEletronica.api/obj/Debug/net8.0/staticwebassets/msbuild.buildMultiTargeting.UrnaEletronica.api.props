@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\UrnaEletronica.api.props" />
+</Project>
