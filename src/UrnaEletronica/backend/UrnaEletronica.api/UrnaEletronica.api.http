@@ -1,0 +1,6 @@
+@UrnaEletronica.api_HostAddress = http://localhost:5004
+
+GET {{UrnaEletronica.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
