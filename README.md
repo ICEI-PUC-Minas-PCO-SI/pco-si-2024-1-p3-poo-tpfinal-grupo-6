@@ -14,7 +14,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 * Alex de Souza Galdino
 * Matheus Felipe Galdino
-* Nome completo do aluno 3
+* Carolina Alves Baião Pessoa
 * Nome completo do aluno 4
 * Nome completo do aluno 5
 
