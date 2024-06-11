@@ -4,11 +4,12 @@
 
 `CURSO: Sistemas de Informação`
 
-`DISCIPLINA: Projeto - Projeto de Infraestrutura`
+`DISCIPLINA: Programação Orientada por Objetos`
 
-`Eixo: 5`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O objetivo do projeto é simular um sistema de eleição para prefeito e vereador de uma cidade, com base na quantidade de votos.
+
+
 
 ## Integrantes
 
@@ -20,6 +21,6 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Orientador
 
-* Nome completo do professor 1
+* Fabio Leandro Rodrigues Cordeiro
 
 
