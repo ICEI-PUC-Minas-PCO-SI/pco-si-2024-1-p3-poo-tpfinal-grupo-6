@@ -7,7 +7,7 @@
 `DISCIPLINA: Programação Orientada por Objetos`
 
 
-O objetivo do projeto é simular um sistema de eleição para prefeito e vereador de uma cidade com base na quantidade de votos.
+O objetivo do projeto é simular um sistema de eleição para prefeito e vereador de uma cidade, com base na quantidade de votos.
 
 
 
