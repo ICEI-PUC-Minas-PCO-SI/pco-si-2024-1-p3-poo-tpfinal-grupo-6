@@ -21,6 +21,6 @@ O objetivo do projeto é simular um sistema de eleição para prefeito e vereado
 
 ## Orientador
 
-* Nome completo do professor 1
+* Fabio Leandro Rodrigues Cordeiro
 
 
