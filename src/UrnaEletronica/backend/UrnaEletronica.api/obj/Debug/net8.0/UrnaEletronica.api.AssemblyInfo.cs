@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrnaEletronica.api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67fd29c1b0d3e3c17662f0ba0e9c419605ac4d2c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7e1137b4f899ca261c8a75b3d4bf316f6d2f1671")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrnaEletronica.api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrnaEletronica.api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
