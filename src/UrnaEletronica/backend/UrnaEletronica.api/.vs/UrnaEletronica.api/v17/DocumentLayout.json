@@ -3,19 +3,13 @@
   "WorkspaceRootPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\implementacoes\\shared\\sharedpersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAF8B9E4-922E-47BA-A61C-9810CE21A6C6}|..\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.servico\\servicos\\implementacoes\\usuarios\\tokenservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\contratos\\usuarios\\iusuariopersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAF8B9E4-922E-47BA-A61C-9810CE21A6C6}|..\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.servico\\servicos\\implementacoes\\cidades\\cidadeservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\contexto\\urnaeletronicacontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\implementacoes\\usuarios\\usuariopersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\implementacoes\\cidades\\cidadepersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAF8B9E4-922E-47BA-A61C-9810CE21A6C6}|..\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.servico\\servicos\\implementacoes\\usuarios\\usuarioservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,76 +19,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TokenServico.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\TokenServico.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\TokenServico.cs",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\TokenServico.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\TokenServico.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAowD4AAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-14T10:36:55.775Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UrnaEletronicaContexto.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
-              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAdAAAA",
+              "Title": "UsuarioServico.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\UsuarioServico.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\UsuarioServico.cs",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\UsuarioServico.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Usuarios\\UsuarioServico.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAcwG4AAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T14:08:14.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UsuarioPersistencia.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Usuarios\\UsuarioPersistencia.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Usuarios\\UsuarioPersistencia.cs",
-              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Usuarios\\UsuarioPersistencia.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Usuarios\\UsuarioPersistencia.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCwAAAALAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T13:49:54.993Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CidadePersistencia.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
-              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAACsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T13:49:30.03Z",
+              "WhenOpened": "2024-06-13T18:51:30.704Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "IUsuarioPersistencia.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Usuarios\\IUsuarioPersistencia.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Usuarios\\IUsuarioPersistencia.cs",
-              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Usuarios\\IUsuarioPersistencia.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Usuarios\\IUsuarioPersistencia.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Title": "CidadeServico.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Cidades\\CidadeServico.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Cidades\\CidadeServico.cs",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Cidades\\CidadeServico.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Servico\\Servicos\\Implementacoes\\Cidades\\CidadeServico.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowHQAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T13:47:21.713Z",
+              "WhenOpened": "2024-06-12T13:43:56.667Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SharedPersistencia.cs",
-              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Shared\\SharedPersistencia.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Shared\\SharedPersistencia.cs",
-              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Shared\\SharedPersistencia.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Shared\\SharedPersistencia.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAAABsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T13:02:53.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
