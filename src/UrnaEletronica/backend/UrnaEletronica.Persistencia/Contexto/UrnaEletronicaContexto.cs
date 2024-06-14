@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using UrnaEletronica.Dominio.Modelos.Usuarios;
 using Microsoft.EntityFrameworkCore;
 using UrnaEletronica.Dominio.Modelos.Cidades;
+using UrnaEletronica.Dominio.Modelos.Candidatos;
 
 namespace UrnaEletronica.Persistencia.Contexto
 {
@@ -16,6 +17,7 @@ namespace UrnaEletronica.Persistencia.Contexto
     {
         public UrnaEletronicaContexto(DbContextOptions<UrnaEletronicaContexto> options) : base(options) { }
         public DbSet<Cidade> Cidades { get; set; }
+        public DbSet<Candidato> Candidatos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -36,6 +38,17 @@ namespace UrnaEletronica.Persistencia.Contexto
                         .HasForeignKey(uf => uf.UserId)
                         .IsRequired();
                });
+            builder.Entity<Candidato>(
+                candidato =>
+                {
+                    candidato.HasIndex(c => c.CidadeId);
+
+                    candidato.HasIndex(c => c.LegislativoId);
+
+                    candidato.HasIndex(c => c.ExecutivoId);
+
+                    candidato.HasIndex(c => c.PartidoId);
+                });
         }
 
     }
