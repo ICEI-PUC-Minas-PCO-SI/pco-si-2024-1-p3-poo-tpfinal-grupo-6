@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj": {}
+    "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj": {
+    "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
+        "projectUniqueName": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
         "projectName": "UrnaEletronica.api",
-        "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\obj\\",
+        "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
+        "packagesPath": "C:\\Users\\igaoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igaoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,15 +26,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj": {
-                "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj"
+              "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj": {
+                "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj"
               }
             }
           }
@@ -86,10 +85,6 @@
               "target": "Package",
               "version": "[8.0.6, )"
             },
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[8.0.2, )"
-            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.2, )"
@@ -122,20 +117,20 @@
         }
       }
     },
-    "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj": {
+    "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj",
+        "projectUniqueName": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj",
         "projectName": "UrnaEletronica.Dominio",
-        "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\obj\\",
+        "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj",
+        "packagesPath": "C:\\Users\\igaoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igaoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -144,7 +139,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -193,20 +187,20 @@
         }
       }
     },
-    "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj": {
+    "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj",
+        "projectUniqueName": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj",
         "projectName": "UrnaEletronica.Persistencia",
-        "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\obj\\",
+        "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj",
+        "packagesPath": "C:\\Users\\igaoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igaoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -215,15 +209,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj": {
-                "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj"
+              "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj": {
+                "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj"
               }
             }
           }
@@ -282,20 +275,20 @@
         }
       }
     },
-    "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj": {
+    "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj",
+        "projectUniqueName": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj",
         "projectName": "UrnaEletronica.Servico",
-        "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\obj\\",
+        "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj",
+        "packagesPath": "C:\\Users\\igaoa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\igaoa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -304,18 +297,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj": {
-                "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj"
+              "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj": {
+                "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Dominio\\UrnaEletronica.Dominio.csproj"
               },
-              "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj": {
-                "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj"
+              "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj": {
+                "projectPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj"
               }
             }
           }
