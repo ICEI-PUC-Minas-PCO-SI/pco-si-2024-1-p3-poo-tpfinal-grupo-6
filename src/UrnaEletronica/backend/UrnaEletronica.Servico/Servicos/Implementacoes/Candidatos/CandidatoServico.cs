@@ -136,15 +136,15 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
 
                 if (await _candidatoPersistencia.SaveChangeAsync())
                 {
-                    var candidatoMapper = await _candidatoPersistencia.GetCandidatoByIdAsync(candidatoMapper.Id);
+                    var candidatoMapper = await _candidatoPersistencia.GetCandidatoByIdAsync(candidatoUpdate.Id);
                     return _mapper.Map<CandidatoDto>(candidatoMapper);
                 }
 
                 return null;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
     }

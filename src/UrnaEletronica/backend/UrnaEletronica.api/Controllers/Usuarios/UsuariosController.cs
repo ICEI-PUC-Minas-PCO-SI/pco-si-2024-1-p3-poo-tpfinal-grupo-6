@@ -3,6 +3,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UrnaEletronica.api.Util.Extensions.Security;
+using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Servico.Dtos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
 
@@ -91,11 +92,11 @@ namespace UrnaEletronica.api.Controllers.Usuarios
 
                 var usuarios = await _usuarioServico.GetAllUsuariosByNomeAsync(nome);
                 if (usuarios == null) return NoContent();
-                return Ok();
+                return Ok(usuarios);
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao recuperar conta. Erro: {ex.Message}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar conta. Erro: {ex.Message}");
             }
         }
         [HttpGet("GetUsuarios")]
@@ -108,10 +109,10 @@ namespace UrnaEletronica.api.Controllers.Usuarios
 
                 var usuarios = await _usuarioServico.GetAllUsuariosAsync();
                 if (usuarios == null) return NoContent();
-                return Ok();
+                return Ok(usuarios);
             }catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao recuperar conta. Erro: {ex.Message}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar conta. Erro: {ex.Message}");
             }
         }
         [HttpGet("GetUsuario/{id}")]
@@ -124,11 +125,11 @@ namespace UrnaEletronica.api.Controllers.Usuarios
 
                 var usuario = await _usuarioServico.GetUsuarioByIdAsync(usuarioId);
                 if (usuario == null) return NoContent();
-                return Ok();
+                return Ok(usuario);
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao recuperar conta por Id. Erro: {ex.Message}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar conta por Id. Erro: {ex.Message}");
             }
         }
         [AllowAnonymous]
@@ -176,7 +177,7 @@ namespace UrnaEletronica.api.Controllers.Usuarios
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao recuperar conta. Erro: {ex.Message}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar conta. Erro: {ex.Message}");
             }
         }
     }
