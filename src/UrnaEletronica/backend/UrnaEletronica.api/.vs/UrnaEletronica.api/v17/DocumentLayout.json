@@ -1,12 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\controllers\\usuarios\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:controllers\\usuarios\\usuarioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\controllers\\cidades\\cidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:controllers\\cidades\\cidadescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuariosController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Controllers\\Usuarios\\UsuariosController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Usuarios\\UsuariosController.cs",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Controllers\\Usuarios\\UsuariosController.cs",
+              "RelativeToolTip": "Controllers\\Usuarios\\UsuariosController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAALIAAAB9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T09:45:23.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CidadesController.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Controllers\\Cidades\\CidadesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\Cidades\\CidadesController.cs",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Controllers\\Cidades\\CidadesController.cs",
+              "RelativeToolTip": "Controllers\\Cidades\\CidadesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-15T09:42:57.921Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
