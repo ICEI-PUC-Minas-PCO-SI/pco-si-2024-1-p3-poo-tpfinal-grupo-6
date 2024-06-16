@@ -8,5 +8,6 @@ namespace UrnaEletronica.Dominio.Modelos.Coligacoes
 {
     public class Coligacao
     {
+        public int Id { get; set; }
     }
 }
