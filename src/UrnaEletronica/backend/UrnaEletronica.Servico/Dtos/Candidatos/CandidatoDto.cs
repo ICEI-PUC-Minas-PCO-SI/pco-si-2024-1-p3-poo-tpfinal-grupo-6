@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UrnaEletronica.Dominio.Modelos.Cidades;
 using UrnaEletronica.Dominio.Modelos.Partidos;
 using UrnaEletronica.Servico.Dtos.Cidades;
+using UrnaEletronica.Servico.Dtos.Partidos;
 
 namespace UrnaEletronica.Servico.Dtos.Candidatos
 {
@@ -20,8 +21,12 @@ namespace UrnaEletronica.Servico.Dtos.Candidatos
         public int CidadeId { get; set; }
         public CidadeDto Cidade { get; set; }
         public int PartidoId { get; set; }
+<<<<<<< Updated upstream
         //public PartidoDto Partido { get; set; }
         public int ColigacaoId { get; set; }
         //public ColigacaoDto Coligacao { get; set; 
+=======
+        public PartidoDto Partido { get; set; }
+>>>>>>> Stashed changes
     }
 }
