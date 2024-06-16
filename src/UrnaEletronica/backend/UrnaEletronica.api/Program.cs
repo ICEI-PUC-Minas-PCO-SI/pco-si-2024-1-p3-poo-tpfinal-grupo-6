@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -9,14 +8,18 @@ using System.Text;
 using System.Text.Json.Serialization;
 using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Persistencia.Contexto;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Candidatos;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Cidades;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Shared;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Usuarios;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Cidades;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Shared;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Usuarios;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Candidatos;
+using UrnaEletronica.Servico.Servicos.Contratos.Candidatos;
 using UrnaEletronica.Servico.Servicos.Contratos.Cidades;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Cidades;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Usuarios;
 
@@ -94,13 +97,15 @@ builder.Services
 builder.Services
     .AddScoped<IUsuarioPersistencia, UsuarioPersistencia>()
     .AddScoped<ICidadePersistencia, CidadePersistencia>()
-    .AddScoped<ISharedPersistencia, SharedPersistencia>();
+    .AddScoped<ISharedPersistencia, SharedPersistencia>()
+    .AddScoped<ICandidatoPersistencia, CandidatoPersistencia>();
 
 //Injeção dos Serviços
 builder.Services
     .AddScoped<IUsuarioServico, UsuarioServico>()
     .AddScoped<ICidadeServico, CidadeServico>()
-    .AddScoped<ITokenServico, TokenServico>();
+    .AddScoped<ITokenServico, TokenServico>()
+    .AddScoped<ICandidatoServico, CandidatoServico>();
 
 //Injeçao do Cors(Segurança)
 builder.Services

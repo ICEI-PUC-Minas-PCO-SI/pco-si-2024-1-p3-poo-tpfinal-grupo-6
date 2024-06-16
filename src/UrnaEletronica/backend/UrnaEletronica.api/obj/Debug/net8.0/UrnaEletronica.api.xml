@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UrnaEletronica.api</name>
+    </assembly>
+    <members>
+        <member name="M:UrnaEletronica.api.Controllers.Cidades.CidadesController.GetCidades">
+            <summary>
+            Obtém os dados de todos as cidades cadastradas 
+            </summary>
+            <response code="200">Dados das cidades cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Cidades.CidadesController.GetCidadeByIdAsync(System.Int32)">
+            <summary>
+            Obtém os dados de uma cidade específica
+            </summary>
+            <param name="cidadeId">Identificador da cidade</param>
+            <response code="200">Dados da cidade consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Cidades.CidadesController.CreateCidade(UrnaEletronica.Servico.Dtos.Cidades.CidadeDto)">
+            <summary>
+            Realiza inclusão de uma cidade 
+            </summary>
+            <response code="200">Dados das cidades cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Cidades.CidadesController.UpdateCidade(System.Int32,UrnaEletronica.Servico.Dtos.Cidades.CidadeDto)">
+            <summary>
+            Realiza a atualização dos dados de uma cidade
+            </summary>
+            <param name="cidadeId">Identificador da cidade</param>
+            <param name="cidadeDto">Cidade cadastrada</param>
+            <response code="200">Cidade atualizada com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Cidades.CidadesController.DeleteCidade(System.Int32)">
+            <summary>
+            Obtém os dados de uma cidade específica
+            </summary>
+            <param name="cidadeId">Identificador da cidade</param>
+            <response code="200">Dados da cidade consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+    </members>
+</doc>

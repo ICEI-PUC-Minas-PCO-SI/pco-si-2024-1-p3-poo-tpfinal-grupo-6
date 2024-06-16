@@ -115,7 +115,7 @@ namespace UrnaEletronica.api.Controllers.Usuarios
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar conta. Erro: {ex.Message}");
             }
         }
-        [HttpGet("GetUsuario/{id}")]
+        [HttpGet("GetUsuario/{usuarioId}")]
         public async Task<IActionResult> GetUsuarioById(int usuarioId)
         {
             try
