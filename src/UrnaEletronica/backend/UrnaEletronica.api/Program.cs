@@ -22,6 +22,10 @@ using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Cidades;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Usuarios;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Log;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Log;
+using UrnaEletronica.Servico.Servicos.Contratos.Log;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Log;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -98,14 +102,17 @@ builder.Services
     .AddScoped<IUsuarioPersistencia, UsuarioPersistencia>()
     .AddScoped<ICidadePersistencia, CidadePersistencia>()
     .AddScoped<ISharedPersistencia, SharedPersistencia>()
-    .AddScoped<ICandidatoPersistencia, CandidatoPersistencia>();
+    .AddScoped<ICandidatoPersistencia, CandidatoPersistencia>()
+    .AddScoped<ILogVotosBatchPersistencia, LogVotosBatchPersistencia>()
+    .AddScoped<ILogVotosErrosPersistencia, LogVotosErrosPersistencia>();
 
 //Injeção dos Serviços
 builder.Services
     .AddScoped<IUsuarioServico, UsuarioServico>()
     .AddScoped<ICidadeServico, CidadeServico>()
     .AddScoped<ITokenServico, TokenServico>()
-    .AddScoped<ICandidatoServico, CandidatoServico>();
+    .AddScoped<ICandidatoServico, CandidatoServico>()
+    .AddScoped<IProcessarVotosBatchServico, ProcessarVotosBatchServico>();
 
 //Injeçao do Cors(Segurança)
 builder.Services

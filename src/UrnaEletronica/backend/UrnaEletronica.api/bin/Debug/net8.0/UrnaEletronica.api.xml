@@ -4,6 +4,77 @@
         <name>UrnaEletronica.api</name>
     </assembly>
     <members>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.GetCandidatos">
+            <summary>
+            Obtém os dados de todos os candidatos cadastrados 
+            </summary>
+            <response code="200">Dados dos candidatos</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.GetCandidatoByIdAsync(System.Int32)">
+            <summary>
+            Obtém os dados de um candidato específico
+            </summary>
+            <param name="candidatoId">Identificador do candidato</param>
+            <response code="200">Dados do candidato consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.CreateCandidato(UrnaEletronica.Servico.Dtos.Candidatos.CandidatoDto)">
+            <summary>
+            Realiza inclusão de um candidato 
+            </summary>
+            <param name="candidatoDto">Candidato a ser cadastrado</param>
+            <response code="200">Dados do candidato cadastrado</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.UpdateCandidato(System.Int32,UrnaEletronica.Servico.Dtos.Candidatos.CandidatoDto)">
+            <summary>
+            Realiza a atualização dos dados de um candidato
+            </summary>
+            <param name="candidatoId">Identificador do candidato</param>
+            <param name="candidatoDto">Candidato a ser alterado</param>
+            <response code="200">Candidato atualizado com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.DeleteCandidato(System.Int32)">
+            <summary>
+            Exclui os dados de um candidato específico
+            </summary>
+            <param name="candidatoId">Identificador do candidato</param>
+            <response code="200">Dados do candidato excluído</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.RegistrarVoto(System.Int32)">
+            <summary>
+            Realiza a votação online para um candidato
+            </summary>
+            <param name="candidatoId">Identificador do candidato</param>
+            <response code="200">Voto registrado com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.RegistrarVoto(System.Int32,System.Int32)">
+            <summary>
+            Realiza a votação batch para um candidato
+            </summary>
+            <param name="candidatoId">Identificador do candidato</param>
+            <param name="qtdVotos">Quantidade de votos do candidato</param>
+            <response code="200">Voto registrado com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
         <member name="M:UrnaEletronica.api.Controllers.Cidades.CidadesController.GetCidades">
             <summary>
             Obtém os dados de todos as cidades cadastradas 

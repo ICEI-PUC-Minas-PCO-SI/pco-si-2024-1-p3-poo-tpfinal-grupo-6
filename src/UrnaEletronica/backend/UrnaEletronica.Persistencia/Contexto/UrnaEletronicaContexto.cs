@@ -14,6 +14,10 @@ using UrnaEletronica.Dominio.Modelos.Candidatos;
 using UrnaEletronica.Dominio.Modelos.Partidos;
 =======
 using UrnaEletronica.Dominio.Modelos.Coligacoes;
+<<<<<<< HEAD
+using UrnaEletronica.Dominio.Modelos.LogVotosBatch;
+=======
+>>>>>>> main
 >>>>>>> main
 
 namespace UrnaEletronica.Persistencia.Contexto
@@ -27,6 +31,11 @@ namespace UrnaEletronica.Persistencia.Contexto
         public DbSet<Partido> Partidos { get; set; }
 =======
         public DbSet<Coligacao> Coligacoes { get; set; }
+<<<<<<< HEAD
+        public DbSet<LogVotosBatch> LogVotosBatch { get; set; }
+        public DbSet<LogVotosBatchErros> LogVotosBatchErros { get; set; }
+=======
+>>>>>>> main
 >>>>>>> main
 
         protected override void OnModelCreating(ModelBuilder builder)

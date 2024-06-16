@@ -26,10 +26,4 @@ D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronic
 D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.AssemblyInfo.cs
 D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.csproj.CoreCompileInputs.cache
 D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.sourcelink.json
-<<<<<<< HEAD
-=======
-D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.dll
-D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\refint\UrnaEletronica.Dominio.dll
-D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.pdb
->>>>>>> main
 D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\ref\UrnaEletronica.Dominio.dll
