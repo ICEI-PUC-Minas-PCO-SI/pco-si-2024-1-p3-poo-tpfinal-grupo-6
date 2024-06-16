@@ -478,3 +478,6 @@ $RECYCLE.BIN/
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
 *AssemblyInfo.cs
+src/UrnaEletronica/backend/UrnaEletronica.api/.vs/ProjectEvaluation/urnaeletronica.api.metadata.v8.bin
+src/UrnaEletronica/backend/UrnaEletronica.api/.vs/ProjectEvaluation/urnaeletronica.api.projects.v8.bin
+src/UrnaEletronica/backend/UrnaEletronica.Servico/obj/Debug/net8.0/UrnaEletronica.Servico.csproj.AssemblyReference.cache

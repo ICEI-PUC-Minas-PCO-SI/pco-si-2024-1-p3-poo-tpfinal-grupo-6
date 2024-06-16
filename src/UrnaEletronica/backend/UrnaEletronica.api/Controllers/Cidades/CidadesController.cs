@@ -145,7 +145,7 @@ namespace UrnaEletronica.api.Controllers.Cidades
         /// <response code="400">Parâmetros incorretos</response>
         /// <response code="500">Erro interno</response>
         /// 
-        [HttpDelete("{cidadId}")]
+        [HttpDelete("{cidadeId}")]
         public async Task<IActionResult> DeleteCidade(int cidadeId)
         {
             try
