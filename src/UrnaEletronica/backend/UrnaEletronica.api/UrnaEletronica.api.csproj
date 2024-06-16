@@ -34,4 +34,8 @@
     <ProjectReference Include="..\UrnaEletronica.Servico\UrnaEletronica.Servico.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Partidos\" />
+  </ItemGroup>
+
 </Project>
