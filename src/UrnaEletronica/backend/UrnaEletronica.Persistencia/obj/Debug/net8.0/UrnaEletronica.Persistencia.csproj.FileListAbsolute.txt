@@ -32,3 +32,5 @@ C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEle
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Persistencia\obj\Debug\net8.0\UrnaEletronica.Persistencia.pdb
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Persistencia\obj\Debug\net8.0\UrnaEletronica.Persistencia.genruntimeconfig.cache
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Persistencia\obj\Debug\net8.0\ref\UrnaEletronica.Persistencia.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Persistencia\bin\Debug\net8.0\UrnaEletronica.Persistencia.runtimeconfig.json
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Persistencia\obj\Debug\net8.0\UrnaEletronica.Persistencia.genruntimeconfig.cache

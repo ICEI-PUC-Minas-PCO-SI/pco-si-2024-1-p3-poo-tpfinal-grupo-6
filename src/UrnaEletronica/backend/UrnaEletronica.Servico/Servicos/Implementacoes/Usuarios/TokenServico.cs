@@ -28,7 +28,7 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Usuarios
             _userManager = userManager;
             _mapper = mapper;
 
-            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Tokekey"]));
+            _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Tokenkey"]));
         }
         public async Task<string> CreateToken(UsuarioUpdateDto usuarioUpdateDto)
         {

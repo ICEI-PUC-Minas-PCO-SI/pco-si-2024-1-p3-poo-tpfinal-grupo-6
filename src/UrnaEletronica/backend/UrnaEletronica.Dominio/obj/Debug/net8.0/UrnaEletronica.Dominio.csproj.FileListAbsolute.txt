@@ -11,3 +11,16 @@ C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEle
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\refint\UrnaEletronica.Dominio.dll
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.pdb
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\ref\UrnaEletronica.Dominio.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\bin\Debug\net8.0\UrnaEletronica.Dominio.deps.json
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\bin\Debug\net8.0\UrnaEletronica.Dominio.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\bin\Debug\net8.0\UrnaEletronica.Dominio.pdb
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.csproj.AssemblyReference.cache
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.AssemblyInfoInputs.cache
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.AssemblyInfo.cs
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.csproj.CoreCompileInputs.cache
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.sourcelink.json
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\refint\UrnaEletronica.Dominio.dll
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.pdb
+D:\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\ref\UrnaEletronica.Dominio.dll
