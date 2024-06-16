@@ -21,5 +21,7 @@ namespace UrnaEletronica.Servico.Dtos.Candidatos
         public CidadeDto Cidade { get; set; }
         public int PartidoId { get; set; }
         //public PartidoDto Partido { get; set; }
+        public int ColigacaoId { get; set; }
+        //public ColigacaoDto Coligacao { get; set; 
     }
 }

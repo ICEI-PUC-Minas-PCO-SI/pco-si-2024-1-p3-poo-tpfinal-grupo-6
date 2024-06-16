@@ -1,7 +1,26 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\contexto\\urnaeletronicacontexto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\implementacoes\\log\\logvotosbatchpersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\implementacoes\\cidades\\cidadepersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\contratos\\log\\ilogvotoserrospersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\contratos\\log\\ilogvotosbatchpersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\contratos\\cidades\\icidadepersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +28,89 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UrnaEletronicaContexto.cs",
+              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
+              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Contexto\\UrnaEletronicaContexto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:22:33.72Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CidadePersistencia.cs",
+              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
+              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Cidades\\CidadePersistencia.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:17:10.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LogVotosBatchPersistencia.cs",
+              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Log\\LogVotosBatchPersistencia.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Log\\LogVotosBatchPersistencia.cs",
+              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Log\\LogVotosBatchPersistencia.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Implementacoes\\Log\\LogVotosBatchPersistencia.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAABFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:16:52.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ILogVotosErrosPersistencia.cs",
+              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosErrosPersistencia.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosErrosPersistencia.cs",
+              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosErrosPersistencia.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosErrosPersistencia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:13:27.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ICidadePersistencia.cs",
+              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Cidades\\ICidadePersistencia.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Cidades\\ICidadePersistencia.cs",
+              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Cidades\\ICidadePersistencia.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Cidades\\ICidadePersistencia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:01:42.046Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ILogVotosBatchPersistencia.cs",
+              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosBatchPersistencia.cs",
+              "RelativeDocumentMoniker": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosBatchPersistencia.cs",
+              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosBatchPersistencia.cs",
+              "RelativeToolTip": "..\\UrnaEletronica.Persistencia\\Interfaces\\Contratos\\Log\\ILogVotosBatchPersistencia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T12:01:33.209Z",
+              "EditorCaption": ""
             }
           ]
         }
