@@ -16,7 +16,7 @@ O objetivo do projeto é simular um sistema de eleição para prefeito e vereado
 * Alex de Souza Galdino
 * Matheus Felipe Galdino
 * Carolina Alves Baião Pessoa
-* Nome completo do aluno 4
+* Igor Alvarenga Nunes de Brito
 * Nome completo do aluno 5
 
 ## Orientador

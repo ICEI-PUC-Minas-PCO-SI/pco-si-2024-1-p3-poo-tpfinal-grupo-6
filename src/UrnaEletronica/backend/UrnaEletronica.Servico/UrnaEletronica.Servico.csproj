@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Servicos\Implementacoes\Usuarios\TokenServico\**" />
+    <EmbeddedResource Remove="Servicos\Implementacoes\Usuarios\TokenServico\**" />
+    <None Remove="Servicos\Implementacoes\Usuarios\TokenServico\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />

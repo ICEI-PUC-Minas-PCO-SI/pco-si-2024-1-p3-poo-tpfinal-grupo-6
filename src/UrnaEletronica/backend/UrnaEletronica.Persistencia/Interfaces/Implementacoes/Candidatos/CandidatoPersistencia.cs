@@ -5,15 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UrnaEletronica.Dominio.Modelos.Candidatos;
-using UrnaEletronica.Dominio.Modelos.Cidades;
 using UrnaEletronica.Persistencia.Contexto;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Candidatos;
-using UrnaEletronica.Persistencia.Interfaces.Contratos.Cidades;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Shared;
 
 namespace UrnaEletronica.Persistencia.Interfaces.Implementacoes.Candidatos
 {
-    internal class CandidatoPersistencia : SharedPersistencia, ICandidatoPersistencia
+    public class CandidatoPersistencia : SharedPersistencia, ICandidatoPersistencia
     {
         private readonly UrnaEletronicaContexto _contexto;
 
