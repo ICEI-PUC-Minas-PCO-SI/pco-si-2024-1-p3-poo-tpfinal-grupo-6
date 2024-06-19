@@ -172,3 +172,14 @@ C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEle
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.pdb
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.genruntimeconfig.cache
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\ref\UrnaEletronica.api.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.csproj.AssemblyReference.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.AssemblyInfoInputs.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.AssemblyInfo.cs
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.csproj.CoreCompileInputs.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.sourcelink.json
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\refint\UrnaEletronica.api.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.api\obj\Debug\net8.0\UrnaEletronica.api.pdb

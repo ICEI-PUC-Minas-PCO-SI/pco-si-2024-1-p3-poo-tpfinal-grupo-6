@@ -1,0 +1,13 @@
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\bin\Debug\net8.0\UrnaEletronica.Dominio.deps.json
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\bin\Debug\net8.0\UrnaEletronica.Dominio.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\bin\Debug\net8.0\UrnaEletronica.Dominio.pdb
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.csproj.AssemblyReference.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.AssemblyInfoInputs.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.AssemblyInfo.cs
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.csproj.CoreCompileInputs.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.sourcelink.json
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\refint\UrnaEletronica.Dominio.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\UrnaEletronica.Dominio.pdb
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Dominio\obj\Debug\net8.0\ref\UrnaEletronica.Dominio.dll

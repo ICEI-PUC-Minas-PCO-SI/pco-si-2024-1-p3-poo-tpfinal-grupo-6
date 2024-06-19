@@ -34,3 +34,12 @@ C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEle
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\refint\UrnaEletronica.Servico.dll
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.pdb
 C:\Users\mathe\Documents\github\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\ref\UrnaEletronica.Servico.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.csproj.AssemblyReference.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.AssemblyInfoInputs.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.AssemblyInfo.cs
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.csproj.CoreCompileInputs.cache
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.sourcelink.json
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\refint\UrnaEletronica.Servico.dll
+C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.pdb
