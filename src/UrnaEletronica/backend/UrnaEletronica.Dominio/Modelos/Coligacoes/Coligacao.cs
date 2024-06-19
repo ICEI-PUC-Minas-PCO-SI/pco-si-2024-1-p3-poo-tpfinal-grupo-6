@@ -8,10 +8,14 @@ namespace UrnaEletronica.Dominio.Modelos.Coligacoes
 {
     public class Coligacao
     {
+<<<<<<< HEAD
             public int Id { get; set; }
             public string Nome { get; set; }
             public string Sigla { get; set; }
             public int Partido { get; set; }
         
+=======
+        public int Id { get; set; }
+>>>>>>> main
     }
 }

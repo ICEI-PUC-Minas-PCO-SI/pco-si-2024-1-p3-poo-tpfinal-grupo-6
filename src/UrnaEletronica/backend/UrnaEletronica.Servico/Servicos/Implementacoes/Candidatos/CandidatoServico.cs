@@ -39,9 +39,9 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
 
                 return null;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -58,9 +58,9 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
 
                 return await _candidatoPersistencia.SaveChangeAsync();
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -76,9 +76,9 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
 
                 return candidatosMappper;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -94,9 +94,9 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
 
                 return candidatoMapper;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
 
@@ -136,15 +136,15 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
 
                 if (await _candidatoPersistencia.SaveChangeAsync())
                 {
-                    var candidatoMapper = await _candidatoPersistencia.GetCandidatoByIdAsync(candidatoMapper.Id);
+                    var candidatoMapper = await _candidatoPersistencia.GetCandidatoByIdAsync(candidatoUpdate.Id);
                     return _mapper.Map<CandidatoDto>(candidatoMapper);
                 }
 
                 return null;
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-                throw new Exception(e.Message);
+                throw new Exception(ex.Message);
             }
         }
     }

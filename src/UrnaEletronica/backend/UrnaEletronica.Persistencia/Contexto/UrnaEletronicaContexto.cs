@@ -10,7 +10,15 @@ using UrnaEletronica.Dominio.Modelos.Usuarios;
 using Microsoft.EntityFrameworkCore;
 using UrnaEletronica.Dominio.Modelos.Cidades;
 using UrnaEletronica.Dominio.Modelos.Candidatos;
+<<<<<<< HEAD
+using UrnaEletronica.Dominio.Modelos.Partidos;
+=======
 using UrnaEletronica.Dominio.Modelos.Coligacoes;
+<<<<<<< HEAD
+using UrnaEletronica.Dominio.Modelos.LogVotosBatch;
+=======
+>>>>>>> main
+>>>>>>> main
 
 namespace UrnaEletronica.Persistencia.Contexto
 {
@@ -19,7 +27,16 @@ namespace UrnaEletronica.Persistencia.Contexto
         public UrnaEletronicaContexto(DbContextOptions<UrnaEletronicaContexto> options) : base(options) { }
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
+<<<<<<< HEAD
+        public DbSet<Partido> Partidos { get; set; }
+=======
         public DbSet<Coligacao> Coligacoes { get; set; }
+<<<<<<< HEAD
+        public DbSet<LogVotosBatch> LogVotosBatch { get; set; }
+        public DbSet<LogVotosBatchErros> LogVotosBatchErros { get; set; }
+=======
+>>>>>>> main
+>>>>>>> main
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

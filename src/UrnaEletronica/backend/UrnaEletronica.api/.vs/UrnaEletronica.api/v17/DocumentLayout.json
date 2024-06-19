@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\igaoa\\OneDrive\\Documentos\\GitHub\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
   "Documents": [
     {
@@ -27,6 +28,10 @@
       "AbsoluteMoniker": "D:0:0:{88FB6860-E308-4EAE-9AB2-19204D2BC6D8}|..\\UrnaEletronica.Persistencia\\UrnaEletronica.Persistencia.csproj|c:\\users\\igaoa\\onedrive\\documentos\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.persistencia\\interfaces\\contratos\\coligacoes\\icoligacaopersistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
+=======
+  "WorkspaceRootPath": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
+  "Documents": [],
+>>>>>>> main
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -34,6 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
+<<<<<<< HEAD
           "SelectedChildIndex": 2,
           "Children": [
             {
@@ -142,6 +148,13 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-06-15T01:06:01.6Z",
               "EditorCaption": ""
+=======
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+>>>>>>> main
             }
           ]
         }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UrnaEletronica.Dominio.Modelos.Cidades;
+using UrnaEletronica.Dominio.Modelos.Coligacoes;
 using UrnaEletronica.Dominio.Modelos.Partidos;
 
 namespace UrnaEletronica.Dominio.Modelos.Candidatos
@@ -20,5 +21,7 @@ namespace UrnaEletronica.Dominio.Modelos.Candidatos
         public Cidade Cidade { get; set; }
         public int PartidoId { get; set; }
         public Partido Partido { get; set; }
+        public int ColigacaoId { get; set; }
+        public Coligacao Coligacao { get; set; }
     }
 }
