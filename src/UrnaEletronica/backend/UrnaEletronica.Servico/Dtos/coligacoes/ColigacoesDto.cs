@@ -4,18 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UrnaEletronica.Dominio.Modelos.Coligacoes
+namespace UrnaEletronica.Servico.Dtos.coligacoes
 {
-    public class Coligacao
+    public class ColigacoesDto
     {
-<<<<<<< HEAD
             public int Id { get; set; }
             public string Nome { get; set; }
             public string Sigla { get; set; }
-            public int Partido { get; set; }
-        
-=======
-        public int Id { get; set; }
->>>>>>> main
+
+            //public PartidoDto Partido { get; set; }
+
     }
 }

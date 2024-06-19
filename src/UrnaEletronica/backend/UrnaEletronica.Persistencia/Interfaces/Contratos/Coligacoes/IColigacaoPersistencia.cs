@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UrnaEletronica.Dominio.Modelos.Cidades;
+using UrnaEletronica.Dominio.Modelos.Coligacoes;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Shared;
 
 namespace UrnaEletronica.Persistencia.Interfaces.Contratos.Coligacoes
 {
-    public interface IColigacaoPersistencia
+    public interface IColigacaoPersistencia : ISharedPersistencia
     {
+
+            Task<IEnumerable<Coligacao>> GetAllCidadesAsync();
+            Task<Coligacao> GetCidadeByIdAsync(int cidadeId);
+        }
     }
 }
