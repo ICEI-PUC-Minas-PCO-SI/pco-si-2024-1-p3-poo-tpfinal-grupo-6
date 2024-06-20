@@ -4,7 +4,7 @@
         <name>UrnaEletronica.api</name>
     </assembly>
     <members>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.GetCandidatos">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.GetCandidatos">
             <summary>
             Obtém os dados de todos os candidatos cadastrados 
             </summary>
@@ -13,7 +13,7 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.GetCandidatoByIdAsync(System.Int32)">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.GetCandidatoByIdAsync(System.Int32)">
             <summary>
             Obtém os dados de um candidato específico
             </summary>
@@ -23,7 +23,7 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.CreateCandidato(UrnaEletronica.Servico.Dtos.Candidatos.CandidatoDto)">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.CreateCandidato(UrnaEletronica.Servico.Dtos.Candidatos.CandidatoDto)">
             <summary>
             Realiza inclusão de um candidato 
             </summary>
@@ -33,7 +33,7 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.UpdateCandidato(System.Int32,UrnaEletronica.Servico.Dtos.Candidatos.CandidatoDto)">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.UpdateCandidato(System.Int32,UrnaEletronica.Servico.Dtos.Candidatos.CandidatoDto)">
             <summary>
             Realiza a atualização dos dados de um candidato
             </summary>
@@ -44,7 +44,7 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.DeleteCandidato(System.Int32)">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.DeleteCandidato(System.Int32)">
             <summary>
             Exclui os dados de um candidato específico
             </summary>
@@ -54,7 +54,7 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.RegistrarVoto(System.Int32)">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.RegistrarVoto(System.Int32)">
             <summary>
             Realiza a votação online para um candidato
             </summary>
@@ -64,7 +64,7 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatoController.RegistrarVoto(System.Int32,System.Int32)">
+        <member name="M:UrnaEletronica.api.Controllers.Candidatos.CandidatosController.RegistrarVoto(System.Int32,System.Int32)">
             <summary>
             Realiza a votação batch para um candidato
             </summary>
@@ -116,6 +116,191 @@
             </summary>
             <param name="cidadeId">Identificador da cidade</param>
             <response code="200">Dados da cidade consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Coligacoes.ColigacoesController.GetColigacoes">
+            <summary>
+            Obtém os dados de todos as coligacoes cadastradas 
+            </summary>
+            <response code="200">Dados das coligacoes cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Coligacoes.ColigacoesController.GetColigacaoByIdAsync(System.Int32)">
+            <summary>
+            Obtém os dados de uma coligacao específica
+            </summary>
+            <param name="coligacaoId">Identificador da coligacao</param>
+            <response code="200">Dados da coligacao consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Coligacoes.ColigacoesController.CreateColigacao(UrnaEletronica.Servico.Dtos.Coligacoes.ColigacaoDto)">
+            <summary>
+            Realiza inclusão de uma coligacao 
+            </summary>
+            <response code="200">Dados das coligacoes cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Coligacoes.ColigacoesController.UpdateColigacao(System.Int32,UrnaEletronica.Servico.Dtos.Coligacoes.ColigacaoDto)">
+            <summary>
+            Realiza a atualização dos dados de uma coligacao
+            </summary>
+            <param name="coligacaoId">Identificador da coligacao</param>
+            <param name="coligacaoDto">Coligacao cadastrada</param>
+            <response code="200">Coligacao atualizada com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Coligacoes.ColigacoesController.DeleteColigacao(System.Int32)">
+            <summary>
+            Obtém os dados de uma coligacao específica
+            </summary>
+            <param name="coligacaoId">Identificador da coligacao</param>
+            <response code="200">Dados da coligacao consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.CalcularVencedorExecutivo">
+            <summary>
+            Calcular vencedor processo de eleição Executiva
+            </summary>
+            <response code="200">Dados das coligacoes cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.IniciarEleicao">
+            <summary>
+            Inicia processo de eleição
+            </summary>
+            <response code="200">Dados das coligacoes cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.EncerrarEleicao">
+            <summary>
+            Encerra processo de eleição
+            </summary>
+            <response code="200">Dados das coligacoes cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.ParametrosEleicoes.ParametrosEleicoesController.GetParametros">
+            <summary>
+            Obtém os dados de dos parâmetros de eleições
+            </summary>
+            <response code="200">Dados dos parâmetros cadastrados</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.ParametrosEleicoes.ParametrosEleicoesController.CreateParametroEleicao(UrnaEletronica.Servico.Dtos.ParametrosEleicoes.ParametroEleicaoDto)">
+            <summary>
+            Realiza inclusão de parâmetros
+            </summary>
+            <response code="200">Dados do parâmetro cadastrado</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.ParametrosEleicoes.ParametrosEleicoesController.UpdateParametroEleicao(System.Int32,UrnaEletronica.Servico.Dtos.ParametrosEleicoes.ParametroEleicaoDto)">
+            <summary>
+            Realiza a atualização dos dados de um parâmetro
+            </summary>
+            <param name="parametroId">Identificador do parâmetro</param>
+            <param name="parametroEleicaoDto">parâmetro cadastrada</param>
+            <response code="200">parâmetro atualizada com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Partidos.PartidosController.GetPartidos">
+            <summary>
+            Obt�m os dados de todos os partidos cadastrados 
+            </summary>
+            <response code="200">Dados dos partidos cadastrados</response>
+            <response code="400">Par�metros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Partidos.PartidosController.GetPartidoByIdAsync(System.Int32)">
+            <summary>
+            Obt�m os dados de um partido espec�fico
+            </summary>
+            <param name="partidoId">Identificador do partido</param>
+            <response code="200">Dados do partido consultado</response>
+            <response code="400">Par�metros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Partidos.PartidosController.CreatePartido(UrnaEletronica.Servico.Dtos.Partidos.PartidoDto)">
+            <summary>
+            Realiza inclus�o de um partido 
+            </summary>
+            <response code="200">Dados dos partidos cadastrados</response>
+            <response code="400">Par�metros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Partidos.PartidosController.UpdatePartido(System.Int32,UrnaEletronica.Servico.Dtos.Partidos.PartidoDto)">
+            <summary>
+            Realiza a atualiza��o dos dados de um partido
+            </summary>
+            <param name="partidoId">Identificador do partido</param>
+            <param name="partidoDto">partido cadastrado</param>
+            <response code="200">partido atualizado com sucesso</response>
+            <response code="400">Par�metros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Partidos.PartidosController.DeletePartido(System.Int32)">
+            <summary>
+            Obt�m os dados de um partido espec�fico
+            </summary>
+            <param name="partidoId">Identificador do partido</param>
+            <response code="200">Dados do partido consultado</response>
+            <response code="400">Par�metros incorretos</response>
+            <response code="500">Erro interno</response>
+            
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Resultados.ResultadosController.GetColigacoes">
+            <summary>
+            Obtém os dados de todos resultados cadastrados
+            </summary>
+            <response code="200">Dados das resultados cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Resultados.ResultadosController.GetResultadoByIdAsync(System.Int32)">
+            <summary>
+            Obtém os dados de uma resultado específico
+            </summary>
+            <param name="resultadoId">Identificador do resultado</param>
+            <response code="200">Dados do resultado consultado</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Resultados.ResultadosController.CreateResultado(UrnaEletronica.Servico.Dtos.Resultado.ResultadoDto)">
+            <summary>
+            Realiza inclusão de uma resultado 
+            </summary>
+            <response code="200">Dados das resultados cadastrados</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Resultados.ResultadosController.UpdateResultado(System.Int32,UrnaEletronica.Servico.Dtos.Resultado.ResultadoDto)">
+            <summary>
+            Realiza a atualização dos dados de um resultado
+            </summary>
+            <param name="resultadoId">Identificador do resultado</param>
+            <param name="resultadoDto">Resultado cadastrad</param>
+            <response code="200">Resultado atualizada com sucesso</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Resultados.ResultadosController.DeleteResultado(System.Int32)">
+            <summary>
+            Obtém os dados de um resultado específica
+            </summary>
+            <param name="resultadoId">Identificador dp resultado</param>
+            <response code="200">Dados do resultado consultado</response>
             <response code="400">Parâmetros incorretos</response>
             <response code="500">Erro interno</response>
             

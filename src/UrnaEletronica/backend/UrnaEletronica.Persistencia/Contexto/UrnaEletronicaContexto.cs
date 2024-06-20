@@ -1,48 +1,39 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using UrnaEletronica.Dominio.Modelos.Usuarios;
 using Microsoft.EntityFrameworkCore;
-using UrnaEletronica.Dominio.Modelos.Cidades;
 using UrnaEletronica.Dominio.Modelos.Candidatos;
-<<<<<<< HEAD
-using UrnaEletronica.Dominio.Modelos.Partidos;
-=======
+using UrnaEletronica.Dominio.Modelos.Cidades;
 using UrnaEletronica.Dominio.Modelos.Coligacoes;
-<<<<<<< HEAD
-using UrnaEletronica.Dominio.Modelos.LogVotosBatch;
-=======
->>>>>>> main
->>>>>>> main
+using UrnaEletronica.Dominio.Modelos.ParametrosEleicoes;
+using UrnaEletronica.Dominio.Modelos.Eleicoes.Executivos;
+using UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos;
+using UrnaEletronica.Dominio.Modelos.Partidos;
+using UrnaEletronica.Dominio.Modelos.LogsVotosBatchs;
+using UrnaEletronica.Dominio.Modelos.Resultados;
 
 namespace UrnaEletronica.Persistencia.Contexto
 {
     public class UrnaEletronicaContexto : IdentityDbContext<Usuario, Funcao, int, IdentityUserClaim<int>, UsuarioFuncao, IdentityUserLogin<int>, IdentityRoleClaim<int>, IdentityUserToken<int>>
     {
         public UrnaEletronicaContexto(DbContextOptions<UrnaEletronicaContexto> options) : base(options) { }
-        public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Candidato> Candidatos { get; set; }
-<<<<<<< HEAD
-        public DbSet<Partido> Partidos { get; set; }
-=======
+        public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Coligacao> Coligacoes { get; set; }
-<<<<<<< HEAD
-        public DbSet<LogVotosBatch> LogVotosBatch { get; set; }
-        public DbSet<LogVotosBatchErros> LogVotosBatchErros { get; set; }
-=======
->>>>>>> main
->>>>>>> main
+        public DbSet<ParametroEleicao> ParametrosEleicoes { get; set; }
+        public DbSet<EleicaoExecutivo> EleicoesExecutivas { get; set; }
+        public DbSet<EleicaoLegislativo> EleicoesLegislativas { get; set; }
+        public DbSet<LogVotosBatch> LogsVotosBatches{ get; set; }
+        public DbSet<LogVotosBatchErros> LogsVotosBatchesErros { get; set; }
+        public DbSet<Partido> Partidos { get; set; }
+        public DbSet<Resultado> Resultados { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<UsuarioFuncao>(
+            builder.Entity<UsuarioFuncao>
+            (
                usuarioFuncao =>
                {
                    usuarioFuncao.HasKey(uf => new { uf.UserId, uf.RoleId });
@@ -56,18 +47,19 @@ namespace UrnaEletronica.Persistencia.Contexto
                         .WithMany(f => f.UsuariosFuncoes)
                         .HasForeignKey(uf => uf.UserId)
                         .IsRequired();
-               });
-            builder.Entity<Candidato>(
-                candidato =>
-                {
-                    candidato.HasIndex(c => c.CidadeId);
+               }
 
-                    candidato.HasIndex(c => c.LegislativoId);
+            );
 
-                    candidato.HasIndex(c => c.ExecutivoId);
+            builder.Entity<Partido>()
+                .HasOne(p => p.Coligacao)
+                .WithMany(c => c.Partidos)
+                .HasForeignKey(p => p.ColigacaoId);
 
-                    candidato.HasIndex(c => c.PartidoId);
-                });
+            builder.Entity<Candidato>()
+                .HasOne(c => c.Partido)
+                .WithMany(p => p.Candidatos)
+                .HasForeignKey(c => c.PartidoId);
         }
 
     }

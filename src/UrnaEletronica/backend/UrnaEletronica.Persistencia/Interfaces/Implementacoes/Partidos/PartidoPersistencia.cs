@@ -24,6 +24,8 @@ namespace UrnaEletronica.Persistencia.Interfaces.Implementacoes.Partidos
         public async Task<IEnumerable<Partido>> GetAllPartidosAsync()
         {
             IQueryable<Partido> query = _contexto.Partidos
+                .Include(p => p.Coligacao)
+                .Include(p => p.Candidatos)
                 .AsNoTracking()
                 .OrderBy(c => c.Id);
 
@@ -33,9 +35,11 @@ namespace UrnaEletronica.Persistencia.Interfaces.Implementacoes.Partidos
         public async Task<Partido> GetPartidoByIdAsync(int partidoId)
         {
             IQueryable<Partido> query = _contexto.Partidos
-              .AsNoTracking()
-              .OrderBy(u => u.Id)
-              .Where(u => u.Id == partidoId);
+                .Include(p => p.Coligacao)
+                .Include(p => p.Candidatos)
+                .AsNoTracking()
+                .OrderBy(u => u.Id)
+                .Where(u => u.Id == partidoId);
 
             return await query.FirstOrDefaultAsync();
         }

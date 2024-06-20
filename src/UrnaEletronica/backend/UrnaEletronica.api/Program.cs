@@ -1,31 +1,60 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.OpenApi.Models;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using UrnaEletronica.Dominio.Modelos.Eleicoes.Executivos;
+using UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos;
 using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Persistencia.Contexto;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Candidatos;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Cidades;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Coligacoes;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.LogsVotosBatchs;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.ParametrosEleicoes;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Partidos;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Resultados;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Shared;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Usuarios;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Candidatos;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Cidades;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Coligacoes;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.ConfigEleicoes;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.LogsVotosBatchs;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Partidos;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Resultados;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Shared;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Usuarios;
-using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Candidatos;
 using UrnaEletronica.Servico.Servicos.Contratos.Candidatos;
 using UrnaEletronica.Servico.Servicos.Contratos.Cidades;
+using UrnaEletronica.Servico.Servicos.Contratos.Coligacoes;
+using UrnaEletronica.Servico.Servicos.Contratos.Eleicoes;
+using UrnaEletronica.Servico.Servicos.Contratos.Log;
+using UrnaEletronica.Servico.Servicos.Contratos.ParametrosEleicoes;
+using UrnaEletronica.Servico.Servicos.Contratos.Partidos;
+using UrnaEletronica.Servico.Servicos.Contratos.Resultados;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Cidades;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Coligacoes;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Eleicoes;
+using UrnaEletronica.Servico.Servicos.Implementacoes.LogsVotosBatchs;
+using UrnaEletronica.Servico.Servicos.Implementacoes.ParametrosEleicoes;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Partidos;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Resultados;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Usuarios;
-using UrnaEletronica.Persistencia.Interfaces.Contratos.Log;
-using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Log;
-using UrnaEletronica.Servico.Servicos.Contratos.Log;
-using UrnaEletronica.Servico.Servicos.Implementacoes.Log;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,7 +65,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 
-//Injeção de Dependencia do contexto
+//Injeï¿½ï¿½o de Dependencia do contexto
 builder.Services
     .AddDbContext<UrnaEletronicaContexto>(
         context =>
@@ -47,7 +76,7 @@ builder.Services
         }
     );
 
-//Injeção de dependencia do IdentityFrameWork
+//Injeï¿½ï¿½o de dependencia do IdentityFrameWork
 builder.Services
     .AddIdentityCore<Usuario>(options =>
     {
@@ -64,7 +93,7 @@ builder.Services
     .AddEntityFrameworkStores<UrnaEletronicaContexto>()
     .AddDefaultTokenProviders();
 
-//Injeção de Autenticação
+//Injeï¿½ï¿½o de Autenticaï¿½ï¿½o
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -78,50 +107,64 @@ builder.Services
         };
     });
 
-//Injeção de Controllers
+//Injeï¿½ï¿½o de Controllers
 builder.Services
     .AddControllers()
-    // Já leva os enum convertidos na query
+    // Jï¿½ leva os enum convertidos na query
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-        //    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-        //    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        //options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
     })
     // Eliminar loop infinito da estrutura
     .AddNewtonsoftJson(options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
 
-//Injeção do Mapeamento automático de campos (Dto)
+//Injeï¿½ï¿½o do Mapeamento automï¿½tico de campos (Dto)
 builder.Services
     .AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+// Registra as classes derivadas
+builder.Services.AddSingleton<EleicaoExecutivo>();
+builder.Services.AddSingleton<EleicaoLegislativo>();
 
-//Injeção das Persistências
+//Injeï¿½ï¿½o das Persistï¿½ncias
 builder.Services
-    .AddScoped<IUsuarioPersistencia, UsuarioPersistencia>()
-    .AddScoped<ICidadePersistencia, CidadePersistencia>()
-    .AddScoped<ISharedPersistencia, SharedPersistencia>()
     .AddScoped<ICandidatoPersistencia, CandidatoPersistencia>()
+    .AddScoped<ICidadePersistencia, CidadePersistencia>()
+    .AddScoped<IColigacaoPersistencia, ColigacaoPersistencia>()
     .AddScoped<ILogVotosBatchPersistencia, LogVotosBatchPersistencia>()
-    .AddScoped<ILogVotosErrosPersistencia, LogVotosErrosPersistencia>();
+    .AddScoped<ILogVotosErrosPersistencia, LogVotosErrosPersistencia>()
+    .AddScoped<IParametroEleicaoPersistencia, ParametroEleicoePersistencia>()
+    .AddScoped<IPartidoPersistencia, PartidoPersistencia>()
+    .AddScoped<IResultadoPersistencia, ResultadoPersistencia>()
+    .AddScoped<ISharedPersistencia, SharedPersistencia>()
+    .AddScoped<IUsuarioPersistencia, UsuarioPersistencia>()
+    ;
 
-//Injeção dos Serviços
+//Injeï¿½ï¿½o dos Serviï¿½os
 builder.Services
-    .AddScoped<IUsuarioServico, UsuarioServico>()
-    .AddScoped<ICidadeServico, CidadeServico>()
-    .AddScoped<ITokenServico, TokenServico>()
     .AddScoped<ICandidatoServico, CandidatoServico>()
-    .AddScoped<IProcessarVotosBatchServico, ProcessarVotosBatchServico>();
+    .AddScoped<ICidadeServico, CidadeServico>()
+    .AddScoped<IColigacaoServico, ColigacaoServico>()
+    .AddScoped<IEleicaoExecutivaServico, EleicaoExecutivaServico>()
+    .AddScoped<IParametroEleicaoServico, ParametroEleicaoServico>()
+    .AddScoped<IPartidoServico, PartidoServico>()
+    .AddScoped<IProcessarVotosBatchServico, ProcessarVotosBatchServico>()
+    .AddScoped<IResultadoServico, ResultadoServico>()
+    .AddScoped<ITokenServico, TokenServico>()
+    .AddScoped<IUsuarioServico, UsuarioServico>()
+    ;
 
-//Injeçao do Cors(Segurança)
+//Injeï¿½ao do Cors(Seguranï¿½a)
 builder.Services
     .AddCors();
 
 
 builder.Services.AddSwaggerGen(options => 
 {
-    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "UrnaEletronica.API", Version = "v1", Description = "API responsável por implementar as funcionalidades de backend da Urna Eletrônica " });
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "UrnaEletronica.API", Version = "v1", Description = "API responsï¿½vel por implementar as funcionalidades de backend da Urna Eletrï¿½nica " });
 
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -176,6 +219,12 @@ app.UseCors(cors => cors
     .AllowAnyMethod()
     .AllowAnyHeader()
 );
+
+app.UseStaticFiles(new StaticFileOptions()
+{
+    FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "Resources")),
+    RequestPath = new PathString("/Resources")
+});
 
 app.MapControllers();
 

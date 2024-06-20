@@ -1,19 +1,19 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UrnaEletronica.api.Util.Extensions.Security;
-using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Servico.Dtos.Cidades;
-using UrnaEletronica.Servico.Dtos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Contratos.Cidades;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
-using UrnaEletronica.Servico.Servicos.Implementacoes.Usuarios;
 
 namespace UrnaEletronica.api.Controllers.Cidades
 {
-     [Authorize]
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class CidadesController : Controller 
+    public class CidadesController : ControllerBase 
     {
         private readonly ICidadeServico _cidadeServico;
         private readonly IUsuarioServico _usuarioServico;

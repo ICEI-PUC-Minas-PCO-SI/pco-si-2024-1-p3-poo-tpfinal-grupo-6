@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace UrnaEletronica.Servico.Dtos.LogVotosBatch
+﻿namespace UrnaEletronica.Servico.Dtos.LogVotosBatch
 {
     public class LogVotosBatchDto
     {
@@ -14,6 +8,6 @@ namespace UrnaEletronica.Servico.Dtos.LogVotosBatch
         public int CidadeId { get; set; }
         public int PartidoId { get; set; }
         public int ColigacaoId { get; set; }
-        public int qtdVotos { get; set; }
+        public int QtdVotos { get; set; }
     }
 }

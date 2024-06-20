@@ -11,9 +11,9 @@ namespace UrnaEletronica.Persistencia.Interfaces.Contratos.Coligacoes
 {
     public interface IColigacaoPersistencia : ISharedPersistencia
     {
+        Task<IEnumerable<Coligacao>> GetAllColigacoesAsync();
+        Task<Coligacao> GetColigacaoByIdAsync(int cidadeId);
+        Task<bool> CalcularVotosColigacao();
 
-            Task<IEnumerable<Coligacao>> GetAllCidadesAsync();
-            Task<Coligacao> GetCidadeByIdAsync(int cidadeId);
-        }
     }
 }

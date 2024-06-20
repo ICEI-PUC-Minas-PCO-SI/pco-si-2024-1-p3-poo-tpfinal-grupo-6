@@ -1,9 +1,11 @@
 ﻿
 
+using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UrnaEletronica.api.Util.Extensions.Security;
-using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Servico.Dtos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
 

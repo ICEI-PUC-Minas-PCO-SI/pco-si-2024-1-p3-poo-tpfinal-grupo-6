@@ -10,6 +10,8 @@ namespace UrnaEletronica.Persistencia.Interfaces.Contratos.Candidatos
 {
     public interface ICandidatoPersistencia : ISharedPersistencia
     {
+        Task<IEnumerable<Candidato>> GetAllCandidatosComVotosValidosExecutivoAsync();
+        Task<IEnumerable<Candidato>> GetAllCandidatosComVotosValidosLegislativoAsync();
         Task<IEnumerable<Candidato>> GetAllCandidatosAsync();
         Task<Candidato> GetCandidatoByIdAsync(int candidatoId);
         Task<bool> RegistrarVoto(int candidatoId);

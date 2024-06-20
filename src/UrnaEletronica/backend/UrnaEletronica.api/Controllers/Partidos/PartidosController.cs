@@ -1,20 +1,19 @@
+using System;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using UrnaEletronica.api.Util.Extensions.Security;
-using UrnaEletronica.Dominio.Modelos.Partidos;
-using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Servico.Dtos.Partidos;
-using UrnaEletronica.Servico.Dtos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Contratos.Partidos;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
-using UrnaEletronica.Servico.Servicos.Implementacoes.Usuarios;
 
 namespace UrnaEletronica.api.Controllers.Partidos
 {
     [Authorize]
     [ApiController]
     [Route("api/[controller]")]
-    public class PartidosController : Controller
+    public class PartidosController : ControllerBase
     {
         private readonly IPartidoServico _partidoServico;
         private readonly IUsuarioServico _usuarioServico;
@@ -28,10 +27,10 @@ namespace UrnaEletronica.api.Controllers.Partidos
         }
 
         /// <summary>
-        /// Obtém os dados de todos os partidos cadastrados 
+        /// Obtï¿½m os dados de todos os partidos cadastrados 
         /// </summary>
         /// <response code="200">Dados dos partidos cadastrados</response>
-        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="400">Parï¿½metros incorretos</response>
         /// <response code="500">Erro interno</response>
 
         [HttpGet()]
@@ -43,7 +42,7 @@ namespace UrnaEletronica.api.Controllers.Partidos
                 if (claimUserName == null) return Unauthorized();
 
                 var partidos = await _partidoServico.GetAllPartidosAsync();
-                if (partidos == null) return NotFound("Não existem partidos cadastrados.");
+                if (partidos == null) return NotFound("Nï¿½o existem partidos cadastrados.");
                 return Ok(partidos);
             }
             catch (Exception ex)
@@ -52,11 +51,11 @@ namespace UrnaEletronica.api.Controllers.Partidos
             }
         }
         /// <summary>
-        /// Obtém os dados de um partido específico
+        /// Obtï¿½m os dados de um partido especï¿½fico
         /// </summary>
         /// <param name="partidoId">Identificador do partido</param>
         /// <response code="200">Dados do partido consultado</response>
-        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="400">Parï¿½metros incorretos</response>
         /// <response code="500">Erro interno</response>
 
         [HttpGet("{partidoId}")]
@@ -68,7 +67,7 @@ namespace UrnaEletronica.api.Controllers.Partidos
                 if (claimUserName == null) return Unauthorized();
 
                 var partido = await _partidoServico.GetPartidoByIdAsync(partidoId);
-                if (partido == null) return NotFound("Não existe partido cadastrado para o ID informado.");
+                if (partido == null) return NotFound("Nï¿½o existe partido cadastrado para o ID informado.");
                 return Ok(partido);
             }
             catch (Exception ex)
@@ -79,10 +78,10 @@ namespace UrnaEletronica.api.Controllers.Partidos
 
 
         /// <summary>
-        /// Realiza inclusão de um partido 
+        /// Realiza inclusï¿½o de um partido 
         /// </summary>
         /// <response code="200">Dados dos partidos cadastrados</response>
-        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="400">Parï¿½metros incorretos</response>
         /// <response code="500">Erro interno</response>
 
         [HttpPost]
@@ -95,7 +94,7 @@ namespace UrnaEletronica.api.Controllers.Partidos
                 if (claimUserName == null) return Unauthorized();
 
                 var partido = await _partidoServico.GetPartidoByIdAsync(partidoDto.Id);
-                if (partido != null) return BadRequest("Já existe um partido cadastrado.");
+                if (partido != null) return BadRequest("Jï¿½ existe um partido cadastrado.");
 
                 var createdPartido = await _partidoServico.CreatePartido(partidoDto);
                 if (createdPartido != null) return Ok(partido);
@@ -109,12 +108,12 @@ namespace UrnaEletronica.api.Controllers.Partidos
         }
 
         /// <summary>
-        /// Realiza a atualização dos dados de um partido
+        /// Realiza a atualizaï¿½ï¿½o dos dados de um partido
         /// </summary>
         /// <param name="partidoId">Identificador do partido</param>
         /// <param name="partidoDto">partido cadastrado</param>
         /// <response code="200">partido atualizado com sucesso</response>
-        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="400">Parï¿½metros incorretos</response>
         /// <response code="500">Erro interno</response>
         [HttpPut("partidoId")]
         public async Task<IActionResult> UpdatePartido(int partidoId, PartidoDto partidoDto)
@@ -126,7 +125,7 @@ namespace UrnaEletronica.api.Controllers.Partidos
 
                 var partidoUpdated = await _partidoServico.UpdatePartido(partidoId, partidoDto);
 
-                if (partidoUpdated == null) return NotFound("Não existe partido cadastrado para o Id informado.");
+                if (partidoUpdated == null) return NotFound("Nï¿½o existe partido cadastrado para o Id informado.");
 
 
                 return Ok(partidoUpdated);
@@ -139,11 +138,11 @@ namespace UrnaEletronica.api.Controllers.Partidos
         }
 
         /// <summary>
-        /// Obtém os dados de um partido específico
+        /// Obtï¿½m os dados de um partido especï¿½fico
         /// </summary>
         /// <param name="partidoId">Identificador do partido</param>
         /// <response code="200">Dados do partido consultado</response>
-        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="400">Parï¿½metros incorretos</response>
         /// <response code="500">Erro interno</response>
         /// 
         [HttpDelete("{partidoId}")]
