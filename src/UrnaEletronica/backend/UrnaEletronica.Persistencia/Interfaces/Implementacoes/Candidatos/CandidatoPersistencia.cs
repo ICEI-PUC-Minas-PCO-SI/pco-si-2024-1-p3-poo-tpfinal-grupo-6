@@ -24,8 +24,36 @@ namespace UrnaEletronica.Persistencia.Interfaces.Implementacoes.Candidatos
         {
             IQueryable<Candidato> query = _contexto.Candidatos
                 .Include(c => c.Cidade)
+                .Include(c => c.Partido)
+                .Include(c => c.Coligacao)
                 .AsNoTracking()
                 .OrderBy(a => a.Id);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Candidato>> GetAllCandidatosComVotosValidosExecutivoAsync()
+        {
+            IQueryable<Candidato> query = _contexto.Candidatos
+                .Include(c => c.Cidade)
+                .Include(c => c.Partido)
+                .Include(c => c.Coligacao)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(c => c.VotosValidos && c.EhExecutivo);
+
+            return await query.ToListAsync();
+        }
+
+        public async Task<IEnumerable<Candidato>> GetAllCandidatosComVotosValidosLegislativoAsync()
+        {
+            IQueryable<Candidato> query = _contexto.Candidatos
+                .Include(c => c.Cidade)
+                .Include(c => c.Partido)
+                .Include(c => c.Coligacao)
+                .AsNoTracking()
+                .OrderBy(c => c.Id)
+                .Where(c => c.VotosValidos && c.EhLegislativo);
 
             return await query.ToListAsync();
         }

@@ -82,6 +82,42 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Candidatos
             }
         }
 
+        public async Task<IEnumerable<CandidatoDto>> GetAllCandidatosComVotosValidosExecutivoAsync()
+        {
+            try
+            {
+                var candidatos = await _candidatoPersistencia.GetAllCandidatosComVotosValidosExecutivoAsync();
+
+                if (candidatos == null) return null;
+
+                var candidatosMappper = _mapper.Map<CandidatoDto[]>(candidatos);
+
+                return candidatosMappper;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<IEnumerable<CandidatoDto>> GetAllCandidatosComVotosValidosLegislativoAsync()
+        {
+            try
+            {
+                var candidatos = await _candidatoPersistencia.GetAllCandidatosComVotosValidosLegislativoAsync();
+
+                if (candidatos == null) return null;
+
+                var candidatosMappper = _mapper.Map<CandidatoDto[]>(candidatos);
+
+                return candidatosMappper;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<CandidatoDto> GetCandidatoByIdAsync(int candidatoId)
         {
             try

@@ -14,6 +14,8 @@ namespace UrnaEletronica.Servico.Servicos.Contratos.Candidatos
         Task<CandidatoDto> CreateCandidato(CandidatoDto candidatoDto);
         Task<CandidatoDto> UpdateCandidato(int candidatoId, CandidatoDto candidatoDto);
         Task<bool> DeleteCandidato(int candidatoId);
+        Task<IEnumerable<CandidatoDto>> GetAllCandidatosComVotosValidosExecutivoAsync();
+        Task<IEnumerable<CandidatoDto>> GetAllCandidatosComVotosValidosLegislativoAsync();
         Task<IEnumerable<CandidatoDto>> GetAllCandidatosAsync();
         Task<CandidatoDto> GetCandidatoByIdAsync(int candidatoId);
         Task<bool> RegistrarVoto(int candidatoId);

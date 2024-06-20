@@ -11,6 +11,7 @@ namespace UrnaEletronica.Dominio.Modelos.Usuarios
     {
         public required string Nome { get; set; }
         public bool IsAdmin { get; set; }
+        public string FotoURL { get; set; }
         public IEnumerable<UsuarioFuncao> UsuariosFuncoes { get; set; }
     }
 }
