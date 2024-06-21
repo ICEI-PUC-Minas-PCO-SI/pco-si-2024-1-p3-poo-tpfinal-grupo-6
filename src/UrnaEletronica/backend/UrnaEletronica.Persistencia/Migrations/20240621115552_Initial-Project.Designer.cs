@@ -12,7 +12,7 @@ using UrnaEletronica.Persistencia.Contexto;
 namespace UrnaEletronica.Persistencia.Migrations
 {
     [DbContext(typeof(UrnaEletronicaContexto))]
-    [Migration("20240619123822_Initial-Project")]
+    [Migration("20240621115552_Initial-Project")]
     partial class InitialProject
     {
         /// <inheritdoc />
@@ -124,7 +124,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.Property<int>("CidadeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ColigacaoId")
+                    b.Property<int?>("ColigacaoId")
                         .HasColumnType("int");
 
                     b.Property<int>("ColigacoaId")
@@ -139,8 +139,10 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.Property<bool>("EhLegislativo")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("FotoURL")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("PartidoId")
@@ -148,6 +150,9 @@ namespace UrnaEletronica.Persistencia.Migrations
 
                     b.Property<int>("QtdVotos")
                         .HasColumnType("int");
+
+                    b.Property<string>("TipoCandidatura")
+                        .HasColumnType("longtext");
 
                     b.Property<bool>("VotosValidos")
                         .HasColumnType("tinyint(1)");
@@ -172,11 +177,16 @@ namespace UrnaEletronica.Persistencia.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Nome")
-                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("NomeEstado")
                         .HasColumnType("longtext");
 
                     b.Property<int>("QtdHabitantes")
                         .HasColumnType("int");
+
+                    b.Property<string>("SiglaEstado")
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
@@ -192,14 +202,12 @@ namespace UrnaEletronica.Persistencia.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("QtdVotos")
                         .HasColumnType("int");
 
                     b.Property<string>("Sigla")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -207,7 +215,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.ToTable("Coligacoes");
                 });
 
-            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.LogVotosBatch.LogVotosBatch", b =>
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.LogsVotosBatchs.LogVotosBatch", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -235,10 +243,10 @@ namespace UrnaEletronica.Persistencia.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("LogVotosBatch");
+                    b.ToTable("LogsVotosBatches");
                 });
 
-            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.LogVotosBatch.LogVotosBatchErros", b =>
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.LogsVotosBatchs.LogVotosBatchErros", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -259,7 +267,6 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("MensagemErro")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<int>("PartidoId")
@@ -270,7 +277,43 @@ namespace UrnaEletronica.Persistencia.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("LogVotosBatchErros");
+                    b.ToTable("LogsVotosBatchesErros");
+                });
+
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.ParametrosEleicoes.ParametroEleicao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CidadeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DataEleicaoPrimeiroTurno")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataEleicaoSegundoTurno")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("PrimeiroTurno")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("QtdCadeiras")
+                        .HasColumnType("int");
+
+                    b.Property<int>("QtdVotosSomentePrimeiroTurno")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("SegundoTurno")
+                        .HasColumnType("tinyint(1)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CidadeId");
+
+                    b.ToTable("ParametrosEleicoes");
                 });
 
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Partidos.Partido", b =>
@@ -281,18 +324,13 @@ namespace UrnaEletronica.Persistencia.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("CodigoPartido")
-                        .HasColumnType("int");
-
                     b.Property<int>("ColigacaoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Sigla")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.HasKey("Id");
@@ -300,6 +338,33 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.HasIndex("ColigacaoId");
 
                     b.ToTable("Partidos");
+                });
+
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Resultados.Resultado", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("CandidatoEleito")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("CandidatoId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("PercentualVotos")
+                        .HasColumnType("double");
+
+                    b.Property<int>("QtdVotos")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CandidatoId");
+
+                    b.ToTable("Resultados");
                 });
 
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Usuarios.Funcao", b =>
@@ -319,7 +384,6 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .HasColumnType("varchar(256)");
 
                     b.Property<string>("NomeFuncao")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedName")
@@ -357,6 +421,9 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
 
+                    b.Property<string>("FotoURL")
+                        .HasColumnType("longtext");
+
                     b.Property<bool>("IsAdmin")
                         .HasColumnType("tinyint(1)");
 
@@ -367,7 +434,6 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<string>("Nome")
-                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedEmail")
@@ -469,13 +535,11 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .IsRequired();
 
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Coligacoes.Coligacao", "Coligacao")
-                        .WithMany()
-                        .HasForeignKey("ColigacaoId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Candidatos")
+                        .HasForeignKey("ColigacaoId");
 
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Partidos.Partido", "Partido")
-                        .WithMany()
+                        .WithMany("Candidatos")
                         .HasForeignKey("PartidoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -487,6 +551,17 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.Navigation("Partido");
                 });
 
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.ParametrosEleicoes.ParametroEleicao", b =>
+                {
+                    b.HasOne("UrnaEletronica.Dominio.Modelos.Cidades.Cidade", "Cidade")
+                        .WithMany()
+                        .HasForeignKey("CidadeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Cidade");
+                });
+
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Partidos.Partido", b =>
                 {
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Coligacoes.Coligacao", "Coligacao")
@@ -496,6 +571,17 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .IsRequired();
 
                     b.Navigation("Coligacao");
+                });
+
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Resultados.Resultado", b =>
+                {
+                    b.HasOne("UrnaEletronica.Dominio.Modelos.Candidatos.Candidato", "Candidato")
+                        .WithMany()
+                        .HasForeignKey("CandidatoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Candidato");
                 });
 
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Usuarios.UsuarioFuncao", b =>
@@ -519,7 +605,14 @@ namespace UrnaEletronica.Persistencia.Migrations
 
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Coligacoes.Coligacao", b =>
                 {
+                    b.Navigation("Candidatos");
+
                     b.Navigation("Partidos");
+                });
+
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Partidos.Partido", b =>
+                {
+                    b.Navigation("Candidatos");
                 });
 
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Usuarios.Funcao", b =>

@@ -5,16 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAF8B9E4-922E-47BA-A61C-9810CE21A6C6}|..\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.servico\\servicos\\contratos\\eleicoes\\ieleicaoexecutivaservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EAF8B9E4-922E-47BA-A61C-9810CE21A6C6}|..\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.servico\\servicos\\contratos\\eleicoes\\ieleicaolegislativaservico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\controllers\\eleicoes\\eleicoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:controllers\\eleicoes\\eleicoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -24,50 +14,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IEleicaoLegislativaServico.cs",
-              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoLegislativaServico.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoLegislativaServico.cs",
-              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoLegislativaServico.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoLegislativaServico.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:30:09.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IEleicaoExecutivaServico.cs",
-              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoExecutivaServico.cs",
-              "RelativeDocumentMoniker": "..\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoExecutivaServico.cs",
-              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoExecutivaServico.cs",
-              "RelativeToolTip": "..\\UrnaEletronica.Servico\\Servicos\\Contratos\\Eleicoes\\IEleicaoExecutivaServico.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:29:35.709Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EleicoesController.cs",
-              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Api\\Controllers\\Eleicoes\\EleicoesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\Eleicoes\\EleicoesController.cs",
-              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Api\\Controllers\\Eleicoes\\EleicoesController.cs",
-              "RelativeToolTip": "Controllers\\Eleicoes\\EleicoesController.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACUAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:14:34.376Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -77,9 +28,9 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAJUAAAAyAAAA",
+              "ViewState": "AQIAAIAAAAAAAAAAAAAAAJ4AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-20T19:01:12.052Z",
+              "WhenOpened": "2024-06-21T12:28:34.15Z",
               "EditorCaption": ""
             }
           ]

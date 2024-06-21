@@ -21,7 +21,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    NomeFuncao = table.Column<string>(type: "longtext", nullable: false)
+                    NomeFuncao = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     Name = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
@@ -42,9 +42,11 @@ namespace UrnaEletronica.Persistencia.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     IsAdmin = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    FotoURL = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     UserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     NormalizedUserName = table.Column<string>(type: "varchar(256)", maxLength: 256, nullable: true)
@@ -80,7 +82,11 @@ namespace UrnaEletronica.Persistencia.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SiglaEstado = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    NomeEstado = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     QtdHabitantes = table.Column<int>(type: "int", nullable: false)
                 },
@@ -96,9 +102,9 @@ namespace UrnaEletronica.Persistencia.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Sigla = table.Column<string>(type: "longtext", nullable: false)
+                    Sigla = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     QtdVotos = table.Column<int>(type: "int", nullable: false)
                 },
@@ -109,7 +115,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "LogVotosBatch",
+                name: "LogsVotosBatches",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -123,12 +129,12 @@ namespace UrnaEletronica.Persistencia.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LogVotosBatch", x => x.Id);
+                    table.PrimaryKey("PK_LogsVotosBatches", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "LogVotosBatchErros",
+                name: "LogsVotosBatchesErros",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -139,12 +145,12 @@ namespace UrnaEletronica.Persistencia.Migrations
                     PartidoId = table.Column<int>(type: "int", nullable: false),
                     ColigacaoId = table.Column<int>(type: "int", nullable: false),
                     QtdVotos = table.Column<int>(type: "int", nullable: false),
-                    MensagemErro = table.Column<string>(type: "longtext", nullable: false)
+                    MensagemErro = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_LogVotosBatchErros", x => x.Id);
+                    table.PrimaryKey("PK_LogsVotosBatchesErros", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -270,15 +276,40 @@ namespace UrnaEletronica.Persistencia.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "ParametrosEleicoes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    PrimeiroTurno = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    SegundoTurno = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    QtdVotosSomentePrimeiroTurno = table.Column<int>(type: "int", nullable: false),
+                    QtdCadeiras = table.Column<int>(type: "int", nullable: false),
+                    DataEleicaoPrimeiroTurno = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DataEleicaoSegundoTurno = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CidadeId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ParametrosEleicoes", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ParametrosEleicoes_Cidades_CidadeId",
+                        column: x => x.CidadeId,
+                        principalTable: "Cidades",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "Partidos",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    CodigoPartido = table.Column<int>(type: "int", nullable: false),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Sigla = table.Column<string>(type: "longtext", nullable: false)
+                    Sigla = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ColigacaoId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -302,15 +333,19 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     EhExecutivo = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     EhLegislativo = table.Column<bool>(type: "tinyint(1)", nullable: false),
-                    Nome = table.Column<string>(type: "longtext", nullable: false)
+                    Nome = table.Column<string>(type: "longtext", nullable: true)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     QtdVotos = table.Column<int>(type: "int", nullable: false),
                     VotosValidos = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     DataNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    TipoCandidatura = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    FotoURL = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     CidadeId = table.Column<int>(type: "int", nullable: false),
                     PartidoId = table.Column<int>(type: "int", nullable: false),
                     ColigacoaId = table.Column<int>(type: "int", nullable: false),
-                    ColigacaoId = table.Column<int>(type: "int", nullable: false)
+                    ColigacaoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -325,12 +360,34 @@ namespace UrnaEletronica.Persistencia.Migrations
                         name: "FK_Candidatos_Coligacoes_ColigacaoId",
                         column: x => x.ColigacaoId,
                         principalTable: "Coligacoes",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Candidatos_Partidos_PartidoId",
                         column: x => x.PartidoId,
                         principalTable: "Partidos",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Resultados",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    CandidatoId = table.Column<int>(type: "int", nullable: false),
+                    QtdVotos = table.Column<int>(type: "int", nullable: false),
+                    PercentualVotos = table.Column<double>(type: "double", nullable: false),
+                    CandidatoEleito = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Resultados", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Resultados_Candidatos_CandidatoId",
+                        column: x => x.CandidatoId,
+                        principalTable: "Candidatos",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -389,9 +446,19 @@ namespace UrnaEletronica.Persistencia.Migrations
                 column: "PartidoId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_ParametrosEleicoes_CidadeId",
+                table: "ParametrosEleicoes",
+                column: "CidadeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Partidos_ColigacaoId",
                 table: "Partidos",
                 column: "ColigacaoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Resultados_CandidatoId",
+                table: "Resultados",
+                column: "CandidatoId");
         }
 
         /// <inheritdoc />
@@ -413,19 +480,25 @@ namespace UrnaEletronica.Persistencia.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
-                name: "Candidatos");
+                name: "LogsVotosBatches");
 
             migrationBuilder.DropTable(
-                name: "LogVotosBatch");
+                name: "LogsVotosBatchesErros");
 
             migrationBuilder.DropTable(
-                name: "LogVotosBatchErros");
+                name: "ParametrosEleicoes");
+
+            migrationBuilder.DropTable(
+                name: "Resultados");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Candidatos");
 
             migrationBuilder.DropTable(
                 name: "Cidades");

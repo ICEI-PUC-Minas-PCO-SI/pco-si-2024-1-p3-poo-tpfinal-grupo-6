@@ -21,6 +21,7 @@ export class UsuarioService {
   public userLoged = {} as Usuario;
 
   public createUser(model: any): Observable<void> {
+    console.log(this.baseURL + "CreateUsuario")
     return this.#http.post<Usuario>(this.baseURL + "CreateUsuario", model).pipe(
       take(1),
       map((response: Usuario) => {
