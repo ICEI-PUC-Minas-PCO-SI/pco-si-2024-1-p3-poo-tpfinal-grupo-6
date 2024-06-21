@@ -4,6 +4,7 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* Importing Bootstrap SCSS file. */
+@import 'ngx-toastr/toastr';
 @import "bootswatch/dist/lumen/variables";
 @import "bootstrap/scss/bootstrap";
 @import "bootswatch/dist/lumen/bootswatch";
@@ -16,8 +17,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .urn-logo-principal {
-  width: 240px;
-  height: 120px;
+  width: 18.4em;
+  height: 15em;
 }
 
 .urn-drawer-icon {

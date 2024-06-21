@@ -50,7 +50,12 @@ import { JwtInterceptor } from '../util/security';
     NgxMaskDirective,
     NgxSpinnerModule.forRoot({ type: "square-loader"}),
     RouterModule,
-    ToastrModule.forRoot({ positionClass: 'toast-bottom-right' }),
+    ToastrModule.forRoot({
+      timeOut: 0,
+      extendedTimeOut: 0,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
 
     MatButtonModule,
     MatCardModule,
@@ -111,7 +116,6 @@ import { JwtInterceptor } from '../util/security';
     provideAnimationsAsync(),
     provideNativeDateAdapter(),
     provideEnvironmentNgxMask(),
-    provideToastr()
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 

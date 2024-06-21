@@ -21,8 +21,6 @@ namespace UrnaEletronica.Persistencia.Contexto
         public DbSet<Cidade> Cidades { get; set; }
         public DbSet<Coligacao> Coligacoes { get; set; }
         public DbSet<ParametroEleicao> ParametrosEleicoes { get; set; }
-        public DbSet<EleicaoExecutivo> EleicoesExecutivas { get; set; }
-        public DbSet<EleicaoLegislativo> EleicoesLegislativas { get; set; }
         public DbSet<LogVotosBatch> LogsVotosBatches{ get; set; }
         public DbSet<LogVotosBatchErros> LogsVotosBatchesErros { get; set; }
         public DbSet<Partido> Partidos { get; set; }
