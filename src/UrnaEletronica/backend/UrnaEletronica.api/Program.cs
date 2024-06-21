@@ -4,6 +4,8 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
+using BibCorpPrevenir2.api.Util.Services.Interfaces.Contracts.Uploads;
+using BibCorpPrevenir2.api.Util.Services.Interfaces.Implementations.Uploads;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
@@ -154,6 +156,7 @@ builder.Services
     .AddScoped<IProcessarVotosBatchServico, ProcessarVotosBatchServico>()
     .AddScoped<IResultadoServico, ResultadoServico>()
     .AddScoped<ITokenServico, TokenServico>()
+    .AddScoped<IUploadService, UploadService>()
     .AddScoped<IUsuarioServico, UsuarioServico>()
     ;
 
