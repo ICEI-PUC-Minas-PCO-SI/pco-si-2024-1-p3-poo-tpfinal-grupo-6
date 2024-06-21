@@ -1,0 +1,50 @@
+<div class="container px-3 py-2">
+@if (showDrawer()) {
+    <mat-drawer-container class="rounded-5 p-0 m-0 bg-ligth" [class.drawer-opened]="drawer.opened">
+      <mat-drawer #drawer [mode]="modeDrawer" [opened]="openedDrawer">
+        <div class="flex-column justify-content-center">
+          <img src="../assets/images/urna.jpeg" alt="Logotipo Prevenir" class="urn-logo-principal"
+            (click)="drawer.close()">
+          <button matTooltip="Fechar Menu" mat-icon-button (click)="drawer.close()" alt="Menu Recolher"
+            class="position-absolute end-0">
+            <mat-icon>close</mat-icon>
+          </button>
+        </div>
+        <p class="border-top border-bottom text-center p-3 text-primary">Urna Eletrônica</p>
+        <p class="px-3">Menu Principal</p>
+        <app-drawer-navigator />
+      </mat-drawer>
+      <mat-drawer-content>
+
+        @if (!drawer.opened) {
+
+        <div class="d-flex p-1 bg-white">
+          <button matTooltip="Abrir Menu" mat-icon-button (click)="drawer.toggle()" alt="Menu Expandir">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <div>
+            <img src="../assets/images/urna.jpeg" alt="Logotipo Prevenir" class="urn-logo-secundaria"
+              (click)="drawer.toggle()">
+          </div>
+          <div class="flex-grow-1 text-end mt-3">
+            <p class="text-primary">Urna Eletronica</p>
+          </div>
+        </div>
+
+        }
+
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+  } @else {
+
+    <div class="container-fluid p-0 m-0">
+      <router-outlet></router-outlet>
+    </div>
+
+  }
+</div>
+
+  <ngx-spinner>
+    <p class="text-white">Carregando...</p>
+  </ngx-spinner>
