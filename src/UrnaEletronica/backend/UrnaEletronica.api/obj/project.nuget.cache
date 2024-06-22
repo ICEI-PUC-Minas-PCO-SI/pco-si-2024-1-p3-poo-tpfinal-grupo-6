@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
+  "dgSpecHash": "oZD4yBOWRe4=",
+  "success": true,
+  "projectFilePath": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
+=======
   "dgSpecHash": "MPBRTw8Wng6268XBD/uobgYa5LxU4vjJL0pFZTMhuZBC0ieknjydscaqARnSl9CDNHZljBDeAq/XtBTMLPl8SA==",
   "success": true,
   "projectFilePath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
+>>>>>>> main
   "expectedPackageFiles": [
     "C:\\Users\\mathe\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\mathe\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

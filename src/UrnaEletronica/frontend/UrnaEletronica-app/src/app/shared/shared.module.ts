@@ -15,8 +15,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { DrawerNavigatorComponent, ModalDeleteComponent, TitleNavigatorComponent } from '.';
 import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -32,6 +30,9 @@ import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/cor
 import { RouterModule } from '@angular/router';
 import { NgxMaskDirective, provideEnvironmentNgxMask } from 'ngx-mask';
 import { JwtInterceptor } from '../util/security';
+import { LoginService, UsuarioService } from '../services/usuario';
+import { CandidatoService } from '../services/candidato';
+import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -46,6 +47,7 @@ import { JwtInterceptor } from '../util/security';
     BrowserModule,
     CommonModule,
     FlexModule,
+    NgbCollapseModule,
     NgbModule,
     NgxMaskDirective,
     NgxSpinnerModule.forRoot({ type: "square-loader"}),
@@ -78,6 +80,7 @@ import { JwtInterceptor } from '../util/security';
     BrowserAnimationsModule,
     CommonModule,
     FlexModule,
+    NgbCollapseModule,
     NgbModule,
     NgxSpinnerModule,
     RouterModule,
@@ -102,11 +105,11 @@ import { JwtInterceptor } from '../util/security';
     TitleNavigatorComponent
   ],
   providers: [
-    //AcervoService,
+    CandidatoService,
     //EmprestimoService,
-    //LoginService,
+    LoginService,
     //PatrimonioService,
-    //UsuarioService,
+    UsuarioService,
 
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline', color: 'primary' }},

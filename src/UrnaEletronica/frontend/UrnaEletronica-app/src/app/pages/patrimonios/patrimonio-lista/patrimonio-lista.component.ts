@@ -34,7 +34,7 @@ export class PatrimonioListaComponent {
   public patrimonioId = 0;
   public patrimonioISBN = "";
 
-   public exibirImagem: boolean = true;
+  public exibirImagem: boolean = true;
 
   public capaLivro =
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAvSXCxMVWmCqcYHAvsrPZXmy2OkBeGy1-fbuCX2yfV5duFlE84Bk7C_APCxidn5u9cE0&usqp=CAU";

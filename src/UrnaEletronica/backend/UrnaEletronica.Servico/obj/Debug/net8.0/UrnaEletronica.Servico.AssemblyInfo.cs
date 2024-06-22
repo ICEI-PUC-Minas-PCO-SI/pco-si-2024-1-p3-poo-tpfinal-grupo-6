@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrnaEletronica.Servico")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a887a5503bb8194b4a5da105eba5b2c35e25615")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+794d78e64d8b453482f97702328b246c3be556f2")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrnaEletronica.Servico")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrnaEletronica.Servico")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
