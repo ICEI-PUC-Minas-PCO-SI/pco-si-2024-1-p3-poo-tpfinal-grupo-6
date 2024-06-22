@@ -12,7 +12,7 @@ using UrnaEletronica.Persistencia.Contexto;
 namespace UrnaEletronica.Persistencia.Migrations
 {
     [DbContext(typeof(UrnaEletronicaContexto))]
-    [Migration("20240621115552_Initial-Project")]
+    [Migration("20240622011834_Initial-Project")]
     partial class InitialProject
     {
         /// <inheritdoc />
