@@ -2,16 +2,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent, HomePageComponent } from './pages/home';
 import {
-  CadastroComponent,
-  LoginComponent,
-  PerfilComponent,
-  UsuariosComponent,
-} from './pages/usuarios';
-import {
   CandidatoDetalheComponent,
   CandidatosComponent,
   CandidatosListaComponent,
 } from './pages/candidatos';
+
+import { CadastroComponent, LoginComponent, PerfilComponent, UsuariosComponent } from './pages/usuarios';
+import { CidadesListaComponent } from './pages/cidades/cidades-lista/cidades-lista.component';
+import { CidadeDetalheComponent } from './pages/cidades/cidade-detalhe/cidade-detalhe.component';
+import { CidadesComponent } from './pages/cidades/cidades.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'pages/home', pathMatch: 'full' },
@@ -57,7 +56,24 @@ const routes: Routes = [
     ],
   },
 
-  { path: '**', redirectTo: 'pages/home', pathMatch: 'full' },
+  {
+    path: "cidades",
+    redirectTo: "pages/cidades/lista",
+    pathMatch: "full",
+  },
+  {
+    path: "pages/cidades",
+    component: CidadesComponent,
+    children: [
+      { path: "", pathMatch: "full", redirectTo: "lista" },
+      { path: "lista", component: CidadesListaComponent },
+      { path: "detalhe/:id", component: CidadeDetalheComponent },
+      { path: "cadastrar", component: CidadeDetalheComponent },
+    ],
+  },
+
+  { path: "**", redirectTo: "pages/home", pathMatch: "full" },
+
 ];
 
 @NgModule({

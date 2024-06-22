@@ -18,7 +18,7 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header >
         <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">home</mat-icon>
+          <mat-icon class="bcp-drawer-icon">home</mat-icon>
           Home
         </mat-panel-title>
       </mat-expansion-panel-header>
@@ -33,19 +33,19 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">group</mat-icon>
-          Candidatos
+          <mat-icon class="bcp-drawer-icon">book</mat-icon>
+          Patrimônio
         </mat-panel-title>
       </mat-expansion-panel-header>
 
       @if (usuarioAtivo.isAdmin) {
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/candidatos/cadastrar">
-        Cadastrar
+      <a class="text-white" routerLink="/pages/patrimonios/cadastrar">
+        Novo
       </a>
       }
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/candidatos/lista">
+      <a class="text-white" routerLink="/pages/patrimonios/lista">
         Lista
       </a>
     </mat-expansion-panel>
@@ -54,7 +54,7 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">library_books</mat-icon>
+          <mat-icon class="bcp-drawer-icon">library_books</mat-icon>
           Acervo
         </mat-panel-title>
       </mat-expansion-panel-header>
@@ -72,7 +72,7 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">admin_panel_settings</mat-icon>
+          <mat-icon class="bcp-drawer-icon">admin_panel_settings</mat-icon>
           Administrador
         </mat-panel-title>
       </mat-expansion-panel-header>

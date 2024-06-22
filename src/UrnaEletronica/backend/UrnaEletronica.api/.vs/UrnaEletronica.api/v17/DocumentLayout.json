@@ -1,9 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
+  "WorkspaceRootPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|d:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|c:\\users\\mathe\\documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\urnaeletronica\\backend\\urnaeletronica.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{BE8F3D08-4D31-4E4E-8437-8931C9203C33}|UrnaEletronica.api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -14,21 +22,51 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-21T19:36:50.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-21T19:36:19.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Program.cs",
+              "ToolTip": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAIAAAAAAAAAAAAAAAJ4AAAAvAAAA",
+              "ViewState": "AQIAAI8AAAAAAAAAAAAAAJ4AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-21T12:28:34.15Z",
               "EditorCaption": ""

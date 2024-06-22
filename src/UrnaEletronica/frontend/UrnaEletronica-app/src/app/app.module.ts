@@ -8,7 +8,10 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+
 import { CandidatosModule } from './pages/candidatos/candidatos.module';
+
+import { CidadesModule } from './pages/cidades/cidades.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { CandidatosModule } from './pages/candidatos/candidatos.module';
     HttpClientModule,
 
     SharedModule,
-    CandidatosModule
+    CandidatosModule,
+    CidadesModule
   ],
   providers: [
     provideClientHydration(),
