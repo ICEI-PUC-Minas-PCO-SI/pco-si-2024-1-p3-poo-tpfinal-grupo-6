@@ -8,6 +8,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SharedModule } from './shared';
 import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { CidadesModule } from './pages/cidades/cidades.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
   imports: [
     NgbModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    CidadesModule
   ],
   providers: [
     provideClientHydration(),
