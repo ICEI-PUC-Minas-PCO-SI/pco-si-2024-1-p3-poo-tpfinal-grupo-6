@@ -1,0 +1,73 @@
+@if (showCabecalho()) {
+<div class="bg-primary p-0 m-0">
+  <div fxLayout="row" class="m-0 px-2">
+    <div fxLayout="row" fxFlexFill fxFlex="70" class="mt-2 text-white">
+      <mat-icon class="urn-title-menu-icon me-3">{{iconTitle}}</mat-icon>
+      <h1>{{title}}</h1>
+    </div>
+    <div fxLayout="row" fxFlex="30" fxLayoutAlign="end center" class="m-1 p-0">
+      <mat-expansion-panel class="mat-elevation-z8 bg-primary">
+        <mat-expansion-panel-header >
+          <mat-panel-title class="text-white">
+            <span>
+              @if (usuarioLogado) {
+              <img [src]="fotoURL" class="rounded-circle mx-2 urn-avatar">
+              <span class="text-white">{{usuario.userName}}</span>
+              } @else {
+              <span class="text-white">Opcões:</span>
+              }
+            </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-divider class="mt-2 mb-2" />
+        <mat-icon class="urn-drawer-icon text-white">login</mat-icon>
+        <a class="text-white" routerLink="/pages/usuarios/login">
+          Login
+        </a>
+        <mat-divider class="mt-2 mb-2" />
+        <mat-icon class="urn-drawer-icon text-white">person_add</mat-icon>
+        <a class="text-white"  role="button" (click)="register()">
+          Novo Usuário
+        </a>
+        @if (usuarioLogado) {
+          <mat-divider class="mt-2 mb-2" />
+          <mat-icon class="urn-drawer-icon text-white">logout</mat-icon>
+          <a class="text-white"  role="button" (click)="logout()">
+            Sair
+          </a>
+          }
+      </mat-expansion-panel>
+
+      <mat-menu class="mat-elevation-z8 bg-primary mt-3" >
+        <mat-menu-item>
+          <mat-icon class="urn-drawer-icon text-primary">login</mat-icon>
+          <a routerLink="/pages/usuarios/login">
+            Login
+          </a>
+        </mat-menu-item>
+        <mat-divider class="mt-2 mb-2"></mat-divider>
+        <mat-menu-item class="px-2">
+          <mat-icon class="urn-drawer-icon text-primary">person_add</mat-icon>
+          <a class="ms-2" role="button" (click)="register()">
+            Novo Usuário
+          </a>
+        </mat-menu-item>
+        <mat-divider class="mt-2 mb-2"></mat-divider>
+        @if (usuarioLogado) {
+        <mat-menu-item class="px-2">
+          <mat-icon class="urn-drawer-icon text-primary">logout</mat-icon>
+          <a class="ms-2" role="button" (click)="logout()">
+            Sair
+          </a>
+        </mat-menu-item>
+        }
+      </mat-menu>
+    </div>
+  </div>
+</div>
+}
+
+<ngx-spinner bdColor="rgba(251,251,251,0.8)" size="medium" color="#000" type="square-jelly-box">
+  <p style="font-size: 20px; color: white">Carregando...</p>
+</ngx-spinner>

@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* Importing Bootstrap SCSS file. */
+@import 'ngx-toastr/toastr';
+@import "bootswatch/dist/lumen/variables";
+@import "bootstrap/scss/bootstrap";
+@import "bootswatch/dist/lumen/bootswatch";
+@import "ngx-bootstrap/datepicker/bs-datepicker";
+
+@import "./assets/scss/index";
+
+.urn-avatar {
+  width: 40px;
+  height: 40px;
+}
+
+.urn-avatar2 {
+  width: 240px;
+  height: 240px;
+}
+
+.urn-logo-secundaria {
+  width: 45px;
+}
+
+.urn-logo-principal {
+  width: 18.4em;
+  height: 15em;
+}
+
+.urn-drawer-icon {
+  transform: scale(1.2);
+  margin-right: 4px;
+}
+.urn-logotipo-pagina {
+  max-width: 350px;
+}
+
+.urn-title-menu-icon {
+  transform: scale(1.4);
+  margin-right: 6px;
+}
+
+.mat-drawer-content {
+  min-height: 890px;
+}
+

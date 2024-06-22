@@ -8464,19 +8464,37 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\carol\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\mathe\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+>>>>>>> main
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\carol\\OneDrive\\Área de Trabalho\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
       "projectName": "UrnaEletronica.api",
       "projectPath": "C:\\Users\\carol\\OneDrive\\Área de Trabalho\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
       "packagesPath": "C:\\Users\\carol\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\carol\\OneDrive\\Área de Trabalho\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
+      "projectName": "UrnaEletronica.api",
+      "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\UrnaEletronica.api.csproj",
+      "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.api\\obj\\",
+>>>>>>> main
       "projectStyle": "PackageReference",
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\carol\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+>>>>>>> main
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8490,8 +8508,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+<<<<<<< HEAD
             "C:\\Users\\carol\\OneDrive\\Área de Trabalho\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj": {
               "projectPath": "C:\\Users\\carol\\OneDrive\\Área de Trabalho\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj"
+=======
+            "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj": {
+              "projectPath": "C:\\Users\\mathe\\Documents\\github\\pco-si-2024-1-p3-poo-tpfinal-grupo-6\\src\\UrnaEletronica\\backend\\UrnaEletronica.Servico\\UrnaEletronica.Servico.csproj"
+>>>>>>> main
             }
           }
         }
@@ -8570,7 +8593,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+>>>>>>> main
       }
     }
   }
