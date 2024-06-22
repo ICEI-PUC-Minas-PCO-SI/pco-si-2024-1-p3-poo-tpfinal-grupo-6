@@ -2,11 +2,11 @@
   <div class="p-2">
     <p class="h5">Lista de ACervos:</p>
   </div>
-  <form [formGroup]="formAcervoLista">
+  <form [formGroup]="formCidadesLista">
     <div fxLayout="row wrap" class="m-0 p-0 g-0">
       <mat-form-field fxFlex="20" fxFlex.xs="100" fxFlex.sm="20" class="ms-2 p-2">
         <mat-label>Filtrar por</mat-label>
-        <mat-select matNativeControl formControlName="opcaoPesquisa" (selectionChange)="getAcervos()">
+        <mat-select matNativeControl formControlName="opcaoPesquisa" (selectionChange)="getCidades()">
           <mat-option value="Todos">Todos</mat-option>
           <mat-option value="Autor">Autor</mat-option>
           <mat-option value="Titulo">Título</mat-option>
@@ -15,7 +15,7 @@
       <mat-form-field fxFlex="79" fxFlex.xs="100" fxFlex.sm="50" class="p-2">
         <mat-label>Argumento</mat-label>
         <input matInput formControlName="argumento">
-        <button matSuffix mat-icon-button (click)="getAcervos()">
+        <button matSuffix mat-icon-button (click)="getCidades()">
           <mat-icon>search</mat-icon>
         </button>
       </mat-form-field>
@@ -26,48 +26,34 @@
 <table class="table table-striped table-hover table-light rounded-3 ">
   <thead class="table-primary">
     <tr>
-      <th class="d-none d-md-table-cell d-flex justify-center">
-        <a class="text-white" (click)="alterarImagem()">
-          <mat-icon>{{exibirImagem ? 'visibility' : 'visibility_off'}}</mat-icon>
-        </a>
-      </th>
       <th>#</th>
-      <th>ISBN</th>
-      <th>Gênero</th>
-      <th>Título</th>
-      <th>Publicação</th>
-      <th>Editora</th>
-      <th>Edição</th>
-      <th>Páginas</th>
+      <th>Nome</th>
+      <th>Silga Estado</th>
+      <th>NomeEstado</th>
+      <th>Qtde Habitantes</th>
       <th>Opções</th>
     </tr>
   </thead>
-  @if (acervos && acervos.length) {
+  @if (cidades && cidades.length) {
   <tbody>
-    @for (acervo of acervos; track acervo.id) {
-    <tr (click)="editarAcervo(acervo.id)" style="cursor: pointer">
-      <td>
-        <img [(ngbCollapse)]="!exibirImagem" src="{{acervo.capaUrl}}" alt="Capa do livro" class="bcp-imagem-lista mx-2">
-      </td>
-      <td>{{acervo.id}}</td>
-      <td>{{acervo.isbn}}</td>
-      <td>{{acervo.genero}}</td>
-      <td>{{acervo.titulo}}</td>
-      <td>{{acervo.anoPublicacao}}</td>
-      <td>{{acervo.editora}}</td>
-      <td>{{acervo.edicao}}</td>
-      <td>{{acervo.qtdPaginas}}</td>
+    @for (cidade of cidades; track cidade.id) {
+    <tr (click)="editarCidade(cidade.id)" style="cursor: pointer">
+      <td>{{cidade.id}}</td>
+      <td>{{cidade.nome}}</td>
+      <td>{{cidade.siglaEstado}}</td>
+      <td>{{cidade.nomeEstado}}</td>
+      <td>{{cidade.qtdHabitantes}}</td>
       <td>
         @if (usuarioAdmin) {
         <div class="btn-group mx-1">
-          <a class="text-danger" (click)="abrirModal($event, acervo.id, acervo.isbn)" matTooltip="Excluír">
+          <a class="text-danger" (click)="abrirModal($event, cidade.id, cidade.nome)" matTooltip="Excluír">
             <mat-icon>delete</mat-icon>
           </a>
         </div>
         }
         @if (!usuarioAdmin) {
         <div class="btn-group mx-1">
-          <a class="text-secondary" (click)="detalheAcervo($event, acervo.id)" matTooltip="Detalhe">
+          <a class="text-secondary" (click)="detalheCidade($event, cidade.id)" matTooltip="Detalhe">
             <mat-icon>loupe</mat-icon>
           </a>
         </div>
@@ -77,7 +63,7 @@
     }
   </tbody>
   }
-  @if (!acervos.length) {
+  @if (!cidades.length) {
   <tfoot>
     <td colspan="12" class="text-center" class="text-center">
       <h4>Nenhum acervo encontrado</h4>
@@ -86,7 +72,8 @@
   }
 </table>
 
-@if (acervos.length) {
+
+<!-- @if (acervos.length) {
 <div class="card-footer d-flex p-1 m-0 bcp-bg-primary" *ngIf="acervos.length">
   <div class="justify-content-center m-auto p-0 m-0 my-1">
     <ngb-pagination [collectionSize]="paginacao.itensPorPagina" [page]="paginacao.paginaCorrente"
@@ -95,4 +82,4 @@
     </ngb-pagination>
   </div>
 </div>
-}
+} -->

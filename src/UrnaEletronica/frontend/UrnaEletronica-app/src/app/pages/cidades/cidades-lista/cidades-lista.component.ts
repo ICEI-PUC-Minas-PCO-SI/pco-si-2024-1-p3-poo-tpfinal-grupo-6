@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CidadeService } from '../../../services/cidade/cidade.service';
 import { MatDialog } from '@angular/material/dialog';
-import { FormBuilder, FormGroup } from '@angular/forms';
+
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { UsuarioService } from '../../../services/usuario';
@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 import { Cidade } from '../../../shared/models/interfaces/cidade/Cidade';
 import { Usuario } from '../../../shared/models/interfaces/usuario';
 import { ModalDeleteComponent } from '../../../shared';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-cidades-lista',
@@ -25,8 +26,8 @@ export class CidadesListaComponent implements OnInit {
   #toastrService = inject(ToastrService);
   #usuarioService = inject(UsuarioService);
 
-  public formCidadeLista = {} as FormGroup;
-
+  public formCidadesLista = {} as FormGroup;
+  
   public cidades = [] as Cidade[];
   public cidade = {} as Cidade;
 
@@ -36,7 +37,7 @@ export class CidadesListaComponent implements OnInit {
   public usuarioAdmin = false;
 
   public get ctrF(): any {
-    return this.formCidadeLista.controls;
+    return this.formCidadesLista.controls;
   }
 
   ngOnInit(): void {
@@ -46,7 +47,7 @@ export class CidadesListaComponent implements OnInit {
   }
 
   private validation(): void {
-    this.formCidadeLista = this.#formBuilder.group({
+    this.formCidadesLista = this.#formBuilder.group({
       opcaoPesquisa: ["Todos"],
       argumento: [""],
     });

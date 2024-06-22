@@ -4,10 +4,11 @@ import { CidadesComponent } from './cidades.component';
 import { SharedModule } from '../../shared';
 import { CidadesListaComponent } from './cidades-lista/cidades-lista.component';
 import { CidadeDetalheComponent } from './cidade-detalhe/cidade-detalhe.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule, 
+    ReactiveFormsModule,
     SharedModule
   ],
   declarations: [CidadesComponent, CidadesListaComponent, CidadeDetalheComponent],
