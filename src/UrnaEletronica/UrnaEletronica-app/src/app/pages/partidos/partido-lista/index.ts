@@ -1,0 +1,1 @@
+export * from './cidades-lista.component'

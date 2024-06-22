@@ -102,11 +102,17 @@ import { JwtInterceptor } from '../util/security';
     TitleNavigatorComponent
   ],
   providers: [
+<<<<<<< HEAD:src/UrnaEletronica/UrnaEletronica-app/src/app/shared/shared.module.ts
     //AcervoService,
     //EmprestimoService,
     //LoginService,
     //PatrimonioService,
     //UsuarioService,
+=======
+    CandidatoService,
+    LoginService,
+    UsuarioService,
+>>>>>>> main:src/UrnaEletronica/frontend/UrnaEletronica-app/src/app/shared/shared.module.ts
 
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline', color: 'primary' }},
