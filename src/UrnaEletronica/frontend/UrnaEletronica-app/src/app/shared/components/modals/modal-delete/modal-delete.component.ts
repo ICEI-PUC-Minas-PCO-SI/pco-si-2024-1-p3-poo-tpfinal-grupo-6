@@ -1,5 +1,6 @@
 import { Component, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { ModalDelete } from "../../../../util/class";
 
 
 @Component({
@@ -7,7 +8,7 @@ import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
   templateUrl: "./modal-delete.component.html"
 })
 export class ModalDeleteComponent {
-  /*
+  
   constructor(
     public dialogRef: MatDialogRef<ModalDeleteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: ModalDelete
@@ -16,5 +17,5 @@ export class ModalDeleteComponent {
   onNoClick(): void {
     this.dialogRef.close();
   }
-    */
+    
 }

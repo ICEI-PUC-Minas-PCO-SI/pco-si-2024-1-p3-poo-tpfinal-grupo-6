@@ -1,5 +1,3 @@
-import { Patrimonio } from "../patrimonio";
-
 export interface Candidato {
   id: number;
   ehExecutivo: boolean;

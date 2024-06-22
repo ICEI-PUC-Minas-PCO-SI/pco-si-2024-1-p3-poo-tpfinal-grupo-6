@@ -106,9 +106,7 @@ import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   providers: [
     CandidatoService,
-    //EmprestimoService,
     LoginService,
-    //PatrimonioService,
     UsuarioService,
 
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
