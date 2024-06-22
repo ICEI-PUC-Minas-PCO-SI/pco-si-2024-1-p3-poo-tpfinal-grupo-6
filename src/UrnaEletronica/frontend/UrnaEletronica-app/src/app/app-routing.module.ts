@@ -8,9 +8,7 @@ import {
 } from './pages/candidatos';
 
 import { CadastroComponent, LoginComponent, PerfilComponent, UsuariosComponent } from './pages/usuarios';
-import { CidadesListaComponent } from './pages/cidades/cidades-lista/cidades-lista.component';
-import { CidadeDetalheComponent } from './pages/cidades/cidade-detalhe/cidade-detalhe.component';
-import { CidadesComponent } from './pages/cidades/cidades.component';
+import { CidadeDetalheComponent, CidadesComponent, CidadesListaComponent } from './pages/cidades';
 
 const routes: Routes = [
   { path: '', redirectTo: 'pages/home', pathMatch: 'full' },

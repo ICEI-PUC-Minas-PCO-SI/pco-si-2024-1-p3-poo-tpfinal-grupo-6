@@ -1,6 +1,3 @@
-import { Emprestimo } from "../emprestimo"
-
-
 export interface Usuario{
     id: number
     isAdmin: boolean
@@ -11,6 +8,5 @@ export interface Usuario{
     userName:string
     phoneNumber:string
     fotoURL: string
-    Emprestimos: Emprestimo[]
     token: string
 }
