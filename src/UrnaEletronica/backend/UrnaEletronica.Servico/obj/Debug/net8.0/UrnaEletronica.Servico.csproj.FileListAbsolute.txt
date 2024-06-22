@@ -43,3 +43,21 @@ C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\s
 C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.dll
 C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\refint\UrnaEletronica.Servico.dll
 C:\Users\igaoa\OneDrive\Documentos\GitHub\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.pdb
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Servico.deps.json
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Servico.dll
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Servico.pdb
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Dominio.dll
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Persistencia.dll
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Dominio.pdb
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\bin\Debug\net8.0\UrnaEletronica.Persistencia.pdb
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.csproj.AssemblyReference.cache
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.AssemblyInfoInputs.cache
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.AssemblyInfo.cs
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.csproj.CoreCompileInputs.cache
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.sourcelink.json
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.csproj.CopyComplete
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.dll
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\refint\UrnaEletronica.Servico.dll
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\UrnaEletronica.Servico.pdb
+C:\Users\carol\OneDrive\Área de Trabalho\pco-si-2024-1-p3-poo-tpfinal-grupo-6\src\UrnaEletronica\backend\UrnaEletronica.Servico\obj\Debug\net8.0\ref\UrnaEletronica.Servico.dll
