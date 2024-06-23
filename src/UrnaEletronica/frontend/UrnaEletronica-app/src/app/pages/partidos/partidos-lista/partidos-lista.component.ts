@@ -100,7 +100,7 @@ export class PartidosListaComponent implements OnInit {
     this.#spinnerService.show();
 
     this.#partidoService
-      .deleteCidade(this.partidoId)
+      .deletePartido(this.partidoId)
       .subscribe({
         next: (result: any) => {
           if (result == null)

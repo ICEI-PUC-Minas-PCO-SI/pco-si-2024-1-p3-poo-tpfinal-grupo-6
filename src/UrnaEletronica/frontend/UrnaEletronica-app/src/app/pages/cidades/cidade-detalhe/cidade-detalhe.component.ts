@@ -109,7 +109,7 @@ export class CidadeDetalheComponent implements OnInit {
       .createCidade(this.cidade)
       .subscribe({
         next: (novaCidade: Cidade) => {
-          this.#toastrService.success("Caidade cadastrado!", "Sucesso!");
+          this.#toastrService.success("Cidade cadastrado!", "Sucesso!");
           window.location.reload;
           this.#router.navigateByUrl(
             `/pages/cidades/detalhe/${novaCidade.id}`
@@ -134,8 +134,8 @@ export class CidadeDetalheComponent implements OnInit {
     this.#cidadeService
       .saveCidade(this.cidade)
       .subscribe({
-        next: (caidade: Cidade) => {
-          this.#toastrService.success("Caidade Atualizado!", "Sucesso!");
+        next: (cidade: Cidade) => {
+          this.#toastrService.success("Cidade Atualizado!", "Sucesso!");
         },
         error: (error: any) => {
           this.#toastrService.error("Falha ao atualizar Cidade.", "Erro!");
