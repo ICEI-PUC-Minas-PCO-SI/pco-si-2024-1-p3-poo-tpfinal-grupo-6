@@ -11,7 +11,7 @@
           </h4>
           <div fxLayout="row">
             <mat-form-field fxFlex="35" class="p-1">
-              <mat-label>None da Cidade:</mat-label>
+              <mat-label>Nome da Cidade:</mat-label>
               <input matInput type="text" formControlName="nome" [ngClass]="fieldValidator(ctrF.nome)">
               <mat-error class="invalid-feedback">{{messageReturned(ctrF.nome, '')}}</mat-error>
             </mat-form-field>
@@ -46,8 +46,8 @@
     </div>
   </form>
 </div>
-        <!-- 
+        <!--
 
 <p>Form Value: {{formPatrimonio.value | json}}</p>
-  <p>Form Status: {{formPatrimonio.status | json}}</p> 
+  <p>Form Status: {{formPatrimonio.status | json}}</p>
  -->

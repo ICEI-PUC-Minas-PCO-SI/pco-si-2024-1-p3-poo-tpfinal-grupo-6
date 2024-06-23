@@ -30,7 +30,7 @@ export class PartidoService {
       .pipe(take(3));
   }
 
-  public deleteCidade(partidoId: number): Observable<any> {
+  public deletePartido(partidoId: number): Observable<any> {
     return this.#http
       .delete(`${this.baseURL}${partidoId}?partido=${partidoId}`)
       .pipe(take(3));
