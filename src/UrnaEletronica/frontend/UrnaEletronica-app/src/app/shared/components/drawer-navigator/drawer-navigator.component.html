@@ -33,27 +33,6 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">groups</mat-icon>
-          Candidato
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      @if (usuarioAtivo.isAdmin) {
-      <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/candidatos/cadastrar">
-        Novo
-      </a>
-      }
-      <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/candidatos/lista">
-        Lista
-      </a>
-    </mat-expansion-panel>
-
-
-    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
-      <mat-expansion-panel-header>
-        <mat-panel-title class="text-white">
           <mat-icon class="urn-drawer-icon">location_city</mat-icon>
           Cidade
         </mat-panel-title>
@@ -72,7 +51,27 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">group</mat-icon>
+          <mat-icon class="urn-drawer-icon">groups</mat-icon>
+          Candidato
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      @if (usuarioAtivo.isAdmin) {
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/candidatos/cadastrar">
+        Novo
+      </a>
+      }
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/candidatos/lista">
+        Lista
+      </a>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">3p</mat-icon>
           Partidos
         </mat-panel-title>
       </mat-expansion-panel-header>

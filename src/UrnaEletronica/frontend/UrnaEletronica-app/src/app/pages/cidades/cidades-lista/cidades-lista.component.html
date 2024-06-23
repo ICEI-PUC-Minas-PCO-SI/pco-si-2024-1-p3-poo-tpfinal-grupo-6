@@ -34,7 +34,7 @@
       <th>Opções</th>
     </tr>
   </thead>
-  @if (cidades && cidades.length) {
+  @if (cidades && cidades.length > 0) {
   <tbody>
     @for (cidade of cidades; track cidade.id) {
     <tr (click)="editarCidade(cidade.id)" style="cursor: pointer">
@@ -62,11 +62,10 @@
     </tr>
     }
   </tbody>
-  }
-  @if (!cidades.length) {
+  } @else if (cidades.length) {
   <tfoot>
     <td colspan="12" class="text-center" class="text-center">
-      <h4>Nenhum acervo encontrado</h4>
+      <h4>Nenhuma cidade encontrada</h4>
     </td>
   </tfoot>
   }

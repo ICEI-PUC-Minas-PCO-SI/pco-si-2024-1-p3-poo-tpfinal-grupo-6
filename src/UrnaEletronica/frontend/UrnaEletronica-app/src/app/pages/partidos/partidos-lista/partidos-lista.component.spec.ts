@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { PartidosListaComponent } from './partido-lista.component';
+import { PartidosListaComponent } from './partidos-lista.component';
 
 describe('PartidoListaComponent', () => {
   let component: PartidosListaComponent;

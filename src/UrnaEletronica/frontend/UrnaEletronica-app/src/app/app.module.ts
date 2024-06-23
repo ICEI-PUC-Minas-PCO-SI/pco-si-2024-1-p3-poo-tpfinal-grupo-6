@@ -24,7 +24,7 @@ import { PartidosModule } from './pages/partidos/partidos.module';
     SharedModule,
     CandidatosModule,
     CidadesModule,
-    PartidosModule
+
   ],
   providers: [
     provideClientHydration(),
