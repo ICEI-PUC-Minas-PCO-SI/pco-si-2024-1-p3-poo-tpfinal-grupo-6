@@ -1,3 +1,7 @@
+import { Cidade } from "../cidade";
+import { Coligacao } from "../coligacao";
+import { Partido } from "../partido";
+
 export interface Candidato {
   id: number;
   ehExecutivo: boolean;
@@ -9,9 +13,9 @@ export interface Candidato {
   tipoCandidatura: string;
   fotoURL: string;
   cidadeId: number;
-  //cidade: Cidade;
+  cidade: Cidade;
   partidoId: number;
-  //partido: Partido;
+  partido: Partido;
   coligacaoId: number;
-  //coligacao: Coligacao;
+  coligacao: Coligacao;
 }

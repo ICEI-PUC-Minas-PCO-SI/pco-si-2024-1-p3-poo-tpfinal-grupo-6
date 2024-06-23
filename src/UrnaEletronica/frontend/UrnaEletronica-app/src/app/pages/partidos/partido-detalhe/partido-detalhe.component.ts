@@ -6,11 +6,12 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Partido } from '../../../shared/models/interfaces/partido';
 import { FormValidator } from '../../../util/class';
+import { ColigacaoService } from '../../../services/coligacao/coligacao.service';
+import { Coligacao } from '../../../shared/models/interfaces/coligacao';
 
 @Component({
   selector: 'app-partido-detalhe',
   templateUrl: './partido-detalhe.component.html',
-  styleUrls: ['./partido-detalhe.component.scss']
 })
 export class PartidoDetalheComponent implements OnInit {
 
@@ -19,6 +20,7 @@ export class PartidoDetalheComponent implements OnInit {
   #router = inject(Router);
 
   #partidoService = inject(PartidoService);
+  #coligacaoService = inject(ColigacaoService);
 
   #spinnerService = inject(NgxSpinnerService);
   #toastrService = inject(ToastrService);
@@ -28,7 +30,7 @@ export class PartidoDetalheComponent implements OnInit {
   public partido = {} as Partido;
   public partidoParam: any = "";
 
-  public coligacoes = []
+  public coligacoes = [] as Coligacao[];
 
   public editMode: boolean = false;
 
@@ -43,6 +45,8 @@ export class PartidoDetalheComponent implements OnInit {
     this.editMode = this.partidoParam != null ? true : false;
 
     if (this.editMode) this.getPartido();
+
+    this.getColigacoes();
   }
 
   public formValidator(): void {
@@ -147,7 +151,20 @@ export class PartidoDetalheComponent implements OnInit {
     }
 
     public getColigacoes(): void {
-      
-    }
+      this.#spinnerService.show();
 
+      this.#coligacaoService
+        .getColigacoes()
+        .subscribe({
+          next: (coligacoes: Coligacao[]) => {
+            this.coligacoes = coligacoes;
+            console.log(coligacoes)
+          },
+          error: (error: any) => {
+            this.#toastrService.error("Falha ao recuperar Coligacoes", "Erro!");
+            console.error(error);
+          },
+        })
+        .add(() => this.#spinnerService.hide());
+    }
 }

@@ -27,10 +27,9 @@
   <thead class="table-primary">
     <tr>
       <th>#</th>
-      <th>Nome</th>
-      <th>Codigo Partido</th>
-      <th>Sigla</th>
-      <th>Cidade</th>
+      <th>Nome do Partido</th>
+      <th>Sigla do Partido</th>
+      <th>Coligação</th>
       <th>Opções</th>
     </tr>
   </thead>
@@ -41,29 +40,18 @@
       <td>{{partido.id}}</td>
       <td>{{partido.nome}}</td>
       <td>{{partido.sigla}}</td>
-      <td>{{partido.coligacaoId}}</td>
-      <td>{{partido}}</td>
+      <td>{{partido.coligacao.sigla}}-{{partido.coligacao.nome}}</td>
       <td>
-        @if (usuarioAdmin) {
         <div class="btn-group mx-1">
           <a class="text-danger" (click)="abrirModal($event, partido.id, partido.nome)" matTooltip="Excluír">
             <mat-icon>delete</mat-icon>
           </a>
         </div>
-        }
-        @if (!usuarioAdmin) {
-        <div class="btn-group mx-1">
-          <a class="text-secondary" (click)="detalhePartido($event, partido.id)" matTooltip="Detalhe">
-            <mat-icon>loupe</mat-icon>
-          </a>
-        </div>
-        }
       </td>
     </tr>
     }
   </tbody>
-  }
-  @if (!partidos.length) {
+  } @else if (partidos.length) {
   <tfoot>
     <td colspan="12" class="text-center" class="text-center">
       <h4>Nenhum partido encontrado</h4>

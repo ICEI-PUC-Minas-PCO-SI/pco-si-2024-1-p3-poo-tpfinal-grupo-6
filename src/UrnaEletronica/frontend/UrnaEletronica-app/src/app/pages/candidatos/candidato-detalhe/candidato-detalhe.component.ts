@@ -7,11 +7,16 @@ import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CandidatoService } from '../../../services/candidato';
 import { Candidato } from '../../../shared/models/interfaces/candidato';
+import { Cidade } from '../../../shared/models/interfaces/cidade';
+import { CidadeService } from '../../../services/cidade/cidade.service';
+import { Partido } from '../../../shared/models/interfaces/partido';
+import { PartidoService } from '../../../services/partido/partido.service';
+import { ColigacaoService } from '../../../services/coligacao/coligacao.service';
+import { Coligacao } from '../../../shared/models/interfaces/coligacao';
 
 @Component({
   selector: 'app-candidato-detalhe',
   templateUrl: './candidato-detalhe.component.html',
-  styleUrls: ['./candidato-detalhe.component.scss']
 })
 export class CandidatoDetalheComponent {
 
@@ -20,6 +25,8 @@ export class CandidatoDetalheComponent {
   #router = inject(Router);
 
   #candidatoService = inject(CandidatoService);
+  #cidadeService = inject(CidadeService);
+  #partidoService = inject(PartidoService);
   #uploadService = inject(UploadService)
 
   #spinnerService = inject(NgxSpinnerService);
@@ -31,10 +38,10 @@ export class CandidatoDetalheComponent {
   public fotoURL: string = "../../../../assets/images/upload.png";
   public file!: File[];
 
-  public cidades = []
-  //public cidades = [] as Cidade[]
-  public partidos = []
-  //public partidos = [] as Partidos[]
+  public cidades = [] as Cidade[]
+  public cidade!: Cidade
+  public partidos = [] as Partido[]
+  public partido!: Partido
 
   public candidato = {} as Candidato;
   public candidatoParam: any = "";
@@ -56,11 +63,14 @@ export class CandidatoDetalheComponent {
     this.editMode = this.candidatoParam != null ? true : false;
 
     if (this.editMode) this.getCandidato();
+
+    this.getCidades();
+    this.getPartidos();
   }
 
   public formValidator(): void {
     this.formCandidato = this.#formBuilder.group({
-      candidatoId: [ 0],
+      numCandidato: [ 0],
       ehExecutivo: [ ""],
       ehLegislativo: [ ""],
       votosValidos: [""],
@@ -73,7 +83,8 @@ export class CandidatoDetalheComponent {
       cidadeId: [0, Validators.required],
       partidoId: [0, Validators.required],
       coligacaoId: [0,],
-      nomeColigacao: [""],
+      coligacaoTxt: [""],
+      fotoUrl: [""]
     });
   }
 
@@ -115,7 +126,7 @@ export class CandidatoDetalheComponent {
         next: (candidato: Candidato) => {
           this.candidato = candidato;
           this.formCandidato.patchValue(this.candidato);
-          this.ctrF.candidatoId.setValue(this.candidato.id);
+          this.ctrF.numCandidato.setValue(this.candidato.id);
 
           if (candidato.fotoURL)
              this.candidatoImagem = candidato.fotoURL;
@@ -132,6 +143,8 @@ export class CandidatoDetalheComponent {
     this.#spinnerService.show();
 
     this.candidato = { ...this.formCandidato.value };
+
+    console.log(this.candidato)
 
     this.#candidatoService
       .createCandidato(this.candidato)
@@ -154,9 +167,11 @@ export class CandidatoDetalheComponent {
   public salvarCandidato(): void {
     this.#spinnerService.show();
 
-    this.candidato = {id: this.ctrF.patrimonioId.value,
+    this.candidato = {id: +this.ctrF.numCandidato.value,
        ...this.formCandidato.value,
     };
+
+    console.log(this.candidato)
 
     this.#candidatoService
       .saveCandidato(this.candidato)
@@ -188,7 +203,7 @@ export class CandidatoDetalheComponent {
     this.#spinnerService.show();
 
     this.#uploadService
-      .salvarFotoCandidato(this.file)
+      .salvarFotoCandidato(this.file, this.candidatoParam)
       .subscribe({
         next: () => {
           this.#toastrService.success("Foto atualizada!", "Sucesso!");
@@ -206,4 +221,80 @@ export class CandidatoDetalheComponent {
       })
       .add(() => this.#spinnerService.hide());
   }
+
+
+  public getCidades(): void {
+    this.#spinnerService.show();
+
+    this.#cidadeService
+      .getCidades()
+      .subscribe({
+        next: (cidades: Cidade[]) => {
+          this.cidades = cidades;
+        },
+        error: (error: any) => {
+          this.#toastrService.error("Falha ao recuperar Cidades", "Erro!");
+          console.error(error);
+        },
+      })
+      .add(() => this.#spinnerService.hide());
+  }
+
+  public getPartidos(): void {
+    this.#spinnerService.show();
+
+    this.#partidoService
+      .getPartidos()
+      .subscribe({
+        next: (partidos: Partido[]) => {
+          this.partidos = partidos;
+        },
+        error: (error: any) => {
+          this.#toastrService.error("Falha ao recuperar Partidos", "Erro!");
+          console.error(error);
+        },
+      })
+      .add(() => this.#spinnerService.hide());
+  }
+
+  public verificarCidade(): void {
+    this.#spinnerService.show();
+
+    this.#cidadeService
+      .getCidadeById(this.ctrF.cidadeId.value)
+      .subscribe({
+        next: (cidade: Cidade) => {
+          this.cidade = cidade;
+          this.ctrF.cidadeId.setValue(cidade.id)
+        },
+        error: (error: any) => {
+          this.#toastrService.error("Falha ao recuperar Partidos", "Erro!");
+          console.error(error);
+        },
+      })
+      .add(() => this.#spinnerService.hide());
+  }
+
+
+  public verificarPartido(): void {
+    this.#spinnerService.show();
+
+    this.#partidoService
+      .getPartidoById(this.ctrF.partidoId.value)
+      .subscribe({
+        next: (partido: Partido) => {
+          this.partido = partido;
+          this.ctrF.coligacaoTxt.setValue(partido.coligacao.sigla + " - " + partido.coligacao.nome)
+          this.ctrF.partidoId.setValue(partido.id)
+
+          this.ctrF.coligacaoId.setValue(partido.coligacaoId)
+        },
+
+        error: (error: any) => {
+          this.#toastrService.error("Falha ao recuperar Partidos", "Erro!");
+          console.error(error);
+        },
+      })
+      .add(() => this.#spinnerService.hide());
+    }
 }

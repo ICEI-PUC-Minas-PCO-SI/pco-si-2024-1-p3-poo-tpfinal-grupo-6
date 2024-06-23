@@ -66,13 +66,13 @@
               [src]='(candidato.fotoURL != null) ?  candidato.fotoURL : candidatoImagem' alt="" class="bcp-imagem-lista mx-2">
           </td>
           <td>{{candidato.id}}</td>
-          <td>{{candidato.dataNascimento | date }}</td>
+          <td>{{candidato.nome}}</td>
+          <td>{{candidato.dataNascimento | date : 'dd/MM/yyyy' }}</td>
           <td>{{candidato.tipoCandidatura}}</td>
-          <td>{{candidato.tipoCandidatura}}</td>
-          <td>{{candidato.tipoCandidatura}}</td>
-          <td>{{candidato.tipoCandidatura}}</td>
-          <td>{{candidato.tipoCandidatura}}</td>
-
+          <td>{{candidato.cidade.nome}}</td>
+          <td>{{candidato.cidade.siglaEstado}}</td>
+          <td><b>{{candidato.partido.sigla}}</b>-{{candidato.partido.nome}}</td>
+          <td><b>{{candidato.coligacao.sigla}}</b>-{{candidato.coligacao.nome}}</td>
           <td>
             <div class="btn-group mx-1">
               <a class="text-danger" (click)="abrirModal($event, candidato.id, candidato.nome)">

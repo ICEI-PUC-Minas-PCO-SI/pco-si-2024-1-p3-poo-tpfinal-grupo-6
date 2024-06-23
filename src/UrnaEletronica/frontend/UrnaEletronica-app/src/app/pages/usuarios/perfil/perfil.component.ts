@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
-  styleUrl: './perfil.component.scss'
 })
 export class PerfilComponent {
   #router = inject(Router)

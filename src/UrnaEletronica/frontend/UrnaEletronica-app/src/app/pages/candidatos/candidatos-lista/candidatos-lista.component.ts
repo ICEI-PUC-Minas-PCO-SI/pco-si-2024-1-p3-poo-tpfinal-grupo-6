@@ -11,7 +11,6 @@ import { ModalDeleteComponent } from '../../../shared';
 @Component({
   selector: 'app-candidatos-lista',
   templateUrl: './candidatos-lista.component.html',
-  styleUrls: ['./candidatos-lista.component.scss'],
 })
 export class CandidatosListaComponent implements OnInit {
   #formBuilder = inject(FormBuilder);

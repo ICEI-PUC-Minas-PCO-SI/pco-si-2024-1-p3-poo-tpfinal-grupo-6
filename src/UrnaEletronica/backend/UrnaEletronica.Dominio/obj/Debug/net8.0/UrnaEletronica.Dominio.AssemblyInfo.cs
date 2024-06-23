@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UrnaEletronica.Dominio")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fc265595629f4eeb56ac55feedc7791e4b2b11b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d3819d1ead575e39f1560189db7424ee10d8fd2")]
 [assembly: System.Reflection.AssemblyProductAttribute("UrnaEletronica.Dominio")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UrnaEletronica.Dominio")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

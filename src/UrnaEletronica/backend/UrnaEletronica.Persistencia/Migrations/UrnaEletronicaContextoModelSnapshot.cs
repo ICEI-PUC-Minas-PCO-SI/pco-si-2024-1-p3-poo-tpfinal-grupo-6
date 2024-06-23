@@ -121,10 +121,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.Property<int>("CidadeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ColigacaoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ColigacoaId")
+                    b.Property<int>("ColigacaoId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataNascimento")
@@ -533,12 +530,14 @@ namespace UrnaEletronica.Persistencia.Migrations
 
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Coligacoes.Coligacao", "Coligacao")
                         .WithMany("Candidatos")
-                        .HasForeignKey("ColigacaoId");
+                        .HasForeignKey("ColigacaoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Partidos.Partido", "Partido")
                         .WithMany("Candidatos")
                         .HasForeignKey("PartidoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cidade");

@@ -44,20 +44,16 @@
       <td>{{coligacao.nome}}</td>
       <td>{{coligacao.qtdVotos}}</td>
       <td>
-        @if (usuarioAdmin) {
         <div class="btn-group mx-1">
           <a class="text-danger" (click)="abrirModal($event, coligacao.id, coligacao.nome)" matTooltip="Excluír">
             <mat-icon>delete</mat-icon>
           </a>
         </div>
-        }
-        @if (!usuarioAdmin) {
         <div class="btn-group mx-1">
           <a class="text-secondary" (click)="detalheColigacao($event, coligacao.id)" matTooltip="Detalhe">
             <mat-icon>loupe</mat-icon>
           </a>
         </div>
-        }
       </td>
     </tr>
     }

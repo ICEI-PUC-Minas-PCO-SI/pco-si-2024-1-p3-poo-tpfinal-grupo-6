@@ -50,11 +50,9 @@ import { NgbModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     NgbCollapseModule,
     NgbModule,
     NgxMaskDirective,
-    NgxSpinnerModule.forRoot({ type: "square-loader"}),
+    NgxSpinnerModule.forRoot({ type: "timer"}),
     RouterModule,
     ToastrModule.forRoot({
-      timeOut: 0,
-      extendedTimeOut: 0,
       positionClass: 'toast-bottom-right',
       preventDuplicates: true,
     }),

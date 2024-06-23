@@ -16,7 +16,7 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos
             int totalVotos = candidatos.Sum(c => c.QtdVotos);
             int quocienteEleitoral = totalVotos / parametroEleicao.QtdCadeiras;
 
-            var coligacoes = candidatos.GroupBy(c => c.ColigacoaId);
+            var coligacoes = candidatos.GroupBy(c => c.ColigacaoId);
 
             var quocientesPartidarios = coligacoes.Select(g => new
             {

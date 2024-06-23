@@ -11,6 +11,9 @@ import { CadastroComponent, LoginComponent, PerfilComponent, UsuariosComponent }
 import { CidadeDetalheComponent, CidadesComponent, CidadesListaComponent } from './pages/cidades';
 import { PartidoDetalheComponent, PartidosComponent, PartidosListaComponent } from './pages/partidos';
 import { ColigacaoDetalheComponent, ColigacoesComponent, ColigacoesListaComponent } from './pages/coligacoes';
+import { ParametroEleicaoDetalheComponent, ParametrosEleicoesComponent, ParametrosEleicoesListaComponent } from './pages/parametros-eleicoes';
+import { ConfigAdministradorComponent, EleicoesComponent } from './pages/eleicoes';
+
 
 
 const routes: Routes = [
@@ -102,6 +105,38 @@ const routes: Routes = [
       { path: "lista", component: ColigacoesListaComponent },
       { path: "detalhe/:id", component: ColigacaoDetalheComponent },
       { path: "cadastrar", component: ColigacaoDetalheComponent },
+    ],
+  },
+
+  {
+    path: "parametrosEleicoes",
+    redirectTo: "pages/parametrosEleicoes/lista",
+    pathMatch: "full",
+  },
+  {
+    path: "pages/parametrosEleicoes",
+    component: ParametrosEleicoesComponent,
+    children: [
+      { path: "", pathMatch: "full", redirectTo: "lista" },
+      { path: "lista", component: ParametrosEleicoesListaComponent },
+      { path: "detalhe/:id", component: ParametroEleicaoDetalheComponent },
+      { path: "cadastrar", component: ParametroEleicaoDetalheComponent },
+    ],
+  },
+
+  {
+    path: "eleicoes",
+    redirectTo: "pages/eleicoes/lista",
+    pathMatch: "full",
+  },
+  {
+    path: "pages/eleicoes",
+    component: EleicoesComponent,
+    children: [
+      { path: "", pathMatch: "full", redirectTo: "lista" },
+      { path: "lista", component: ParametrosEleicoesListaComponent },
+      { path: "detalhe/:id", component: ParametroEleicaoDetalheComponent },
+      { path: "admin", component: ConfigAdministradorComponent },
     ],
   },
 

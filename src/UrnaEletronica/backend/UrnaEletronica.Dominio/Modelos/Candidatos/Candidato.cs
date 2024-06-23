@@ -19,7 +19,7 @@ namespace UrnaEletronica.Dominio.Modelos.Candidatos
         public Cidade Cidade { get; set; }
         public int PartidoId { get; set; }
         public Partido Partido { get; set; }
-        public int ColigacoaId { get; set; }
+        public int ColigacaoId { get; set; }
         public Coligacao Coligacao { get; set; }
     }
 }
