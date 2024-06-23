@@ -1,3 +1,46 @@
-<p>
-  coligacao-detalhe works!
-</p>
+<div class="container-fluid">
+  <form class="my-2" [formGroup]="formColigacao">
+    <div class="card rounded mat-elevation-z4">
+      <div class="card-header rounded text-center text-white bg-dark">
+        <h1 class="mt-2">Formulário de
+          coligações
+        </h1>
+      </div>
+      <div class="card-body p-0 mt-1 bg-white  text-black">
+        <div class="row m-0 mb-1">
+          <h4 class="border-bottom mt-2">
+            Dados de Cadastro
+          </h4>
+          <div fxLayout="row">
+            <mat-form-field fxFlex="35" class="p-1">
+              <mat-label>Nome da Coligacao:</mat-label>
+              <input matInput type="text" formControlName="nome" [ngClass]="fieldValidator(ctrF.nome)">
+              <mat-error class="invalid-feedback">{{messageReturned(ctrF.nome, '')}}</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex="15" class="p-1">
+              <mat-label>Sigla da Coligacao:</mat-label>
+              <input matInput type="text" formControlName="sigla" [ngClass]="fieldValidator(ctrF.sigla)">
+              <mat-error class="invalid-feedback">{{messageReturned(ctrF.sigla,'')}}</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="card-footer bg-dark mt-1 ">
+        <div class="d-flex ">
+          <button class="btn btn-outline-danger ms-auto mx-1" (click)="clearForm()">
+            Limpar
+          </button>
+          <button class="btn btn-outline-primary mx-1 px-4" [disabled]="!formColigacao.valid" (click)="saveChange()">
+            {{editMode ? "Salvar" : "Criar"}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+        <!--
+
+<p>Form Value: {{formPatrimonio.value | json}}</p>
+  <p>Form Status: {{formPatrimonio.status | json}}</p>
+ -->
+

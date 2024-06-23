@@ -12,6 +12,7 @@ import { CandidatosModule } from './pages/candidatos/candidatos.module';
 
 import { CidadesModule } from './pages/cidades/cidades.module';
 import { PartidosModule } from './pages/partidos/partidos.module';
+import { ColigacaoModule } from './pages/coligacoes';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,7 @@ import { PartidosModule } from './pages/partidos/partidos.module';
     HttpClientModule,
 
     SharedModule,
-    CandidatosModule,
-    CidadesModule,
-
+    ColigacaoModule
   ],
   providers: [
     provideClientHydration(),
