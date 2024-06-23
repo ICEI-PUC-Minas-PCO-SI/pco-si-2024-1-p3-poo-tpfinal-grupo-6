@@ -1,3 +1,73 @@
-<p>
-  partido-lista works!
-</p>
+<div class="container-fluid">
+  <div class="p-2">
+    <p class="h5">Lista de Partidos:</p>
+  </div>
+  <form [formGroup]="formPartidosLista">
+    <div fxLayout="row wrap" class="m-0 p-0 g-0">
+      <mat-form-field fxFlex="20" fxFlex.xs="100" fxFlex.sm="20" class="ms-2 p-2">
+        <mat-label>Filtrar por</mat-label>
+        <mat-select matNativeControl formControlName="opcaoPesquisa" (selectionChange)="getPartidos()">
+          <mat-option value="Todos">Todos</mat-option>
+          <mat-option value="Autor">Nome</mat-option>
+          <mat-option value="Titulo">Cidade</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex="79" fxFlex.xs="100" fxFlex.sm="50" class="p-2">
+        <mat-label>Argumento</mat-label>
+        <input matInput formControlName="argumento">
+        <button matSuffix mat-icon-button (click)="getPartidos()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<table class="table table-striped table-hover table-light rounded-3 ">
+  <thead class="table-primary">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Codigo Partido</th>
+      <th>Sigla</th>
+      <th>Cidade</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  @if (partidos && partidos.length) {
+  <tbody>
+    @for (partido of partidos; track partido.id) {
+    <tr (click)="editarPartido(partido.id)" style="cursor: pointer">
+      <td>{{partido.id}}</td>
+      <td>{{partido.nome}}</td>
+      <td>{{partido.sigla}}</td>
+      <td>{{partido.coligacaoId}}</td>
+      <td>{{partido}}</td>
+      <td>
+        @if (usuarioAdmin) {
+        <div class="btn-group mx-1">
+          <a class="text-danger" (click)="abrirModal($event, partido.id, partido.nome)" matTooltip="Excluír">
+            <mat-icon>delete</mat-icon>
+          </a>
+        </div>
+        }
+        @if (!usuarioAdmin) {
+        <div class="btn-group mx-1">
+          <a class="text-secondary" (click)="detalhePartido($event, partido.id)" matTooltip="Detalhe">
+            <mat-icon>loupe</mat-icon>
+          </a>
+        </div>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+  }
+  @if (!partidos.length) {
+  <tfoot>
+    <td colspan="12" class="text-center" class="text-center">
+      <h4>Nenhum partido encontrado</h4>
+    </td>
+  </tfoot>
+  }
+</table>

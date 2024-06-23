@@ -11,6 +11,7 @@ import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/
 import { CandidatosModule } from './pages/candidatos/candidatos.module';
 
 import { CidadesModule } from './pages/cidades/cidades.module';
+import { PartidosModule } from './pages/partidos/partidos.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CidadesModule } from './pages/cidades/cidades.module';
 
     SharedModule,
     CandidatosModule,
-    CidadesModule
+    CidadesModule,
+    PartidosModule
   ],
   providers: [
     provideClientHydration(),

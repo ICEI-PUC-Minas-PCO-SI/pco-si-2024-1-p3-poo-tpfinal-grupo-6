@@ -4,7 +4,7 @@ import { SharedModule } from '../../shared';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PartidosComponent } from './partidos.component';
 import { PartidoDetalheComponent } from './partido-detalhe/partido-detalhe.component';
-import { PartidoListaComponent } from './partido-lista/partido-lista.component';
+import { PartidosListaComponent } from './partido-lista/partido-lista.component';
 
 
 
@@ -13,12 +13,12 @@ import { PartidoListaComponent } from './partido-lista/partido-lista.component';
   declarations: [
     PartidosComponent,
     PartidoDetalheComponent,
-    PartidoListaComponent
+    PartidosListaComponent
   ],
   exports: [
     PartidosComponent,
     PartidoDetalheComponent,
-    PartidoListaComponent
+    PartidosListaComponent
   ],
   imports: [
     ReactiveFormsModule,

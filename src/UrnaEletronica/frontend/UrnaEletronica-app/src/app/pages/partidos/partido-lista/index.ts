@@ -1,1 +1,1 @@
-export * from './cidades-lista.component'
+export * from './partido-lista.component'
