@@ -44,25 +44,16 @@
       <td>{{cidade.nomeEstado}}</td>
       <td>{{cidade.qtdHabitantes}}</td>
       <td>
-        @if (usuarioAdmin) {
         <div class="btn-group mx-1">
           <a class="text-danger" (click)="abrirModal($event, cidade.id, cidade.nome)" matTooltip="Excluír">
             <mat-icon>delete</mat-icon>
           </a>
         </div>
-        }
-        @if (!usuarioAdmin) {
-        <div class="btn-group mx-1">
-          <a class="text-secondary" (click)="detalheCidade($event, cidade.id)" matTooltip="Detalhe">
-            <mat-icon>loupe</mat-icon>
-          </a>
-        </div>
-        }
       </td>
     </tr>
     }
   </tbody>
-  } @else if (cidades.length) {
+  } @else if (cidades.length <= 0) {
   <tfoot>
     <td colspan="12" class="text-center" class="text-center">
       <h4>Nenhuma cidade encontrada</h4>

@@ -24,14 +24,14 @@ export class UploadService {
     .pipe(take(1));
   }
 
-  public salvarFotoCandidato(file: File[]): Observable<Candidato> {
+  public salvarFotoCandidato(file: File[], candidatoId: number): Observable<Candidato> {
     const fileUpload = file[0] as File;
     const formData = new FormData();
 
     formData. append('file', fileUpload);
 
     return this.#http
-    .post<Candidato>(`${this.baseURL}upload-candidato-photo`, formData)
+    .post<Candidato>(`${this.baseURL}upload-candidato-photo/${candidatoId}`, formData)
     .pipe(take(1));
   }
 }

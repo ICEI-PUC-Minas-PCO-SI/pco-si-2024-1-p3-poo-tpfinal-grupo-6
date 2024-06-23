@@ -1,5 +1,6 @@
 <div class="container">
   <mat-accordion>
+    @if (usuarioLogado) {
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
@@ -11,6 +12,7 @@
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="/pages/usuarios/perfil"> Perfil </a>
     </mat-expansion-panel>
+    }
 
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
@@ -22,6 +24,21 @@
 
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="/pages/home/homePage"> Principal </a>
+    </mat-expansion-panel>
+
+    @if (usuarioLogado && !usuarioAtivo.isAdmin) {
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">settings</mat-icon>
+          Configurações
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/parametrosEleicoes/cadastrar"> Novo </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/parametrosEleicoes/lista"> Lista </a>
     </mat-expansion-panel>
 
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
@@ -74,14 +91,14 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
 
-      @if (usuarioAtivo.isAdmin) {
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="/pages/candidatos/cadastrar"> Novo </a>
-      }
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="/pages/candidatos/lista"> Lista </a>
     </mat-expansion-panel>
+    }
 
+    @if (usuarioLogado && usuarioAtivo.isAdmin) {
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
@@ -90,13 +107,14 @@
         </mat-panel-title>
       </mat-expansion-panel-header>
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="pages/emprestimos/gerenciarReservas">
-        Gerenciar Reservas
+      <a class="text-white" routerLink="pages/eleicoes/admin">
+        Painel Administrador
       </a>
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="pages/emprestimos/historico">
         Histórico de Reservas
       </a>
     </mat-expansion-panel>
+    }
   </mat-accordion>
 </div>

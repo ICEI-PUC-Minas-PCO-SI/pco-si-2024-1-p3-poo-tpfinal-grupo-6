@@ -44,11 +44,7 @@ export class CadastroComponent {
         Validators.minLength(4),
         Validators.maxLength(20),
       ]),
-      phoneNumber: new FormControl("", [
-        Validators.required,
-        Validators.minLength(11),
-        Validators.maxLength(11),
-      ]),
+      phoneNumber: new FormControl("", []),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [
         Validators.required,

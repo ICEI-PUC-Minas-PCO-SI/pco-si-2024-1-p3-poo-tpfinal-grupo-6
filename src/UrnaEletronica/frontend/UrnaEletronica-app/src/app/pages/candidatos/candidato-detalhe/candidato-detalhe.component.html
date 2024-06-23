@@ -16,12 +16,12 @@
                   <input
                     matInput
                     type="number"
-                    formControlName="candidatoId"
-                    [ngClass]="fieldValidator(ctrF.candidatoId)"
+                    formControlName="numCandidato"
+                    [ngClass]="fieldValidator(ctrF.numCandidato)"
                     readonly
                   />
                   <mat-error class="invalid-feedback">{{
-                    messageReturned(ctrF.candidatoId, "")
+                    messageReturned(ctrF.numCandidato, "")
                   }}</mat-error>
                 </mat-form-field>
                 <mat-form-field fxFlex="25" class="p-1" disabled>
@@ -109,12 +109,12 @@
                   <input
                     matInput
                     type="number"
-                    formControlName="candidatoId"
-                    [ngClass]="fieldValidator(ctrF.candidatoId)"
+                    formControlName="numCandidato"
+                    [ngClass]="fieldValidator(ctrF.numCandidato)"
                     readonly
                   />
                   <mat-error class="invalid-feedback">{{
-                    messageReturned(ctrF.candidatoId, "")
+                    messageReturned(ctrF.numCandidato, "")
                   }}</mat-error>
                 </mat-form-field>
               </div>
@@ -192,43 +192,49 @@
                 </mat-form-field>
               </div>
               <div fxLayout="row">
-                <mat-form-field fxFlex="33" class="p-1">
+                <mat-form-field fxFlex="40" class="p-1">
                   <mat-label>Cidade</mat-label>
                   <mat-select
                     matNativeControl
                     formControlName="cidadeId"
-                    (selectionChange)="verificarTipoCandidato()"
-                  >
-                    <mat-option [value]="0">Não Informado</mat-option>
+                    (selectionChange)="verificarCidade()"
+                     >
                     @for (cidade of cidades; track $index) {
-                    <mat-option value="cidade.id">cidade.nome</mat-option>
+                    <mat-option [value]="cidade.id"><b>{{cidade.siglaEstado}}</b> - {{cidade.nome}}</mat-option>
                     }
                   </mat-select>
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.cidadeId, "")
+                  }}</mat-error>
                 </mat-form-field>
-                <mat-form-field fxFlex="33" class="p-1">
+                <mat-form-field fxFlex="60" class="p-1">
                   <mat-label>Partido</mat-label>
                   <mat-select
                     matNativeControl
                     formControlName="partidoId"
-                    (selectionChange)="verificarTipoCandidato()"
+                    (selectionChange)="verificarPartido()"
                   >
-                    <mat-option [value]="0">Não Informado</mat-option>
                     @for (partido of partidos; track $index) {
-                    <mat-option value="partido.id">partido.nome</mat-option>
+                    <mat-option [value]="partido.id"><b>{{partido.sigla}}</b> - {{partido.nome}}</mat-option>
                     }
                   </mat-select>
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.partidoId, "")
+                  }}</mat-error>
                 </mat-form-field>
-                <mat-form-field fxFlex="34" class="p-1" disabled>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="100" class="p-1" disabled>
                   <mat-label>Coligacao</mat-label>
                   <input
                     matInput
                     type="text"
-                    formControlName="nomeColigacao"
-                    [ngClass]="fieldValidator(ctrF.nomeColigacao)"
+                    formControlName="coligacaoTxt"
+                    [ngClass]="fieldValidator(ctrF.coligacaoTxt)"
                     readonly
                   />
                   <mat-error class="invalid-feedback">{{
-                    messageReturned(ctrF.nomeColigacao, "")
+                    messageReturned(ctrF.coligacaoTxt, "")
                   }}</mat-error>
                 </mat-form-field>
               </div>
@@ -292,8 +298,8 @@
     </div>
   </form>
 </div>
-<!--
+
   <p>Form Value: {{ formCandidato.value | json }}</p>
   <p>Form Status: {{ formCandidato.status | json }}</p>
--->
+
 

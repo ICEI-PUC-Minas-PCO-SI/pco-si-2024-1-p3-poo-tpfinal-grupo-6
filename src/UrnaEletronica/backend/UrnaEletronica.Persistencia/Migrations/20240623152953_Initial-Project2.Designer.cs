@@ -12,8 +12,8 @@ using UrnaEletronica.Persistencia.Contexto;
 namespace UrnaEletronica.Persistencia.Migrations
 {
     [DbContext(typeof(UrnaEletronicaContexto))]
-    [Migration("20240621193745_Initial-Project")]
-    partial class InitialProject
+    [Migration("20240623152953_Initial-Project2")]
+    partial class InitialProject2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -124,10 +124,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.Property<int>("CidadeId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ColigacaoId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ColigacoaId")
+                    b.Property<int>("ColigacaoId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("DataNascimento")
@@ -536,12 +533,14 @@ namespace UrnaEletronica.Persistencia.Migrations
 
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Coligacoes.Coligacao", "Coligacao")
                         .WithMany("Candidatos")
-                        .HasForeignKey("ColigacaoId");
+                        .HasForeignKey("ColigacaoId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("UrnaEletronica.Dominio.Modelos.Partidos.Partido", "Partido")
                         .WithMany("Candidatos")
                         .HasForeignKey("PartidoId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("Cidade");

@@ -25,11 +25,9 @@
               <mat-select
                 matNativeControl
                 formControlName="coligacaoId"
-                (selectionChange)="getColigacoes()"
               >
-                <mat-option [value]="0">Não Informado</mat-option>
                 @for (coligacao of coligacoes; track $index) {
-                <mat-option value="coligacao.id">coligacao.nome</mat-option>
+                <mat-option [value]="coligacao.id">{{coligacao.nome}}</mat-option>
                 }
               </mat-select>
             </mat-form-field>

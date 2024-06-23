@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace UrnaEletronica.Persistencia.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialProject : Migration
+    public partial class InitialProject2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -344,8 +344,7 @@ namespace UrnaEletronica.Persistencia.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     CidadeId = table.Column<int>(type: "int", nullable: false),
                     PartidoId = table.Column<int>(type: "int", nullable: false),
-                    ColigacoaId = table.Column<int>(type: "int", nullable: false),
-                    ColigacaoId = table.Column<int>(type: "int", nullable: true)
+                    ColigacaoId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -360,13 +359,14 @@ namespace UrnaEletronica.Persistencia.Migrations
                         name: "FK_Candidatos_Coligacoes_ColigacaoId",
                         column: x => x.ColigacaoId,
                         principalTable: "Coligacoes",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Candidatos_Partidos_PartidoId",
                         column: x => x.PartidoId,
                         principalTable: "Partidos",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 

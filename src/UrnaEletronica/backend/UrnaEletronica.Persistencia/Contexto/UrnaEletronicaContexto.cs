@@ -11,6 +11,7 @@ using UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos;
 using UrnaEletronica.Dominio.Modelos.Partidos;
 using UrnaEletronica.Dominio.Modelos.LogsVotosBatchs;
 using UrnaEletronica.Dominio.Modelos.Resultados;
+using System.Reflection.Emit;
 
 namespace UrnaEletronica.Persistencia.Contexto
 {
@@ -54,10 +55,20 @@ namespace UrnaEletronica.Persistencia.Contexto
                 .WithMany(c => c.Partidos)
                 .HasForeignKey(p => p.ColigacaoId);
 
+            // Configuração do relacionamento entre Candidato e Coligacao
+            builder.Entity<Candidato>()
+                .HasOne(c => c.Coligacao)
+                .WithMany(c => c.Candidatos)
+                .HasForeignKey(c => c.ColigacaoId)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            // Configuração do relacionamento entre Candidato e Partido
             builder.Entity<Candidato>()
                 .HasOne(c => c.Partido)
                 .WithMany(p => p.Candidatos)
-                .HasForeignKey(c => c.PartidoId);
+                .HasForeignKey(c => c.PartidoId)
+                .OnDelete(DeleteBehavior.Restrict);
+
         }
 
     }
