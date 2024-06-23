@@ -50,7 +50,7 @@ export class CidadeDetalheComponent implements OnInit {
         "",
         [
           Validators.required,
-          Validators.minLength(10),
+          Validators.minLength(3),
           Validators.maxLength(100),
         ],
       ],

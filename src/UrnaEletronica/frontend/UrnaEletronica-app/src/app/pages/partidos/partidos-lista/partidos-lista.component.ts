@@ -13,8 +13,8 @@ import { Partido } from '../../../shared/models/interfaces/partido';
 
 @Component({
   selector: 'app-partidos-lista',
-  templateUrl: './partido-lista.component.html',
-  styleUrls: ['./partido-lista.component.scss']
+  templateUrl: './partidos-lista.component.html',
+  styleUrls: ['./partidos-lista.component.scss']
 })
 export class PartidosListaComponent implements OnInit {
 
@@ -27,7 +27,7 @@ export class PartidosListaComponent implements OnInit {
   #usuarioService = inject(UsuarioService);
 
   public formPartidosLista = {} as FormGroup;
-  
+
   public partidos = [] as Partido[];
   public partido = {} as Partido;
 

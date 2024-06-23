@@ -4,10 +4,6 @@ import { SharedModule } from '../../shared';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CandidatoDetalheComponent, CandidatosComponent, CandidatosListaComponent } from '.';
 
-
-
-
-
 @NgModule({
   declarations: [
     CandidatosComponent,

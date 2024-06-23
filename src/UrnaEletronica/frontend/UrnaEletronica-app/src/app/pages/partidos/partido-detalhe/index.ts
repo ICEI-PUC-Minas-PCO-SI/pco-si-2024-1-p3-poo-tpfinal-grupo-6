@@ -1,1 +1,1 @@
-export * from './cidade-detalhe.component'
+export * from './partido-detalhe.component'

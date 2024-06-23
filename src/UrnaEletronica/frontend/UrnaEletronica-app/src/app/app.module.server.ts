@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { ServerModule } from '@angular/platform-server';
 
-import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
-import { CandidatosModule } from './pages/candidatos/candidatos.module';
+import { AppModule } from './app.module';
 
 @NgModule({
   imports: [

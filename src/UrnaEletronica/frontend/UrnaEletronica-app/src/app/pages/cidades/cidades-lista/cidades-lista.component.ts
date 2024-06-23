@@ -27,7 +27,7 @@ export class CidadesListaComponent implements OnInit {
   #usuarioService = inject(UsuarioService);
 
   public formCidadesLista = {} as FormGroup;
-  
+
   public cidades = [] as Cidade[];
   public cidade = {} as Cidade;
 
@@ -78,6 +78,7 @@ export class CidadesListaComponent implements OnInit {
       .subscribe({
         next: (retorno: Cidade[]) => {
           this.cidades = retorno;
+          console.log(this.cidades.length)
         },
         error: (error: any) => {
           this.#toastrService.error("Erro ao carregar Cidades", "Erro!");
