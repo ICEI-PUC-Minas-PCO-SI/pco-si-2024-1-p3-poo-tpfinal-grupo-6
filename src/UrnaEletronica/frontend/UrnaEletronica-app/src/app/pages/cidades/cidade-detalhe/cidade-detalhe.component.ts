@@ -10,7 +10,6 @@ import { FormValidator } from '../../../util/class';
 @Component({
   selector: 'app-cidade-detalhe',
   templateUrl: './cidade-detalhe.component.html',
-  styleUrls: ['./cidade-detalhe.component.scss']
 })
 export class CidadeDetalheComponent implements OnInit {
 
