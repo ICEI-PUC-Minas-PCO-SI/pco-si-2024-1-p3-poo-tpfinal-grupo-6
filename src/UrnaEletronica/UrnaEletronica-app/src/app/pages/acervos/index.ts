@@ -1,5 +1,0 @@
-export * from './acervos.component'
-export * from './acervos.module'
-export * from './acervo-detalhe'
-export * from './acervo-lista'
-export * from './acervo-edicao'

@@ -1,0 +1,89 @@
+<div class="container">
+  <mat-accordion>
+
+      <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+        <mat-expansion-panel-header>
+          <mat-panel-title class="text-white">
+            <mat-icon class="urn-drawer-icon">person</mat-icon>
+            Usuário
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-divider class="mt-2 mb-2" />
+        <a class="text-white" routerLink="/pages/usuarios/perfil">
+          Perfil
+        </a>
+      </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header >
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">home</mat-icon>
+          Home
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/home/homePage">
+        Principal
+      </a>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">groups</mat-icon>
+          Candiadato
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      @if (usuarioAtivo.isAdmin) {
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/candidatos/cadastrar">
+        Novo
+      </a>
+      }
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/candidatos/lista">
+        Lista
+      </a>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">location_city</mat-icon>
+          Cidade
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/cidades/cadastrar">
+        Novo
+      </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/cidades/lista">
+        Lista
+      </a>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">admin_panel_settings</mat-icon>
+          Administrador
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/emprestimos/gerenciarReservas">
+        Gerenciar Reservas
+      </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/emprestimos/historico">
+        Histórico de Reservas
+      </a>
+    </mat-expansion-panel>
+
+  </mat-accordion>
