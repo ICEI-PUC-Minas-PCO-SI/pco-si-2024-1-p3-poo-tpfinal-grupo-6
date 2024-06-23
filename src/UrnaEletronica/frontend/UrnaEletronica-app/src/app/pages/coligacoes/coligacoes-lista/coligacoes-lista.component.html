@@ -1,3 +1,84 @@
-<p>
-  coligacoes-lista works!
-</p>
+<div class="container-fluid">
+  <div class="p-2">
+    <p class="h5">Lista de Coligações:</p>
+  </div>
+  <form [formGroup]="formColigacoesLista">
+    <div fxLayout="row wrap" class="m-0 p-0 g-0">
+      <mat-form-field fxFlex="20" fxFlex.xs="100" fxFlex.sm="20" class="ms-2 p-2">
+        <mat-label>Filtrar por</mat-label>
+        <mat-select matNativeControl formControlName="opcaoPesquisa" (selectionChange)="getColigacoes()">
+          <mat-option value="Todos">Todos</mat-option>
+          <mat-option value="Autor">Autor</mat-option>
+          <mat-option value="Titulo">Título</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field fxFlex="79" fxFlex.xs="100" fxFlex.sm="50" class="p-2">
+        <mat-label>Argumento</mat-label>
+        <input matInput formControlName="argumento">
+        <button matSuffix mat-icon-button (click)="getColigacoes()">
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
+
+<table class="table table-striped table-hover table-light rounded-3 ">
+  <thead class="table-primary">
+    <tr>
+      <th>#</th>
+      <th>Nome</th>
+      <th>Silga Coligacao</th>
+      <th>Nome Coligacao</th>
+      <th>Qtde Votos</th>
+      <th>Opções</th>
+    </tr>
+  </thead>
+  @if (coligacoes && coligacoes.length > 0) {
+  <tbody>
+    @for (coligacao of coligacoes; track coligacao.id) {
+    <tr (click)="editarColigacao(coligacao.id)" style="cursor: pointer">
+      <td>{{coligacao.id}}</td>
+      <td>{{coligacao.nome}}</td>
+      <td>{{coligacao.sigla}}</td>
+      <td>{{coligacao.nome}}</td>
+      <td>{{coligacao.qtdVotos}}</td>
+      <td>
+        @if (usuarioAdmin) {
+        <div class="btn-group mx-1">
+          <a class="text-danger" (click)="abrirModal($event, coligacao.id, coligacao.nome)" matTooltip="Excluír">
+            <mat-icon>delete</mat-icon>
+          </a>
+        </div>
+        }
+        @if (!usuarioAdmin) {
+        <div class="btn-group mx-1">
+          <a class="text-secondary" (click)="detalheColigacao($event, coligacao.id)" matTooltip="Detalhe">
+            <mat-icon>loupe</mat-icon>
+          </a>
+        </div>
+        }
+      </td>
+    </tr>
+    }
+  </tbody>
+  } @else if (coligacoes.length) {
+  <tfoot>
+    <td colspan="12" class="text-center" class="text-center">
+      <h4>Nenhuma coligação encontrada</h4>
+    </td>
+  </tfoot>
+  }
+</table>
+
+
+<!-- @if (acervos.length) {
+<div class="card-footer d-flex p-1 m-0 bcp-bg-primary" *ngIf="acervos.length">
+  <div class="justify-content-center m-auto p-0 m-0 my-1">
+    <ngb-pagination [collectionSize]="paginacao.itensPorPagina" [page]="paginacao.paginaCorrente"
+      [maxSize]="paginacao.totalDePaginas" [rotate]="true" [boundaryLinks]="true" [ellipses]="false"
+      (pageChange)="alteracaoDePagina($event)">
+    </ngb-pagination>
+  </div>
+</div>
+} -->

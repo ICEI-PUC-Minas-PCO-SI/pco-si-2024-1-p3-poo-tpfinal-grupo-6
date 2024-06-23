@@ -10,6 +10,7 @@ import {
 import { CadastroComponent, LoginComponent, PerfilComponent, UsuariosComponent } from './pages/usuarios';
 import { CidadeDetalheComponent, CidadesComponent, CidadesListaComponent } from './pages/cidades';
 import { PartidoDetalheComponent, PartidosComponent, PartidosListaComponent } from './pages/partidos';
+import { ColigacaoDetalheComponent, ColigacoesComponent, ColigacoesListaComponent } from './pages/coligacoes';
 
 
 const routes: Routes = [
@@ -71,6 +72,7 @@ const routes: Routes = [
       { path: "cadastrar", component: CidadeDetalheComponent },
     ],
   },
+
   {
     path: "partidos",
     redirectTo: "pages/partidos/lista",
@@ -84,6 +86,22 @@ const routes: Routes = [
       { path: "lista", component: PartidosListaComponent },
       { path: "detalhe/:id", component: PartidoDetalheComponent },
       { path: "cadastrar", component: PartidoDetalheComponent },
+    ],
+  },
+
+  {
+    path: "coligacoes",
+    redirectTo: "pages/coligacoes/lista",
+    pathMatch: "full",
+  },
+  {
+    path: "pages/coligacoes",
+    component: ColigacoesComponent,
+    children: [
+      { path: "", pathMatch: "full", redirectTo: "lista" },
+      { path: "lista", component: ColigacoesListaComponent },
+      { path: "detalhe/:id", component: ColigacaoDetalheComponent },
+      { path: "cadastrar", component: ColigacaoDetalheComponent },
     ],
   },
 

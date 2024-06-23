@@ -1,22 +1,19 @@
 <div class="container">
   <mat-accordion>
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">person</mat-icon>
+          Usuário
+        </mat-panel-title>
+      </mat-expansion-panel-header>
 
-      <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
-        <mat-expansion-panel-header>
-          <mat-panel-title class="text-white">
-            <mat-icon class="urn-drawer-icon">person</mat-icon>
-            Usuário
-          </mat-panel-title>
-        </mat-expansion-panel-header>
-
-        <mat-divider class="mt-2 mb-2" />
-        <a class="text-white" routerLink="/pages/usuarios/perfil">
-          Perfil
-        </a>
-      </mat-expansion-panel>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/usuarios/perfil"> Perfil </a>
+    </mat-expansion-panel>
 
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
-      <mat-expansion-panel-header >
+      <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
           <mat-icon class="urn-drawer-icon">home</mat-icon>
           Home
@@ -24,10 +21,7 @@
       </mat-expansion-panel-header>
 
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/home/homePage">
-        Principal
-      </a>
-
+      <a class="text-white" routerLink="/pages/home/homePage"> Principal </a>
     </mat-expansion-panel>
 
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
@@ -39,32 +33,38 @@
       </mat-expansion-panel-header>
 
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="pages/cidades/cadastrar">
-        Novo
-      </a>
+      <a class="text-white" routerLink="pages/cidades/cadastrar"> Novo </a>
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="pages/cidades/lista">
-        Lista
-      </a>
+      <a class="text-white" routerLink="pages/cidades/lista"> Lista </a>
     </mat-expansion-panel>
-    
-        <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
-          <mat-expansion-panel-header>
-            <mat-panel-title class="text-white">
-              <mat-icon class="urn-drawer-icon">3p</mat-icon>
-              Partidos
-            </mat-panel-title>
-          </mat-expansion-panel-header>
 
-          <mat-divider class="mt-2 mb-2" />
-          <a class="text-white" routerLink="pages/partidos/cadastrar">
-            Novo
-          </a>
-          <mat-divider class="mt-2 mb-2" />
-          <a class="text-white" routerLink="pages/partidos/lista">
-            Lista
-          </a>
-        </mat-expansion-panel>
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">hub</mat-icon>
+          Coligação
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/coligacoes/cadastrar"> Novo </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/coligacoes/lista"> Lista </a>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">3p</mat-icon>
+          Partidos
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/partidos/cadastrar"> Novo </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/partidos/lista"> Lista </a>
+    </mat-expansion-panel>
 
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
@@ -76,14 +76,10 @@
 
       @if (usuarioAtivo.isAdmin) {
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/candidatos/cadastrar">
-        Novo
-      </a>
+      <a class="text-white" routerLink="/pages/candidatos/cadastrar"> Novo </a>
       }
       <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="/pages/candidatos/lista">
-        Lista
-      </a>
+      <a class="text-white" routerLink="/pages/candidatos/lista"> Lista </a>
     </mat-expansion-panel>
 
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
@@ -102,5 +98,5 @@
         Histórico de Reservas
       </a>
     </mat-expansion-panel>
-
   </mat-accordion>
+</div>
