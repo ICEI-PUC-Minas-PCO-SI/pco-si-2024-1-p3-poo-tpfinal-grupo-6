@@ -107,7 +107,7 @@ public class CandidatosController : ControllerBase
 
             var createdCandidato = await _candidatoServico.CreateCandidato(candidatoDto);
 
-            if (createdCandidato != null) return Ok(candidato);
+            if (createdCandidato != null) return Ok(createdCandidato);
 
             return BadRequest("Ocorreu um erro ao incluir candidato.");
         }

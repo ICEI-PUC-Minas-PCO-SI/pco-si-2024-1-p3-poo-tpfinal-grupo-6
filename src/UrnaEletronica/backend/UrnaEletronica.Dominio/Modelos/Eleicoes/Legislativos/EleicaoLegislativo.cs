@@ -11,7 +11,7 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos
         public override IEnumerable<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> candidatos)
         {
 
-            List<Resultado> resultados = [];
+            List<Resultado> resultados = new List<Resultado>();
 
             int totalVotos = candidatos.Sum(c => c.QtdVotos);
             int quocienteEleitoral = totalVotos / parametroEleicao.QtdCadeiras;
@@ -83,36 +83,6 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos
                 }
             }
             return resultados.ToArray();
-        }
-
-        public string Legislativo()
-        {
-            return "Vereador";
-        }
-
-        private void setTipoLegislativo()
-        {
-            TipoLegislativo = Legislativo();
-        }
-
-        public override bool IniciarEleicao()
-        {
-            return false;
-        }
-
-        public override bool EncerrarEleicao()
-        {
-            return false;
-        }
-
-        public override bool EleicaoEmAdamento()
-        {
-            return base.IniciarVotacao;
-        }
-
-        public override bool EleicaoEncerrada()
-        {
-            return base.EncerrarVotacao;
         }
     }
 }

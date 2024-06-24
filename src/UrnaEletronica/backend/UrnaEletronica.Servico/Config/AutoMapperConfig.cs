@@ -2,6 +2,7 @@
 using UrnaEletronica.Dominio.Modelos.Candidatos;
 using UrnaEletronica.Dominio.Modelos.Cidades;
 using UrnaEletronica.Dominio.Modelos.Coligacoes;
+using UrnaEletronica.Dominio.Modelos.Eleicoes;
 using UrnaEletronica.Dominio.Modelos.LogsVotosBatchs;
 using UrnaEletronica.Dominio.Modelos.ParametrosEleicoes;
 using UrnaEletronica.Dominio.Modelos.Partidos;
@@ -10,6 +11,7 @@ using UrnaEletronica.Dominio.Modelos.Usuarios;
 using UrnaEletronica.Servico.Dtos.Candidatos;
 using UrnaEletronica.Servico.Dtos.Cidades;
 using UrnaEletronica.Servico.Dtos.Coligacoes;
+using UrnaEletronica.Servico.Dtos.Eleicoes;
 using UrnaEletronica.Servico.Dtos.LogVotosBatch;
 using UrnaEletronica.Servico.Dtos.ParametrosEleicoes;
 using UrnaEletronica.Servico.Dtos.Partidos;
@@ -28,6 +30,8 @@ namespace UrnaEletronica.Servico.Config
             CreateMap<Cidade, CidadeDto>().ReverseMap();
 
             CreateMap<Coligacao, ColigacaoDto>().ReverseMap();
+
+            CreateMap<Eleicao, EleicaoDto>().ReverseMap();
             
             CreateMap<LogVotosBatch, LogVotosBatchDto>().ReverseMap();
             CreateMap<LogVotosBatchErros, LogVotosBatchErrosDto>().ReverseMap();

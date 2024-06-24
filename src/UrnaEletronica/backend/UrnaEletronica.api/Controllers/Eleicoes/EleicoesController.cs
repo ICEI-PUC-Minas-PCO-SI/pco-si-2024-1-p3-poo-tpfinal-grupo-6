@@ -7,6 +7,7 @@ using UrnaEletronica.api.Util.Extensions.Security;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
 using UrnaEletronica.Servico.Servicos.Contratos.Eleicoes;
 using UrnaEletronica.Servico.Servicos.Implementacoes.Eleicoes;
+using UrnaEletronica.Dominio.Modelos.Eleicoes;
 
 namespace UrnaEletronica.api.Controllers.Eleicoes
 {
@@ -16,27 +17,26 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
     public class EleicoesController : ControllerBase
     {
         private readonly IUsuarioServico _usuarioServico;
-        private readonly IEleicaoExecutivaServico _eleicaoExecutivaServico;
-        private readonly IEleicaoLegislativaServico _eleicaoLegislativaServico;
+        private readonly IEleicaoServico _eleicaoServico;
 
-        public EleicoesController(IUsuarioServico usuarioServico, IEleicaoExecutivaServico eleicaoExecutivaServico, IEleicaoLegislativaServico eleicaoLegislativaServico)
+        public EleicoesController(IUsuarioServico usuarioServico, IEleicaoServico eleicaoServico)
         {
             _usuarioServico = usuarioServico;
-            _eleicaoExecutivaServico = eleicaoExecutivaServico;
-            _eleicaoLegislativaServico = eleicaoLegislativaServico;
+            _eleicaoServico = eleicaoServico;
         }
 
 
         /// <summary>
-        /// Calcular vencedor processo de eleição Executiva
+        /// Calcular vencedor processo de eleição
         /// </summary>
-        /// <response code="200">Dados das coligacoes cadastradas</response>
+        /// <param name="eleicaoId">Identificador da eleição</param>
+        /// <response code="200">Dados do resultado das Eleições</response>
         /// <response code="400">Parâmetros incorretos</response>
         /// <response code="500">Erro interno</response>
 
         [Authorize]
-        [HttpGet("calcularVencedorExecutivo/executivo")]
-        public async Task<IActionResult> CalcularVencedorExecutivo()
+        [HttpPost("{eleicaoId}/calcularVencedor")]
+        public async Task<IActionResult> CalcularVencedor(int eleicaoId)
         {
             try
             {
@@ -46,9 +46,13 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
 
                 if (!usuario.IsAdmin) return Unauthorized();
 
-                if (!_eleicaoExecutivaServico.EleicaoEmAndamento()) return BadRequest("Não existe processo de Eleição em andamento, vencedor não disponível.");
+                var eleicao = await _eleicaoServico.GetEleicaoByIdAsync(eleicaoId);
 
-                var resultadoEleicao =  _eleicaoExecutivaServico.CalcularResultado();
+                if (eleicao == null) return BadRequest("Não existe processo de Eleição em andamento.");
+
+                if (!eleicao.IniciarVotacao) return BadRequest("Não existe processo de Eleição em andamento, vencedor não disponível.");
+
+                var resultadoEleicao =  _eleicaoServico.CalcularResultado(eleicaoId);
 
                 if (resultadoEleicao == null) return BadRequest("Não foi possível apurar vencedor.");
 
@@ -63,12 +67,12 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
         /// <summary>
         /// Inicia processo de eleição
         /// </summary>
-        /// <response code="200">Dados das coligacoes cadastradas</response>
+        /// <response code="200">Retorna true (verdadeiro) se inicialização OK.</response>
         /// <response code="400">Parâmetros incorretos</response>
         /// <response code="500">Erro interno</response>
 
         [Authorize]
-        [HttpGet("iniciarEleicao")]
+        [HttpPost("iniciarEleicao")]
         public async Task<IActionResult> IniciarEleicao()
         {
             try
@@ -79,13 +83,9 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
 
                 if (!usuario.IsAdmin) return Unauthorized();
 
-                if (_eleicaoExecutivaServico.EleicaoEmAndamento()) return BadRequest("Eleição em andamento, não pode ser iniciada.");
+                if (await _eleicaoServico.IniciarEleicaoAsync()) return Ok(true);
 
-                if (_eleicaoExecutivaServico.EleicaoEncerrada()) return BadRequest("Eleição finalizada, não pode ser iniciada.");
-
-                if (_eleicaoExecutivaServico.IniciarEleicao()) return Ok("Eleição iniciada.");
-
-                return BadRequest("Falha ao iniciar eleição.");
+                return BadRequest("Falha ao iniciar eleições.");
             }
             catch (Exception ex)
             {
@@ -94,15 +94,16 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
         }
 
         /// <summary>
-        /// Encerra processo de eleição
+        /// Encerrar processo de eleição
         /// </summary>
-        /// <response code="200">Dados das coligacoes cadastradas</response>
+        /// <param name="eleicaoId">Identificador da eleição</param>
+        /// <response code="200">Dretorn true (verdadeiro) se a eleição for encerrada</response>
         /// <response code="400">Parâmetros incorretos</response>
         /// <response code="500">Erro interno</response>
 
         [Authorize]
-        [HttpGet("encerrarEleicao")]
-        public async Task<IActionResult> EncerrarEleicao()
+        [HttpPost("{eleicaoId}/encerrarEleicao")]
+        public async Task<IActionResult> EncerrarEleicao(int eleicaoId)
         {
             try
             {
@@ -112,43 +113,80 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
 
                 if (!usuario.IsAdmin) return Unauthorized();
 
-                if (!_eleicaoExecutivaServico.EleicaoEmAndamento()) return BadRequest("Não existe processo de Eleição em andamento, não pode ser encerrada.");
+                var eleicao = await _eleicaoServico.GetEleicaoByIdAsync(eleicaoId);
 
-                if (_eleicaoExecutivaServico.EleicaoEncerrada()) return BadRequest("Eleição já encerrada.");
+                if (eleicao == null) return BadRequest("Não existe processo de Eleição em andamento.");
 
-                if (_eleicaoExecutivaServico.EncerrarEleicao()) return Ok("Eleição encerrada.");
+                if (!eleicao.IniciarVotacao) return BadRequest("Não existe processo de Eleição em andamento.");
+
+                if (eleicao.EncerrarVotacao) return BadRequest("Eleição já encerrada.");
+
+                if (await _eleicaoServico.EncerrarEleicaoAsync(eleicaoId)) return Ok(true);
 
                 return BadRequest("Falha ao encerrar eleição.");
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar vencedor. Erro: {ex.Message}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao encerrar eleicao. Erro: {ex.Message}");
             }
         }
 
+        /// <summary>
+        /// Recupera um processo de Eleição por eleicaoId
+        /// </summary>
+        /// <param name="eleicaoId">Identificador da eleição</param>
+        /// <response code="200">Dados das eleição cadastradas</response>
+        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="500">Erro interno</response>
         [Authorize]
-        [HttpGet("calcularVencedorLegislativo/legislativo")]
-        public async Task<IActionResult> CalcularVencedorLegislativo()
+        [HttpGet("{eleicaoId}")]
+        public async Task<IActionResult> GetEleicaoById(int eleicaoId)
         {
             try
             {
                 var usuario = await _usuarioServico.GetUsuarioByUserNameAsync(User.GetUserNameClaim());
 
                 if (usuario == null) return Unauthorized();
-                if (!usuario.IsAdmin) return Unauthorized();
 
-                if (!_eleicaoLegislativaServico.EleicaoEmAndamento()) return BadRequest("Não existe processo de Eleição em andamento, vencedor não disponível.");
+                var eleicao = await _eleicaoServico.GetEleicaoByIdAsync(eleicaoId);
 
-                var resultadoEleicao = _eleicaoLegislativaServico.CalcularResultado();
+                if (eleicao == null) return BadRequest("Não existe processo de Eleição em andamento.");
 
-                if (resultadoEleicao == null) return BadRequest("Não foi possível apurar vencedor.");
-
-                return Ok(resultadoEleicao);
+                return Ok(eleicao);
             }
             catch (Exception ex)
             {
-                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar vencedor. Erro: {ex.Message}");
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar eleição por Id. Erro: {ex.Message}");
             }
         }
+
+        /// <summary>
+        /// Encerrar todos os processos de eleição
+        /// </summary>
+        /// <response code="200">Dados das eleições cadastradas</response>
+        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="500">Erro interno</response>
+        [Authorize]
+        [HttpGet]
+        public async Task<IActionResult> GetAllEleicoes()
+        {
+            try
+            {
+                var usuario = await _usuarioServico.GetUsuarioByUserNameAsync(User.GetUserNameClaim());
+
+                if (usuario == null) return Unauthorized();
+
+                var eleicao = await _eleicaoServico.GetAllEleicoesAsync();
+
+                if (eleicao == null) return BadRequest("Não existem processos de Eleições em andamento.");
+
+                return Ok(eleicao);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar eleições. Erro: {ex.Message}");
+            }
+        }
+
     }
 }

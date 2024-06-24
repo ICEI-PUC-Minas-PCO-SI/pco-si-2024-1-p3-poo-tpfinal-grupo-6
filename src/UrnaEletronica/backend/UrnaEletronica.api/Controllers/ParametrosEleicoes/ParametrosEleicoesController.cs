@@ -73,7 +73,7 @@ namespace UrnaEletronica.api.Controllers.ParametrosEleicoes
                     if (parametro != null) return BadRequest("Já existe um parâmetro cadastrado.");
 
                     var createdParametro = await _parametroEleicaoServico.CreateParametroEleicao(parametroEleicaoDto);
-                    if (createdParametro != null) return Ok(parametro);
+                    if (createdParametro != null) return Ok(createdParametro);
                     return BadRequest("Ocorreu um erro ao incluir parâmetro");
 
                 }

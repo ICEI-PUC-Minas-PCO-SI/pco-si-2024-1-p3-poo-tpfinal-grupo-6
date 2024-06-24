@@ -109,6 +109,7 @@ export class CidadeDetalheComponent implements OnInit {
       .subscribe({
         next: (novaCidade: Cidade) => {
           this.#toastrService.success("Cidade cadastrado!", "Sucesso!");
+          console.log(novaCidade)
           window.location.reload;
           this.#router.navigateByUrl(
             `/pages/cidades/detalhe/${novaCidade.id}`

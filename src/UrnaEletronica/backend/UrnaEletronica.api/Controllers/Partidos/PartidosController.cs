@@ -97,7 +97,7 @@ namespace UrnaEletronica.api.Controllers.Partidos
                 if (partido != null) return BadRequest("J� existe um partido cadastrado.");
 
                 var createdPartido = await _partidoServico.CreatePartido(partidoDto);
-                if (createdPartido != null) return Ok(partido);
+                if (createdPartido != null) return Ok(createdPartido);
                 return BadRequest("Ocorreu um erro ao incluir partido");
 
             }

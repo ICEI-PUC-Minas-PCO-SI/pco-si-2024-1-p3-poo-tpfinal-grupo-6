@@ -1,3 +1,317 @@
-<p>
-  config-administrador works!
-</p>
+
+<div class="container-fluid">
+  <div class="card rounded mat-elevation-z4">
+    <div class="card-header rounded text-center text-white bg-dark">
+      <h1 class="mt-2">Start / Stop Eleição</h1>
+    </div>
+    <div fxLayout="row" fxFlex="40" class="mt-2">
+      <div class="card-body p-0 mt-1 bg-white text-black">
+          <button
+          class="btn btn-outline-success mx-1 px-4"
+          (click)="startEleicao()"
+          >
+          Start
+        </button>
+        <button
+        class="btn btn-outline-primary mx-1 px-4"
+        (click)="startEleicao()"
+        >
+        Stop
+      </button>
+        <!--
+            <h4 class="border-bottom mt-2">Dados de Cadastro</h4>
+            <div class="bg-secondary">
+              <h5 class="border-bottom mt-2">Dados de controle</h5>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>Candidato Id</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="numCandidato"
+                    [ngClass]="fieldValidator(ctrF.numCandidato)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.numCandidato, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>Cidade Id</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="cidadeId"
+                    [ngClass]="fieldValidator(ctrF.cidadeId)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.cidadeId, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>Partido Id</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="partidoId"
+                    [ngClass]="fieldValidator(ctrF.partidoId)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.partidoId, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>Coligacao Id</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="coligacaoId"
+                    [ngClass]="fieldValidator(ctrF.coligacaoId)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.coligacaoId, "")
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>É Executivo</mat-label>
+                  <input
+                    matInput
+                    type="texto"
+                    formControlName="ehExecutivo"
+                    [ngClass]="fieldValidator(ctrF.ehExecutivo)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.ehExecutivo, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>É Legislativo</mat-label>
+                  <input
+                    matInput
+                    type="texto"
+                    formControlName="ehLegislativo"
+                    [ngClass]="fieldValidator(ctrF.ehLegislativo)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.ehLegislativo, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>Contabilizar Voto</mat-label>
+                  <input
+                    matInput
+                    type="texto"
+                    formControlName="votosValidos"
+                    [ngClass]="fieldValidator(ctrF.votosValidos)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.votosValidos, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="25" class="p-1" disabled>
+                  <mat-label>Qtd Votos</mat-label>
+                  <input
+                    matInput
+                    type="number"
+                    formControlName="numCandidato"
+                    [ngClass]="fieldValidator(ctrF.numCandidato)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.numCandidato, "")
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div>
+              <h5 class="border-bottom mt-2">Dados do Candidato</h5>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="25" class="p-1">
+                  <mat-label>Tipo Candidato</mat-label>
+                  <mat-select
+                    matNativeControl
+                    formControlName="opcaoCandidato"
+                    (selectionChange)="verificarTipoCandidato()"
+                  >
+                    <mat-option value="Executivo">Executivo</mat-option>
+                    <mat-option value="Legislativo">Legislativo</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field fxFlex="75" class="p-1">
+                  <mat-label>Nome</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="nome"
+                    [ngClass]="fieldValidator(ctrF.nome)"
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.nome, "")
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="25" class="p-1">
+                  <mat-label>Cand. Real</mat-label>
+                  <mat-select
+                    matNativeControl
+                    formControlName="candidatoReal"
+                    (selectionChange)="verificarTipoCandidato()"
+                  >
+                    <mat-option value="Sim">Sim</mat-option>
+                    <mat-option value="Nao">Não</mat-option>
+                  </mat-select>
+                </mat-form-field>
+                <mat-form-field fxFlex="35" class="p-1">
+                  <mat-label>Data Nascimento</mat-label>
+                  <input
+                    matInput
+                    [matDatepicker]="dataNascimento"
+                    formControlName="dataNascimento"
+                    [ngClass]="fieldValidator(ctrF.dataNascimento)"
+                    readonly
+                  />
+                  <mat-datepicker-toggle
+                    matIconSuffix
+                    class="text-info"
+                    [for]="dataNascimento"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker
+                    #dataNascimento
+                    [disabled]="!temDataNascimento"
+                  ></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field fxFlex="40" class="p-1" disabled>
+                  <mat-label>Tipo Candidatura</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="tipoCandidatura"
+                    [ngClass]="fieldValidator(ctrF.tipoCandidatura)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.tipoCandidatura, "")
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="40" class="p-1">
+                  <mat-label>Cidade</mat-label>
+                  <mat-select
+                    matNativeControl
+                    formControlName="cidadeId"
+                    (selectionChange)="verificarCidade()"
+                     >
+                    @for (cidade of cidades; track $index) {
+                    <mat-option [value]="cidade.id"><b>{{cidade.siglaEstado}}</b> - {{cidade.nome}}</mat-option>
+                    }
+                  </mat-select>
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.cidadeId, "")
+                  }}</mat-error>
+                </mat-form-field>
+                <mat-form-field fxFlex="60" class="p-1">
+                  <mat-label>Partido</mat-label>
+                  <mat-select
+                    matNativeControl
+                    formControlName="partidoId"
+                    (selectionChange)="verificarPartido()"
+                  >
+                    @for (partido of partidos; track $index) {
+                    <mat-option [value]="partido.id"><b>{{partido.sigla}}</b> - {{partido.nome}}</mat-option>
+                    }
+                  </mat-select>
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.partidoId, "")
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
+              <div fxLayout="row">
+                <mat-form-field fxFlex="100" class="p-1" disabled>
+                  <mat-label>Coligacao</mat-label>
+                  <input
+                    matInput
+                    type="text"
+                    formControlName="coligacaoTxt"
+                    [ngClass]="fieldValidator(ctrF.coligacaoTxt)"
+                    readonly
+                  />
+                  <mat-error class="invalid-feedback">{{
+                    messageReturned(ctrF.coligacaoTxt, "")
+                  }}</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div fxFlex="33" class="mt-5">
+            @if (!editMode) {
+            <div class="aligns-self-center text-center">
+              <img
+                class="bcp-imagem-lateral"
+                [src]="candidatoImagem"
+                alt="Card imagem imageDetail"
+              />
+            </div>
+            } @else {
+            <div class="card mb-3">
+              <div
+                class="card-header bg-secondary align-items-center text-center p-1"
+              >
+                <input
+                  type="file"
+                  #file
+                  (change)="changePhoto($event)"
+                  class="d-none"
+                />
+                <div class="">
+                  <img
+                    class="rounded-circle urn-avatar2"
+                    [src]="fotoURL"
+                    (click)="file.click()"
+                    alt="Foto do perfil"
+                  />
+                </div>
+              </div>
+              <input
+                type="file"
+                #file
+                (change)="changePhoto($event)"
+                style="display: none"
+              />
+            </div>
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="card-footer bcp-bg-secondary mt-1">
+        <div class="d-flex">
+          <button class="btn btn-outline-danger ms-auto mx-1" (click)="clearForm()">
+            Limpar
+          </button>
+          <button
+            class="btn btn-outline-primary mx-1 px-4"
+            [disabled]="!formCandidato.valid"
+            (click)="saveChange()"
+          >
+            {{ editMode ? "Salvar" : "Criar" }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+  <p>Form Value: {{ formCandidato.value | json }}</p>
+  <p>Form Status: {{ formCandidato.status | json }}</p>
+
+ -->

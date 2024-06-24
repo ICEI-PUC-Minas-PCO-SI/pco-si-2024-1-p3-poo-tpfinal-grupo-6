@@ -94,7 +94,7 @@ namespace UrnaEletronica.api.Controllers.Resultados
                 if (resultado != null) return BadRequest("Já existe uma resultado cadastrado.");
 
                 var createdResultado = await _resultadoServico.CreateResultado(resultadoDto);
-                if (createdResultado != null) return Ok(resultado);
+                if (createdResultado != null) return Ok(createdResultado);
                 return BadRequest("Ocorreu um erro ao incluir resultado");
 
             }

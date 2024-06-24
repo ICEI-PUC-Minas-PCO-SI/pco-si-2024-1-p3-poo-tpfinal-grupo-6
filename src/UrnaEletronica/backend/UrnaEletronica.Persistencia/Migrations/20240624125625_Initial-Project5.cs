@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace UrnaEletronica.Persistencia.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialProject2 : Migration
+    public partial class InitialProject5 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -111,6 +111,29 @@ namespace UrnaEletronica.Persistencia.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Coligacoes", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Eleicoes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    IniciarVotacao = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    EncerrarVotacao = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    DataHoraInicioVotacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    DataHoraFimVotacao = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    TipoEleicao = table.Column<string>(type: "varchar(13)", maxLength: 13, nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TipoExecutivo = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TipoLegislativo = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Eleicoes", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -478,6 +501,9 @@ namespace UrnaEletronica.Persistencia.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Eleicoes");
 
             migrationBuilder.DropTable(
                 name: "LogsVotosBatches");

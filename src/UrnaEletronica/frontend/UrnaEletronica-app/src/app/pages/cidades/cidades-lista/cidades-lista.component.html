@@ -53,11 +53,13 @@
     </tr>
     }
   </tbody>
-  } @else if (cidades.length <= 0) {
+  } @else if (!cidades.length) {
   <tfoot>
-    <td colspan="12" class="text-center" class="text-center">
-      <h4>Nenhuma cidade encontrada</h4>
-    </td>
+    <tr>
+      <td colspan="12" class="text-center" class="text-center">
+        <h4>Nenhuma cidade encontrada</h4>
+      </td>
+    </tr>
   </tfoot>
   }
 </table>
