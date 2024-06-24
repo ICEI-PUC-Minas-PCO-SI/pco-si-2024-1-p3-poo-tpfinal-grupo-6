@@ -12,6 +12,7 @@ using UrnaEletronica.Dominio.Modelos.Partidos;
 using UrnaEletronica.Dominio.Modelos.LogsVotosBatchs;
 using UrnaEletronica.Dominio.Modelos.Resultados;
 using System.Reflection.Emit;
+using UrnaEletronica.Dominio.Modelos.Eleicoes;
 
 namespace UrnaEletronica.Persistencia.Contexto
 {
@@ -26,6 +27,7 @@ namespace UrnaEletronica.Persistencia.Contexto
         public DbSet<LogVotosBatchErros> LogsVotosBatchesErros { get; set; }
         public DbSet<Partido> Partidos { get; set; }
         public DbSet<Resultado> Resultados { get; set; }
+        public DbSet<Eleicao> Eleicoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -68,6 +70,11 @@ namespace UrnaEletronica.Persistencia.Contexto
                 .WithMany(p => p.Candidatos)
                 .HasForeignKey(c => c.PartidoId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<Eleicao>()
+                .HasDiscriminator<string>("TipoEleicao")
+                .HasValue<EleicaoExecutivo>("Executivo")
+                .HasValue<EleicaoLegislativo>("Legislativo");
 
         }
 

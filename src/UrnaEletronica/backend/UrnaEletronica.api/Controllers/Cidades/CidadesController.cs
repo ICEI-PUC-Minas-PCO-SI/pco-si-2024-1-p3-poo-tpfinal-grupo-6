@@ -97,7 +97,7 @@ namespace UrnaEletronica.api.Controllers.Cidades
                     if (cidade != null) return BadRequest("Já existe uma cidade cadastrada.");
 
                     var createdCidade = await _cidadeServico.CreateCidade(cidadeDto);
-                    if (createdCidade != null) return Ok(cidade);
+                    if (createdCidade != null) return Ok(createdCidade);
                     return BadRequest("Ocorreu um erro ao incluir cidade");
 
                 }

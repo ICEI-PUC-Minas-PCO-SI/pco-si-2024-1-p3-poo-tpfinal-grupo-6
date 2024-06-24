@@ -40,9 +40,9 @@ export class CidadesListaComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getCidades();
     this.validation();
     this.getUserName();
-    this.getCidades();
   }
 
   private validation(): void {

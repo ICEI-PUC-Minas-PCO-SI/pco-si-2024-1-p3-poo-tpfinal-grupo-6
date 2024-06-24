@@ -209,6 +209,40 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.ToTable("Coligacoes");
                 });
 
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Eleicoes.Eleicao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("DataHoraFimVotacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime>("DataHoraInicioVotacao")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("EncerrarVotacao")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IniciarVotacao")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("TipoEleicao")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("varchar(13)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Eleicoes");
+
+                    b.HasDiscriminator<string>("TipoEleicao").HasValue("Eleicao");
+
+                    b.UseTphMappingStrategy();
+                });
+
             modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.LogsVotosBatchs.LogVotosBatch", b =>
                 {
                     b.Property<int>("Id")
@@ -482,6 +516,26 @@ namespace UrnaEletronica.Persistencia.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Eleicoes.Executivos.EleicaoExecutivo", b =>
+                {
+                    b.HasBaseType("UrnaEletronica.Dominio.Modelos.Eleicoes.Eleicao");
+
+                    b.Property<string>("TipoExecutivo")
+                        .HasColumnType("longtext");
+
+                    b.HasDiscriminator().HasValue("Executivo");
+                });
+
+            modelBuilder.Entity("UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos.EleicaoLegislativo", b =>
+                {
+                    b.HasBaseType("UrnaEletronica.Dominio.Modelos.Eleicoes.Eleicao");
+
+                    b.Property<string>("TipoLegislativo")
+                        .HasColumnType("longtext");
+
+                    b.HasDiscriminator().HasValue("Legislativo");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>

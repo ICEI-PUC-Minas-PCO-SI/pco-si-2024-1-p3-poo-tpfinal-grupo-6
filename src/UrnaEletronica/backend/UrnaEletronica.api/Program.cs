@@ -24,6 +24,7 @@ using UrnaEletronica.Persistencia.Contexto;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Candidatos;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Cidades;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Coligacoes;
+using UrnaEletronica.Persistencia.Interfaces.Contratos.Eleicoes;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.LogsVotosBatchs;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.ParametrosEleicoes;
 using UrnaEletronica.Persistencia.Interfaces.Contratos.Partidos;
@@ -34,6 +35,7 @@ using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Candidatos;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Cidades;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Coligacoes;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.ConfigEleicoes;
+using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Eleicoes;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.LogsVotosBatchs;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Partidos;
 using UrnaEletronica.Persistencia.Interfaces.Implementacoes.Resultados;
@@ -136,6 +138,7 @@ builder.Services
     .AddScoped<ICandidatoPersistencia, CandidatoPersistencia>()
     .AddScoped<ICidadePersistencia, CidadePersistencia>()
     .AddScoped<IColigacaoPersistencia, ColigacaoPersistencia>()
+    .AddScoped<IEleicaoPersistencia, EleicaoPersistencia>()
     .AddScoped<ILogVotosBatchPersistencia, LogVotosBatchPersistencia>()
     .AddScoped<ILogVotosErrosPersistencia, LogVotosErrosPersistencia>()
     .AddScoped<IParametroEleicaoPersistencia, ParametroEleicoePersistencia>()
@@ -150,7 +153,7 @@ builder.Services
     .AddScoped<ICandidatoServico, CandidatoServico>()
     .AddScoped<ICidadeServico, CidadeServico>()
     .AddScoped<IColigacaoServico, ColigacaoServico>()
-    .AddScoped<IEleicaoExecutivaServico, EleicaoExecutivaServico>()
+    .AddScoped<IEleicaoServico, EleicaoServico>()
     .AddScoped<IParametroEleicaoServico, ParametroEleicaoServico>()
     .AddScoped<IPartidoServico, PartidoServico>()
     .AddScoped<IProcessarVotosBatchServico, ProcessarVotosBatchServico>()

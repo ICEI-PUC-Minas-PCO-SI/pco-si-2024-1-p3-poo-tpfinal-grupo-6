@@ -165,11 +165,12 @@
             <response code="500">Erro interno</response>
             
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.CalcularVencedorExecutivo">
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.CalcularVencedor(System.Int32)">
             <summary>
-            Calcular vencedor processo de eleição Executiva
+            Calcular vencedor processo de eleição
             </summary>
-            <response code="200">Dados das coligacoes cadastradas</response>
+            <param name="eleicaoId">Identificador da eleição</param>
+            <response code="200">Dados do resultado das Eleições</response>
             <response code="400">Parâmetros incorretos</response>
             <response code="500">Erro interno</response>
         </member>
@@ -177,15 +178,33 @@
             <summary>
             Inicia processo de eleição
             </summary>
-            <response code="200">Dados das coligacoes cadastradas</response>
+            <response code="200">Retorna true (verdadeiro) se inicialização OK.</response>
             <response code="400">Parâmetros incorretos</response>
             <response code="500">Erro interno</response>
         </member>
-        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.EncerrarEleicao">
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.EncerrarEleicao(System.Int32)">
             <summary>
-            Encerra processo de eleição
+            Encerrar processo de eleição
             </summary>
-            <response code="200">Dados das coligacoes cadastradas</response>
+            <param name="eleicaoId">Identificador da eleição</param>
+            <response code="200">Dretorn true (verdadeiro) se a eleição for encerrada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.GetEleicaoById(System.Int32)">
+            <summary>
+            Recupera um processo de Eleição por eleicaoId
+            </summary>
+            <param name="eleicaoId">Identificador da eleição</param>
+            <response code="200">Dados das eleição cadastradas</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
+        <member name="M:UrnaEletronica.api.Controllers.Eleicoes.EleicoesController.GetAllEleicoes">
+            <summary>
+            Encerrar todos os processos de eleição
+            </summary>
+            <response code="200">Dados das eleições cadastradas</response>
             <response code="400">Parâmetros incorretos</response>
             <response code="500">Erro interno</response>
         </member>

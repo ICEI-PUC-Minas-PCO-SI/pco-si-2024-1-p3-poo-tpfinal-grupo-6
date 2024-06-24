@@ -50,7 +50,7 @@ export class ParametroEleicaoDetalheComponent implements OnInit {
 
   public formValidator(): void {
     this.formParametro = this.#formBuilder.group({
-      cidadeId: [""],
+      cidadeId: ["", Validators.required],
       numParam: [""],
       primeiroTurno: [false],
       segundoTurno: [false, Validators.required,],
