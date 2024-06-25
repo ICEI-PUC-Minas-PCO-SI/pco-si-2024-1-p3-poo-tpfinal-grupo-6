@@ -36,5 +36,8 @@ export class CandidatoService {
       .pipe(take(3));
   }
 
-
+  public registrarVoto(candidatoId: number): Observable<Candidato> {
+    return this.#http.post<Candidato>(`${this.baseURL}${candidatoId}/VotoOnline`, null)
+      .pipe(take(1));
+  }
 }

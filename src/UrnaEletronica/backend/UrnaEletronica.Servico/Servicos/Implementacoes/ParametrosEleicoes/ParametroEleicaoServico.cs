@@ -28,7 +28,7 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.ParametrosEleicoes
 
                 if (await _parametroEleicaoPersistencia.SaveChangeAsync())
                 {
-                    var parametroEleicaoRetorno = await _parametroEleicaoPersistencia.GetParametroEleicaoAsync();
+                    var parametroEleicaoRetorno = await _parametroEleicaoPersistencia.GetParametroByIdAsync(parametroEleicao.Id);
 
                     return _mapper.Map<ParametroEleicaoDto>(parametroEleicaoRetorno);
                 }
@@ -40,12 +40,29 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.ParametrosEleicoes
                 throw new Exception(ex.Message);
             }
         }
-
-        public async Task<ParametroEleicaoDto> GetParametroEleicaoAsync()
+        public async Task<IEnumerable<ParametroEleicaoDto>> GetParametrosAsync()
         {
             try
             {
-                var parametroEleicao = await _parametroEleicaoPersistencia.GetParametroEleicaoAsync();
+                var parametroEleicao = await _parametroEleicaoPersistencia.GetParametrosAsync();
+
+                if (parametroEleicao == null) return null;
+
+                var parametrpEleicaoMappper = _mapper.Map<ParametroEleicaoDto[]>(parametroEleicao);
+
+                return parametrpEleicaoMappper;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<ParametroEleicaoDto> GetParametroByIdAsync(int parametroId)
+        {
+            try
+            {
+                var parametroEleicao = await _parametroEleicaoPersistencia.GetParametroByIdAsync(parametroId);
 
                 if (parametroEleicao == null) return null;
 
@@ -69,7 +86,7 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.ParametrosEleicoes
 
                 if (await _parametroEleicaoPersistencia.SaveChangeAsync())
                 {
-                    var parametroEleicaoRetorno = await _parametroEleicaoPersistencia.GetParametroEleicaoAsync();
+                    var parametroEleicaoRetorno = await _parametroEleicaoPersistencia.GetParametroByIdAsync(parametroEleicaoId);
 
                     return _mapper.Map<ParametroEleicaoDto>(parametroEleicaoRetorno);
                 }

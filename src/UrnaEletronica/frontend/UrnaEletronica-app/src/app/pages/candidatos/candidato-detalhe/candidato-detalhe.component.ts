@@ -153,7 +153,7 @@ export class CandidatoDetalheComponent {
           this.#toastrService.success("Candidato cadastrado!", "Sucesso!");
           window.location.reload;
           this.#router.navigateByUrl(
-            `/pages/candidados/detalhe/${novoCandidato.id}`
+            `/pages/candidatos/detalhe/${novoCandidato.id}`
           );
         },
         error: (error: any) => {

@@ -94,7 +94,7 @@ namespace UrnaEletronica.api.Controllers.Coligacoes
                 if (coligacao != null) return BadRequest("Já existe uma coligacao cadastrada.");
 
                 var createdColigacao = await _coligacaoServico.CreateColigacao(coligacaoDto);
-                if (createdColigacao != null) return Ok(coligacao);
+                if (createdColigacao != null) return Ok(createdColigacao);
                 return BadRequest("Ocorreu um erro ao incluir coligacao");
 
             }

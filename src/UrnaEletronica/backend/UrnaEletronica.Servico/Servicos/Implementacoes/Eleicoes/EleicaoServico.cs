@@ -27,40 +27,56 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Eleicoes
             IMapper mapper, 
             ICandidatoServico candidatoServico, 
             IParametroEleicaoServico parametroEleicaoServico,
-            IEleicaoPersistencia eleicaoPersistencia)
+            IEleicaoPersistencia eleicaoPersistencia,
+            IResultadoPersistencia resultadoPersistencia)
         {
             _mapper = mapper;
             _candidatoServico = candidatoServico;
             _parametroEleicaoServico = parametroEleicaoServico;
             _eleicaoPersistencia = eleicaoPersistencia;
+            _resultadoPersistencia = resultadoPersistencia;
         }
 
         public async Task<IEnumerable<ResultadoDto>> CalcularResultado(int eleicaoId)
         {
             try
             {
-                var candidados = await _candidatoServico.GetAllCandidatosComVotosValidosExecutivoAsync();
+                Console.WriteLine("---------------------------------------------------------------");
+                var candidatos = await _candidatoServico.GetAllCandidatosComVotosValidosExecutivoAsync();
                 
-                var parametroEleicao = await _parametroEleicaoServico.GetParametroEleicaoAsync();
-
-                var candidadtosMapper = _mapper.Map<Candidato[]>(candidados);
-
+                var parametrosEleicao = await _parametroEleicaoServico.GetParametrosAsync();
+                var parametroEleicao = parametrosEleicao.FirstOrDefault();
+                
+                var candidadtosMapper = _mapper.Map<Candidato[]>(candidatos);
+                
                 var parametroEleicaoMapper = _mapper.Map<ParametroEleicao>(parametroEleicao);
-
+                
                 var eleicao = _eleicaoPersistencia.GetEleicaoByIdUpdateAsync(eleicaoId);
-
+                
                 var resultados = eleicao.CalcularResultado(parametroEleicaoMapper, candidadtosMapper);
-
+                Console.WriteLine("resultados ok ||||||||||||||||||||||||||||||||||| " + resultados.Count() );
+                var resultadosParaPersistencia = new List<Resultado>();
                 foreach (var resultado in resultados)
                 {
-                    _resultadoPersistencia.Create<Resultado>(resultado);
+                    var resultadoParaPersistir = new Resultado
+                    {
+                        CandidatoId = resultado.CandidatoId,
+                        QtdVotos = resultado.QtdVotos,
+                        PercentualVotos = resultado.PercentualVotos,
+                        CandidatoEleito = resultado.CandidatoEleito,
+                    };
+                    Console.WriteLine("entrei foreach ok ||||||||||||||||||||||||||||||||||| " + resultado.CandidatoId + " " + resultado.QtdVotos);
+                   // _resultadoPersistencia.Create<Resultado>(resultadoParaPersistir);
+                    Console.WriteLine("create ok |||||||||||||||||||||||||||||||||||");
+                    resultadosParaPersistencia.Add(resultadoParaPersistir);
                 }
-
+/*                Console.WriteLine("foreach ok |||||||||||||||||||||||||||||||||||");
                 if (await _resultadoPersistencia.SaveChangeAsync())
                 {
                     var resultadosRetorno = await _resultadoPersistencia.GetAllResultadosAsync();
+                    Console.WriteLine("resultadosRetorno ok |||||||||||||||||||||||||||||||||||");
                     return _mapper.Map<ResultadoDto[]>(resultadosRetorno);
-                }
+                }*/
 
                 return null;
             }
@@ -132,7 +148,7 @@ namespace UrnaEletronica.Servico.Servicos.Implementacoes.Eleicoes
                 var eleicaoLegislativo = new EleicaoLegislativo();
                 
                 if(eleicaoLegislativo.IniciarEleicao())
-                _eleicaoPersistencia.Create<Eleicao>(eleicaoExecutivo);
+                _eleicaoPersistencia.Create<Eleicao>(eleicaoLegislativo);
 
 
                 if (await _eleicaoPersistencia.SaveChangeAsync())

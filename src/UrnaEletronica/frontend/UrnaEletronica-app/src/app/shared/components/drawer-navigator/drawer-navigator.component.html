@@ -24,23 +24,11 @@
 
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="/pages/home/homePage"> Principal </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="/pages/home/homeApuracao"> Apuração </a>
     </mat-expansion-panel>
 
     @if (usuarioLogado && !usuarioAtivo.isAdmin) {
-    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
-      <mat-expansion-panel-header>
-        <mat-panel-title class="text-white">
-          <mat-icon class="urn-drawer-icon">settings</mat-icon>
-          Configurações
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-
-      <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="pages/parametrosEleicoes/cadastrar"> Novo </a>
-      <mat-divider class="mt-2 mb-2" />
-      <a class="text-white" routerLink="pages/parametrosEleicoes/lista"> Lista </a>
-    </mat-expansion-panel>
-
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
@@ -48,7 +36,6 @@
           Cidade
         </mat-panel-title>
       </mat-expansion-panel-header>
-
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="pages/cidades/cadastrar"> Novo </a>
       <mat-divider class="mt-2 mb-2" />
@@ -58,11 +45,24 @@
     <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
       <mat-expansion-panel-header>
         <mat-panel-title class="text-white">
+          <mat-icon class="urn-drawer-icon">settings</mat-icon>
+          Configurações
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/parametrosEleicoes/cadastrar"> Novo </a>
+      <mat-divider class="mt-2 mb-2" />
+      <a class="text-white" routerLink="pages/parametrosEleicoes/lista"> Lista </a>
+    </mat-expansion-panel>
+
+
+    <mat-expansion-panel class="mat-elevation-z8 bg-primary mt-3">
+      <mat-expansion-panel-header>
+        <mat-panel-title class="text-white">
           <mat-icon class="urn-drawer-icon">hub</mat-icon>
           Coligação
         </mat-panel-title>
       </mat-expansion-panel-header>
-
       <mat-divider class="mt-2 mb-2" />
       <a class="text-white" routerLink="pages/coligacoes/cadastrar"> Novo </a>
       <mat-divider class="mt-2 mb-2" />

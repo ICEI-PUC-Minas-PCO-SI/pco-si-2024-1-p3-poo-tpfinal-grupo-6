@@ -50,35 +50,41 @@
       <th>Opções</th>
     </tr>
   </thead>
-  <tbody>
-    <tr (click)="editarCandidato(parametros.id)" role="button">
-      <td>{{ parametros.id }}</td>
-      <td>{{ parametros.dataEleicaoPrimeiroTurno | date : "dd/MM/yyyy" }}</td>
-      <td>{{ parametros.dataEleicaoSegundoTurno | date : "dd/MM/yyyy" }}</td>
-      <td>{{ parametros.qtdVotosSomentePrimeiroTurno }}</td>
-      <td>{{ parametros.qtdCadeiras }}</td>
-      <td>
-        {{ parametros.cidade.siglaEstado }}-{{ parametros.cidade.nomeEstado }}
-      </td>
-      <td>
-        <div class="btn-group mx-1">
-          <a class="text-danger" (click)="abrirModal($event, parametro.id)">
-            <mat-icon>delete</mat-icon>
-          </a>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-  <!--
-  } @else if (!candidatos.length)
+
+  @if (parametros && parametros.length) {
+    <tbody>
+      @for (parametro of parametros; track parametro.id) {
+      <tr (click)="editarParametro(parametro.id)" role="button">
+        <td>{{ parametro.id }}</td>
+        <td>{{ parametro.dataEleicaoPrimeiroTurno | date : "dd/MM/yyyy" }}</td>
+        <td>{{ parametro.dataEleicaoSegundoTurno | date : "dd/MM/yyyy" }}</td>
+        <td>{{ parametro.qtdVotosSomentePrimeiroTurno }}</td>
+        <td>{{ parametro.qtdCadeiras }}</td>
+        <td>
+          {{ parametro.cidade.siglaEstado }}-{{ parametro.cidade.nome }}
+        </td>
+        <td>
+          <div class="btn-group mx-1">
+            <a class="text-danger" (click)="abrirModal($event, parametro.id)">
+              <mat-icon>delete</mat-icon>
+            </a>
+          </div>
+        </td>
+      </tr>
+    }
+    </tbody>
+  } @else if (!parametros.length)
   {
     <tfoot>
-      <td colspan="12" class="text-center" class="text-center">
-        <h3>Nenhum candidato encontrado</h3>
-      </td>
+      <tr>
+        <td colspan="12" class="text-center" class="text-center">
+          <h3>Nenhum candidato encontrado</h3>
+        </td>
+      </tr>
     </tfoot>
   }
+</table>
+  <!--
  -->
   <!--
 @if (candidatos.length) {

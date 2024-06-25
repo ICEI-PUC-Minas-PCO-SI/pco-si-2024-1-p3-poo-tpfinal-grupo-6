@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent, HomePageComponent } from './pages/home';
+import { HomeApuracaoComponent, HomeComponent, HomePageComponent } from './pages/home';
 import {
   CandidatoDetalheComponent,
   CandidatosComponent,
@@ -16,6 +16,7 @@ import { ConfigAdministradorComponent, EleicoesComponent } from './pages/eleicoe
 
 
 
+
 const routes: Routes = [
   { path: '', redirectTo: 'pages/home', pathMatch: 'full' },
 
@@ -25,6 +26,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'homePage', pathMatch: 'full' },
       { path: 'homePage', component: HomePageComponent },
+      { path: 'homeApuracao', component: HomeApuracaoComponent },
     ],
   },
 

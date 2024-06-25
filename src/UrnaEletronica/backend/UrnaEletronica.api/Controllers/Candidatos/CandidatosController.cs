@@ -31,16 +31,12 @@ public class CandidatosController : ControllerBase
     /// <response code="400">Parâmetros incorretos</response>
     /// <response code="500">Erro interno</response>
     /// 
-
+    [AllowAnonymous]
     [HttpGet]
     public async Task<IActionResult> GetCandidatos()
     {
         try
         {
-            var claimUserName = User.GetUserNameClaim();
-
-            if (claimUserName == null) return Unauthorized();
-
             var candidatos = await _candidatoServico.GetAllCandidatosAsync();
 
             if (candidatos == null) return NotFound("Não existem candidatos cadastrados.");
@@ -185,21 +181,17 @@ public class CandidatosController : ControllerBase
     /// <response code="400">Parâmetros incorretos</response>
     /// <response code="500">Erro interno</response>
     /// 
-
-    [HttpPatch("{candidatoId}/VotoOnline")]
+    [AllowAnonymous]
+    [HttpPost("{candidatoId}/VotoOnline")]
     public async Task<IActionResult> RegistrarVoto(int candidatoId)
     {
         try
         {
-            var usuario = await _usuarioServico.GetUsuarioByIdAsync(User.GetUserIdClaim());
-
-            if (usuario == null) return Unauthorized();
-
             var registrarVoto = await _candidatoServico.RegistrarVoto(candidatoId);
 
-            if (registrarVoto == null) return NotFound("Não existe canditado cadastrado para votação");
+            if (!registrarVoto) return NotFound("Não existe canditado cadastrado para votação");
 
-            return Ok(registrarVoto);
+            return Ok(true);
         }
         catch (Exception ex)
         {
@@ -222,13 +214,9 @@ public class CandidatosController : ControllerBase
     {
         try
         {
-            var usuario = await _usuarioServico.GetUsuarioByIdAsync(User.GetUserIdClaim());
-
-            if (usuario == null) return Unauthorized();
-
             var registrarVoto = await _candidatoServico.RegistrarVoto(candidatoId, qtdVotos);
 
-            if (registrarVoto == null) return NotFound("Não existe canditado cadastrado para votação");
+            if (registrarVoto == false) return NotFound("Não existe canditado cadastrado para votação");
 
             return Ok(registrarVoto);
         }

@@ -51,11 +51,13 @@
     </tr>
     }
   </tbody>
-  } @else if (partidos.length) {
+  } @else if (!partidos.length) {
   <tfoot>
-    <td colspan="12" class="text-center" class="text-center">
-      <h4>Nenhum partido encontrado</h4>
-    </td>
+    <tr>
+      <td colspan="12" class="text-center" class="text-center">
+        <h4>Nenhum partido encontrado</h4>
+      </td>
+    </tr>
   </tfoot>
   }
 </table>

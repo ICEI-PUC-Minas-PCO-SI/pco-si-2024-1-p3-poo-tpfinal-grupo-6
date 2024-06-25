@@ -11,6 +11,7 @@ namespace UrnaEletronica.Servico.Dtos.Eleicoes
     public class EleicaoDto 
     {
         public int Id { get; set; }
+        public string TipoEleicao { get; set; }
         public bool IniciarVotacao { get; set; } = false;
         public bool EncerrarVotacao { get; set; } = false;
         public DateTime DataHoraInicioVotacao { get; set; }
