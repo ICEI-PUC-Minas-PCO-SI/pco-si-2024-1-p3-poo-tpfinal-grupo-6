@@ -1,113 +1,98 @@
 import { Component, inject } from '@angular/core';
-// import { AcervoService } from '../../../services/acervo';
-// import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-// import { Router } from '@angular/router';
-// import { NgxSpinnerService } from 'ngx-spinner';
-// import { ToastrService } from 'ngx-toastr';
-// import { Acervo } from '../../../shared/models/interfaces/acervo';
-// import { ResultadoPaginado } from '../../../util/class';
+import { Candidato } from '../../../shared/models/interfaces/candidato';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { CandidatoService } from '../../../services/candidato';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
  @Component({
    selector: 'app-home-page',
    templateUrl: './home-page.component.html'
  })
  export class HomePageComponent {
-//   #acervoService = inject(AcervoService);
-//   #formBuilder = inject(FormBuilder);
-//   #router = inject(Router);
-//   #spinnerService = inject(NgxSpinnerService);
-//   #toastrService = inject(ToastrService);
+  #candidatoService = inject(CandidatoService);
+  #router = inject(Router);
+  #spinnerService = inject(NgxSpinnerService);
+  #toastrService = inject(ToastrService);
 
-//   public formHomePage!: FormGroup;
+  public candidatos = [] as Candidato[];
+  public candidato = {} as Candidato;
+  public candidatosPrefeitos = [] as Candidato[]
+  public candidatosVereadores = [] as Candidato[];
 
-//   public acervos: Acervo[] = [];
-//   public acervosRecentes: Acervo[] = [];
-//   public acervosLidos: Acervo[] = [];
+  public votouPrefeito: boolean = false;
+  public votouVereador: boolean = false;
 
-//   public generos: String[] = [];
-//   public isFavorito = false;
+  public currentUrl = this.#router.url;
 
-//   public get ctrF(): any {
-//     return this.formHomePage.controls;
-//   }
+   public ngOnInit(): void {
+     this.getCandidatos();
 
-//   public filtroAcervo(): void {
-//     this.getAcervosRecentes();
-//   }
+     if (this.votouPrefeito && this.votouVereador) {
+      console.log("aquiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii")
+      this.votouPrefeito = this.votouVereador = false
+      setTimeout(() => {
+        this.#router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.#router.navigate([this.currentUrl]);
+        });
+      }, 10000);
+    }
+   }
 
-//   public ngOnInit(): void {
-//     this.validation();
-//     this.getAcervosRecentes();
-//     this.getAcervos();
-//   }
+  public getCandidatos(): void {
+    this.#spinnerService.show();
 
-//   private validation(): void {
-//     this.formHomePage = this.#formBuilder.group({
-//       opcaoPesquisa: ["Todos", Validators.required],
-//       argumento: [""],
-//       opcaoGeneroRecentes: ["Todos"]
-//     });
-//   }
+    this.#candidatoService
+      .getCandidatos()
+      .subscribe({
+        next: (candidatos: Candidato[]) => {
+          this.candidatos = candidatos;
 
-//   public getAcervosRecentes(): void {
-//     this.#spinnerService.show();
+          this.candidatosPrefeitos = this.candidatos.filter(candidato => candidato.tipoCandidatura == "Prefeito")
+          this.candidatosVereadores = this.candidatos.filter(candidato => candidato.tipoCandidatura == "Vereador")
+        },
+         error: (error: any) => {
+           console.log("aqui 2");
+           this.#toastrService.error("Erro ao carregar Acervos", "Erro!");
+           console.error(error);
+         },
+      })
+      .add(() => this.#spinnerService.hide());
+  }
 
-//     // Retrona os 8 exemplares mais recentes
-//     this.#acervoService
-//       .getAcervosRecentes(
-//         1,
-//         8,
-//         this.ctrF.argumento.value,
-//         this.ctrF.opcaoPesquisa.value,
-//         this.ctrF.opcaoGeneroRecentes.value
-//       )
-//       .subscribe({
-//         next: (retorno: ResultadoPaginado<Acervo[]>) => {
-//           this.acervosRecentes = retorno.resultado;
-//         },
-//         error: (error: any) => {
-//           console.log("aqui 2");
-//           this.#toastrService.error("Erro ao carregar Acervos", "Erro!");
-//           console.error(error);
-//         },
-//       })
-//       .add(() => this.#spinnerService.hide());
-//   }
+  public Votar(candidatoId: number, tipoCandidatura: string): void {
+    this.#spinnerService.show();
 
-//   public getAcervos(): void {
-//     this.#spinnerService.show();
+    if (tipoCandidatura == "Prefeito")
+      this.votouPrefeito = true
+    else
+      this.votouVereador = true
 
-//     this.#acervoService
-//       .getAcervos()
-//       .subscribe({
-//         next: (retorno: Acervo[]) => {
-//           this.acervos = retorno;
+    this.#candidatoService
+      .registrarVoto(candidatoId)
+      .subscribe({
+        next: (candidato: Candidato) => {
+          this.candidato = candidato
+          if (candidato.tipoCandidatura == "Prefeito")
+            this.votouPrefeito = true
+          else
+            this.votouVereador = true
 
-//           for (var acervo of this.acervos) this.generos.push(acervo.genero);
+            this.#router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+              this.#router.navigate([this.currentUrl]);
 
-//           this.generos = this.generos.filter(
-//             (genero, i) => this.generos.indexOf(genero) === i
-//           );
+          });
 
-//           this.acervosLidos = retorno;
-//         },
-//         error: (error: any) => {
-//           console.log("aqui 2");
-//           this.#toastrService.error("Erro ao carregar Acervos", "Erro!");
-//           console.error(error);
-//         },
-//       })
-//       .add(() => this.#spinnerService.hide());
-//   }
+          this.#toastrService.success("Voto registrado", "Sucesso!");
 
-//   public detalheAcervo(acervoId: number): void {
-//     this.#router.navigate([`pages/acervos/detalhe/${acervoId}`]);
-//   }
+        },
+        error: (error: any) => {
+          console.log("aqui 2");
+          this.#toastrService.error("Erro ao registra voto", "Erro!");
+          console.error(error);
+         },
+      })
+       .add(() => this.#spinnerService.hide());
+  }
 
-//   public showDetailsButton: number | null = null;
-
-//   favoritarAcervo(acervoId: number): void {
-//     this.isFavorito = !this.isFavorito;
-//     console.log("Livro favoritado:", acervoId);
-//   }
- }
+}

@@ -25,8 +25,8 @@ export class ParametrosEleicoesListaComponent implements OnInit {
 
   public formParametroLista = {} as FormGroup;
 
-  public parametros!: ParametroEleicao;
-  public parametro!: ParametroEleicao;
+  public parametros = [] as ParametroEleicao[];
+  public parametro = {} as ParametroEleicao;
 
   public parametroId = 0;
 
@@ -56,7 +56,7 @@ export class ParametrosEleicoesListaComponent implements OnInit {
     this.#parametroService
       .getParametros()
       .subscribe({
-        next: (parametros: ParametroEleicao) => {
+        next: (parametros: ParametroEleicao[]) => {
           this.parametros = parametros;
         },
         error: (error: any) => {
@@ -74,7 +74,7 @@ export class ParametrosEleicoesListaComponent implements OnInit {
     event.stopPropagation();
     this.parametroId = parametroId;
 
-    this.#parametroService.getParametros()
+    this.#parametroService.getParametroById(parametroId)
     .subscribe({
       next: (parametro: ParametroEleicao) => {
         this.parametro = parametro;
@@ -117,8 +117,8 @@ export class ParametrosEleicoesListaComponent implements OnInit {
       .add(() => this.#spinnerService.show());
   }
 
-  public editarCandidato(_candidatoId: number): void {
-    this.#router.navigate([`pages/parametrosEleicoes/detalhe/${_candidatoId}`]);
+  public editarParametro(parametroId: number): void {
+    this.#router.navigate([`pages/parametrosEleicoes/detalhe/${parametroId}`]);
   }
 
   public alteracaoDePagina(event: any): void {

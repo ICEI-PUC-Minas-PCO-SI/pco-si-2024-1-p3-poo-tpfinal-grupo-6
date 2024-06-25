@@ -9,6 +9,7 @@ using UrnaEletronica.Servico.Dtos.ParametrosEleicoes;
 using UrnaEletronica.Servico.Servicos.Contratos.Cidades;
 using UrnaEletronica.Servico.Servicos.Contratos.ParametrosEleicoes;
 using UrnaEletronica.Servico.Servicos.Contratos.Usuarios;
+using UrnaEletronica.Servico.Servicos.Implementacoes.Cidades;
 
 namespace UrnaEletronica.api.Controllers.ParametrosEleicoes
 {
@@ -43,13 +44,39 @@ namespace UrnaEletronica.api.Controllers.ParametrosEleicoes
                 var claimUserName = User.GetUserNameClaim();
                 if (claimUserName == null) return Unauthorized();
 
-                var parametro = await _parametroEleicaoServico.GetParametroEleicaoAsync();
-                if (parametro == null) return NotFound("Não existe parâmetro cadastrado.");
-                return Ok(parametro);
+                var parametros = await _parametroEleicaoServico.GetParametrosAsync();
+                if (parametros == null) return NotFound("Não existe parâmetro cadastrado.");
+                return Ok(parametros);
             }
             catch (Exception ex)
             {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar parâmetro de eleição. Erro: {ex.Message}");
+            }
+        }
+
+        /// <summary>
+        /// Obtém os dados de um parâmetro
+        /// </summary>
+        /// <param name="parametroId">Identificador da cidade</param>
+        /// <response code="200">Dados da cidade consultada</response>
+        /// <response code="400">Parâmetros incorretos</response>
+        /// <response code="500">Erro interno</response>
+
+        [HttpGet("{parametroId}")]
+        public async Task<IActionResult> GetParamtroByIdAsync(int parametroId)
+        {
+            try
+            {
+                var claimUserName = User.GetUserNameClaim();
+                if (claimUserName == null) return Unauthorized();
+
+                var cidade = await _parametroEleicaoServico.GetParametroByIdAsync(parametroId);
+                if (cidade == null) return NotFound("Não existe cidade cadastrada para o ID informado.");
+                return Ok(cidade);
+            }
+            catch (Exception ex)
+            {
+                return this.StatusCode(StatusCodes.Status500InternalServerError, $"Erro ao buscar cidade por Id. Erro: {ex.Message}");
             }
         }
 
@@ -69,7 +96,7 @@ namespace UrnaEletronica.api.Controllers.ParametrosEleicoes
                     var claimUserName = User.GetUserNameClaim();
                     if (claimUserName == null) return Unauthorized();
 
-                    var parametro = await _parametroEleicaoServico.GetParametroEleicaoAsync();
+                    var parametro = await _parametroEleicaoServico.GetParametroByIdAsync(parametroEleicaoDto.Id);
                     if (parametro != null) return BadRequest("Já existe um parâmetro cadastrado.");
 
                     var createdParametro = await _parametroEleicaoServico.CreateParametroEleicao(parametroEleicaoDto);

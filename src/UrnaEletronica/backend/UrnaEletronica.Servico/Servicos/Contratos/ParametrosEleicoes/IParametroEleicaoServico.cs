@@ -6,7 +6,8 @@ namespace UrnaEletronica.Servico.Servicos.Contratos.ParametrosEleicoes
 {
     public interface IParametroEleicaoServico
     {
-        Task<ParametroEleicaoDto> GetParametroEleicaoAsync();
+        Task<IEnumerable<ParametroEleicaoDto>> GetParametrosAsync();
+        Task<ParametroEleicaoDto> GetParametroByIdAsync(int parametroId);
         Task<ParametroEleicaoDto> CreateParametroEleicao(ParametroEleicaoDto parametroEleicaoDto);
         Task<ParametroEleicaoDto> UpdateParametroEleicao(int parametroEleicaoId, ParametroEleicaoDto parametroEleicaoDto);
     }

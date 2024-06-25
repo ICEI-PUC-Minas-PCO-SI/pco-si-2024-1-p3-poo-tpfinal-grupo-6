@@ -34,26 +34,22 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
         /// <response code="400">Parâmetros incorretos</response>
         /// <response code="500">Erro interno</response>
 
-        [Authorize]
+        [AllowAnonymous]
         [HttpPost("{eleicaoId}/calcularVencedor")]
         public async Task<IActionResult> CalcularVencedor(int eleicaoId)
         {
             try
             {
-                var usuario = await _usuarioServico.GetUsuarioByUserNameAsync(User.GetUserNameClaim());
-
-                if (usuario == null) return Unauthorized();
-
-                if (!usuario.IsAdmin) return Unauthorized();
-
+                Console.WriteLine("1===============================================================");
                 var eleicao = await _eleicaoServico.GetEleicaoByIdAsync(eleicaoId);
 
                 if (eleicao == null) return BadRequest("Não existe processo de Eleição em andamento.");
 
                 if (!eleicao.IniciarVotacao) return BadRequest("Não existe processo de Eleição em andamento, vencedor não disponível.");
 
+                Console.WriteLine("2===============================================================");
                 var resultadoEleicao =  _eleicaoServico.CalcularResultado(eleicaoId);
-
+                Console.WriteLine("3===============================================================");
                 if (resultadoEleicao == null) return BadRequest("Não foi possível apurar vencedor.");
 
                 return Ok(resultadoEleicao);
@@ -166,16 +162,12 @@ namespace UrnaEletronica.api.Controllers.Eleicoes
         /// <response code="200">Dados das eleições cadastradas</response>
         /// <response code="400">Parâmetros incorretos</response>
         /// <response code="500">Erro interno</response>
-        [Authorize]
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetAllEleicoes()
         {
             try
             {
-                var usuario = await _usuarioServico.GetUsuarioByUserNameAsync(User.GetUserNameClaim());
-
-                if (usuario == null) return Unauthorized();
-
                 var eleicao = await _eleicaoServico.GetAllEleicoesAsync();
 
                 if (eleicao == null) return BadRequest("Não existem processos de Eleições em andamento.");

@@ -8,7 +8,7 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos
     public class EleicaoLegislativo : Eleicao
     {
         public string TipoLegislativo { get; set; }
-        public override IEnumerable<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> candidatos)
+        public override List<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> candidatos)
         {
 
             List<Resultado> resultados = new List<Resultado>();
@@ -82,7 +82,7 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Legislativos
                     }
                 }
             }
-            return resultados.ToArray();
+            return resultados;
         }
     }
 }

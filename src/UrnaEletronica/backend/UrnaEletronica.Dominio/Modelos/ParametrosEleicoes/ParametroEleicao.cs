@@ -9,7 +9,7 @@ namespace UrnaEletronica.Dominio.Modelos.ParametrosEleicoes
 {
     public class ParametroEleicao
     {
-        public  int Id { get; set; }
+        public int Id { get; set; }
         public bool PrimeiroTurno { get; set; }
         public bool SegundoTurno { get; set; }
         public int QtdVotosSomentePrimeiroTurno { get; set; }

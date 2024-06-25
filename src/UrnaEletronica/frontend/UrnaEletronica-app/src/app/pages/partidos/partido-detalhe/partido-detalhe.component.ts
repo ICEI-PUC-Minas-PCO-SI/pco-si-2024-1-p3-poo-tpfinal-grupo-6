@@ -96,6 +96,7 @@ export class PartidoDetalheComponent implements OnInit {
           this.partido = partido;
           this.formPartido.patchValue(this.partido);
           this.ctrF.partidoId.setValue(this.partido.id);
+          this.ctrF.coligacaoId.setValue(this.partido.coligacao.id)
         },
         error: (error: any) => {
           this.#toastrService.error("Falha ao recuperar Partido", "Erro!");

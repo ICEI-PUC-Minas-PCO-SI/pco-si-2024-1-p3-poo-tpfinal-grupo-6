@@ -42,8 +42,8 @@ export class ParametroEleicaoDetalheComponent implements OnInit {
 
     this.parametroEleicaoParam = this.#activevateRouter.snapshot.paramMap.get("id");
     this.editMode = this.parametroEleicaoParam != null ? true : false;
-
-    if (this.editMode) this.getParametro
+    console.log(this.parametroEleicao, this.editMode)
+    if (this.editMode) this.getParametro()
 
     this.getCidades();
   }
@@ -86,8 +86,9 @@ export class ParametroEleicaoDetalheComponent implements OnInit {
   public getParametro(): void {
     this.#spinnerService.show();
 
+    console.log(this.parametroEleicao)
     this.#parametroService
-      .getParametros()
+      .getParametroById(this.parametroEleicaoParam)
       .subscribe({
         next: (parametro: ParametroEleicao) => {
           this.parametroEleicao = parametro;
@@ -95,7 +96,7 @@ export class ParametroEleicaoDetalheComponent implements OnInit {
           this.ctrF.numParam.setValue(this.parametroEleicao.id);
         },
         error: (error: any) => {
-          this.#toastrService.error("Falha ao recuperar Cidade", "Erro!");
+          this.#toastrService.error("Falha ao recuperar Parametro", "Erro!");
           console.error(error);
         },
       })

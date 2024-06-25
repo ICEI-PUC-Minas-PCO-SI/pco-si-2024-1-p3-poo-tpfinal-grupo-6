@@ -13,8 +13,12 @@ export class ParametroEleicaoService {
 
   baseURL = `${environment.apiURL}ParametrosEleicoes/`;
 
-  public getParametros(): Observable<ParametroEleicao> {
-      return this.#http.get<ParametroEleicao>(this.baseURL).pipe(take(3));
+  public getParametros(): Observable<ParametroEleicao[]> {
+      return this.#http.get<ParametroEleicao[]>(this.baseURL).pipe(take(3));
+  }
+
+  public getParametroById(parametroId: number): Observable<ParametroEleicao> {
+    return this.#http.get<ParametroEleicao>(`${this.baseURL}${parametroId}`).pipe(take(3));
   }
 
   public createParametro(parametro: ParametroEleicao): Observable<ParametroEleicao> {

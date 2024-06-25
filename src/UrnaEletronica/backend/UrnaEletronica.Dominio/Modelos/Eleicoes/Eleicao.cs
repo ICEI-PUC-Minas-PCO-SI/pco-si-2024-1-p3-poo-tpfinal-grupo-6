@@ -7,12 +7,13 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes
     public abstract class Eleicao
     {
         public int Id { get; set; }
+        public string TipoEleicao { get; set; }
         public bool IniciarVotacao { get; set; } = false;
         public bool EncerrarVotacao { get; set; } = false;
         public DateTime DataHoraInicioVotacao { get; set; }
         public DateTime DataHoraFimVotacao { get; set; }
 
-        public abstract IEnumerable<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> Candidatos);
+        public abstract List<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> Candidatos);
         public bool IniciarEleicao()
         {
             try

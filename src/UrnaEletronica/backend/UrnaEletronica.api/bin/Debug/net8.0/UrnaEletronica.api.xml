@@ -216,6 +216,15 @@
             <response code="400">Parâmetros incorretos</response>
             <response code="500">Erro interno</response>
         </member>
+        <member name="M:UrnaEletronica.api.Controllers.ParametrosEleicoes.ParametrosEleicoesController.GetParamtroByIdAsync(System.Int32)">
+            <summary>
+            Obtém os dados de um parâmetro
+            </summary>
+            <param name="parametroId">Identificador da cidade</param>
+            <response code="200">Dados da cidade consultada</response>
+            <response code="400">Parâmetros incorretos</response>
+            <response code="500">Erro interno</response>
+        </member>
         <member name="M:UrnaEletronica.api.Controllers.ParametrosEleicoes.ParametrosEleicoesController.CreateParametroEleicao(UrnaEletronica.Servico.Dtos.ParametrosEleicoes.ParametroEleicaoDto)">
             <summary>
             Realiza inclusão de parâmetros

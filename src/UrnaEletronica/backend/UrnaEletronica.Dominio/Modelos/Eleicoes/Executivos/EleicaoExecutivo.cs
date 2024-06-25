@@ -13,7 +13,7 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Executivos
     {
         public string TipoExecutivo { get; set; }
 
-        public override IEnumerable<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> candidatos)
+        public override List<Resultado> CalcularResultado(ParametroEleicao parametroEleicao, IEnumerable<Candidato> candidatos)
         {
             List<Resultado> resultados = new List<Resultado>();
 
@@ -50,7 +50,7 @@ namespace UrnaEletronica.Dominio.Modelos.Eleicoes.Executivos
                 });
             }
 
-            return resultados.ToArray();
+            return resultados;
         }
 
         private int CalcularMaiorIdade(IEnumerable<Candidato> candidatos)
